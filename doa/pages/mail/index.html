@@ -1,0 +1,456 @@
+<!doctype html>
+<html style="overflow: hidden;">
+<head>
+<meta charset="utf-8">
+<title>邮寄管理</title>
+<meta name="viewport" content="initial-scale=1, maximum-scale=1">
+<link rel="shortcut icon" href="/favicon.ico">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<link rel="stylesheet"
+	href="//g.alicdn.com/msui/sm/0.6.2/css/??sm.min.css,sm-extend.min.css">
+<link rel="stylesheet" href="../../css/common/common.css">
+</head>
+
+<body>
+	<div class="page-group">
+		<div class="page page-current">
+			<!-- 使用钉钉的导航  -->
+			<!--  <header class="bar bar-nav m-header-container">
+				<a
+					class="button button-link button-nav pull-left m-header-return doa-go-back"
+					href="#"> <span class="icon icon-left"></span>
+				</a>
+				<div class="title m-header-title">邮寄管理</div>
+				<a class="button button-link button-nav pull-right button-new">
+					新建 </a>
+			</header> -->
+			<div class="content m-content">
+				<div class="buttons-tab">
+					<a href="#tab1" class="tab-link active button">待我审</a> <a
+						href="#tab2" class="tab-link button">我已审</a> <a href="#tab3"
+						class="tab-link button">我申请的</a>
+				</div>
+				<div class="tabs">
+					<div id="tab1" class="tab active">
+						<div id="tips1">
+							<div class="empty-block">
+								<img src="../../images/common/empty.png" class="empty-img" />
+								<p>没有数据</p>
+							</div>
+						</div>
+						<ul class="list-block mail-list" id="stayList">
+
+
+						</ul>
+					</div>
+					<div id="tab2" class="tab">
+						<div id="tips2">
+							<div class="empty-block">
+								<img src="../../images/common/empty.png" class="empty-img" />
+								<p>没有数据</p>
+							</div>
+						</div>
+						<ul class="list-block mail-list" id="alreadyList">
+						</ul>
+					</div>
+					<div id="tab3" class="tab">
+						<div id="tips3">
+							<div class="empty-block">
+								<img src="../../images/common/empty.png" class="empty-img" />
+								<p>没有数据</p>
+							</div>
+						</div>
+						<ul class="list-block mail-list" id="myMailList">
+
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- 寄件详情popup 弹框开始 -->
+	<div class="popup popup-detail">
+		<div class="page-group">
+			<div class="page page-current">
+				<header class="bar bar-nav m-header-container">
+					<a
+						class="button button-link button-nav pull-left m-header-return close-popup"
+						href="#"> <span class="icon icon-left"></span>
+					</a>
+					<div class="title m-header-title">寄件详情</div>
+				</header>
+				<div class="content m-content">
+					<div class="content-block mail-detail-content">
+						<p>
+							寄件类别:<span id="expressType">公件</span>
+						</p>
+						<p>
+							收寄方式:<span id="paymentType">寄件寄付</span>
+						</p>
+						<p>
+							快递公司:<span id="expressName">顺丰快递</span>
+						</p>
+						<p>
+							快递单号:<span id="expressNo">2154877787</span>
+						</p>
+						<p>说明:<span id="expressText"></span></p>
+						<p>
+							创建时间:<span id="expressTime">2017-02-09 14:11</span>
+						</p>
+					</div>
+					<div class="list-block mail-detail-list">
+						<ul class="mail-list">
+							<li class="item-content">
+								<div class="item-media">
+									<span class="round r-send">寄</span>
+								</div>
+								<div class="item-inner">
+									<div class="item-title">
+										<div class="list-title">
+											<span id="sName">汤米</span><span id="sMobile">13888880000</span>
+										</div>
+										<div class="list-content-txt">
+											<p id="sAddress">湖南省长沙市高新开发区岳麓西大道588号芯城科技园9栋1501－4号</p>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li class="item-content">
+								<div class="item-media">
+									<span class="round r-recieve">收</span>
+								</div>
+								<div class="item-inner">
+									<div class="item-title">
+										<div class="list-title">
+											<span id="rName">汤米</span><span id="rMobile">13888880000</span>
+										</div>
+										<div class="list-content-txt">
+											<p id="rCompany">御家汇股份有限公司</p>
+											<p id="rAddress">湖南省长沙市高新开发区岳麓西大道588号芯城科技园9栋1501－4号</p>
+										</div>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- 寄件详情popup 弹框结束 -->
+
+	<!-- 新建寄件信息第一步popup 弹框开始 -->
+	<div class="popup popup-new-step1">
+		<div class="page-group">
+			<div class="page page-current">
+				<header class="bar bar-nav m-header-container">
+					<a
+						class="button button-link button-nav pull-left m-header-return close-popup"
+						href="#"> <span class="icon icon-left"></span>
+					</a>
+					<div class="title m-header-title">新建寄件信息</div>
+				</header>
+				<div class="content m-content" style="bottom: 2.2rem;">
+					<div class="list-block mail-new-form">
+						<!-- 寄件栏 -->
+						<ul class="mail-list">
+							<li class="item-content">
+								<div class="item-inner">
+									<div class="item-title label">
+										<span class="colorff0 marR3">*</span>寄件类型：
+									</div>
+									<div class="item-input" id="sendType">
+										<span class="rdopanel" id="rdbPublic"><i
+											class="iconfont icon-rdoselect" id="rdoselect"></i><label
+											for="rdbPublic">公件</label></span> <span class="rdopanel"
+											id="rdbPrivate"><i class="iconfont icon-rdo" id="rdo"></i><label
+											for="rdbPrivate">私件</label></span>
+									</div>
+								</div>
+							</li>
+							<li class="item-content">
+								<div class="item-inner">
+									<div class="item-title label">
+										<span class="colorff0 marR3">*</span>收寄方式：
+									</div>
+									<div class="item-input" id="cssupdate">
+										<span class="rdopanel" id="send">
+											<i class="iconfont icon-rdoselect" id="rdoselect1"></i>
+											<label for="rdbPublic">寄件寄付</label>
+										</span>
+										<span class="rdopanel" id="received">
+											<i class="iconfont icon-rdo" id="rdo1"></i>
+											<label for="rdbPrivate">收件到付</label>
+										</span>
+									</div>
+								</div>
+							</li>
+							<li class="item-content" id="selectExpress">
+								<div class="item-inner">
+									<div class="item-title label">
+										<span class="colorff0 marR3">*</span>快递公司：
+									</div>
+									<div class="item-input">
+										<input type="text" class="input" required="true" readonly="readonly"
+											id="expressInp">
+									</div>
+								</div>
+								<div class="item-after">
+									<span class="color99">请选择<span
+										class="icon icon-right marL5"></span></span>
+								</div>
+							</li>
+							<li class="item-content">
+								<div class="item-inner">
+									<div class="item-title label">快递单号：</div>
+									<div class="item-input">
+										<input type="text" class="input" id="expressCode"> <input
+											type="hidden" id="fdId" value="null">
+									</div>
+								</div>
+								<div class="item-after dingScan">
+									<span class="iconfont icon-saomiao"></span>
+								</div>
+							</li>
+							<li class="align-top">
+								<div class="item-content">
+									<div class="item-inner posRev">
+										<div class="item-input">
+											<textarea placeholder="请输入收寄理由(必填)" id="remark"
+												class="applay-txt"></textarea>
+										</div>
+										<div class="count">
+											<span>0</span>/100
+										</div>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="row no-gutter opt-panel" style="position: fixed;">
+					<div id="nextStepButton">
+						<a href="#" class="sure-btn" style="border-radius: 0rem;">下一步</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- 新建寄件信息第一步popup 弹框结束 -->
+	<!--  新建寄件信息第二步popup 弹框开始 -->
+	<div class="popup popup-new-step2">
+		<div class="page-group">
+			<div class="page page-current">
+				<header class="bar bar-nav m-header-container">
+					<a
+						class="button button-link button-nav pull-left m-header-return return-new-step1"
+						href="#"> <span class="icon icon-left"></span>
+					</a>
+					<div class="title m-header-title">新建寄件信息</div>
+				</header>
+				<div class="content m-content" style="bottom: 2.2rem;">
+					<div class="list-block mail-new-form">
+						<!-- 寄件栏 -->
+						<ul class="mail-list" data-type="send-list">
+							<li class="item-content"
+								style="margin: 0; padding: .35rem .75rem">
+								<div class="subsidiary-title-container">
+									<div class="common-title-flag" style="left: 0;"></div>
+									<div class="subsidiary-title">寄件栏</div>
+								</div> <a href="#"
+								class="subsidiary-explain colororg pull-right insert-send-member"
+								id="addSender">添加常用寄件人</a>
+							</li>
+							<li class="item-content">
+								<div class="item-inner">
+									<div class="item-title label">
+										<span class="colorff0 marR3">*</span>寄件人：
+									</div>
+									<div class="item-input">
+										<input type="text" class="input" class="member-inp" required="true"
+											id="sendMenInp">
+									</div>
+								</div>
+								<div class="item-after select-member select-sendmen"
+									id="selectSender">
+									<span class="color99">请选择<span
+										class="icon icon-right marL5"></span></span>
+								</div>
+							</li>
+							<li class="item-content">
+								<div class="item-inner">
+									<div class="item-title label">
+										<span class="colorff0 marR3">*</span>联系电话：
+									</div>
+									<div class="item-input">
+										<input type="text" class="input" required="true" type="tel"
+											id="senderMobile">
+									</div>
+								</div>
+							</li>
+							<li class="item-content select-area" id="selectSenderArea">
+								<div class="item-inner">
+									<div class="item-title label">
+										<span class="colorff0 marR3">*</span>所在地区：
+									</div>
+									<div class="item-input">
+										<div class="inp-area" id="senderAddress"></div>
+									</div>
+								</div>
+								<div class="item-after">
+									<span class="color99">请选择<span
+										class="icon icon-right marL5"></span></span>
+								</div>
+							</li>
+							<li class="align-top">
+								<div class="item-content">
+									<div class="item-inner posRev">
+										<div class="item-input">
+											<textarea placeholder="请填写详细地址，不少于5个字(必填)" class="applay-txt"
+												id="senderAddressDetail"></textarea>
+										</div>
+										<div class="count">
+											<span id="senderNum">0</span>/100
+										</div>
+									</div>
+								</div>
+							</li>
+							<li class="item-content">
+								<div class="item-inner">
+									<div class="item-title label">邮编：</div>
+									<div class="item-input">
+										<input type="text" class="input" id="senderPostcode">
+									</div>
+								</div>
+							</li>
+						</ul>
+
+						<!-- 收件栏 -->
+						<ul class="mail-list" data-type="receive-list">
+							<li class="item-content"
+								style="margin: 0; padding: .35rem .75rem">
+								<div class="subsidiary-title-container">
+									<div class="common-title-flag" style="left: 0;"></div>
+									<div class="subsidiary-title">收件栏</div>
+								</div> <a href="#"
+								class="subsidiary-explain colororg pull-right  insert-recieve-member"
+								id="addReceiver">添加常用收件人</a>
+							</li>
+							<li class="item-content">
+								<div class="item-inner">
+									<div class="item-title label">
+										<span class="colorff0 marR3">*</span>收件人：
+									</div>
+									<div class="item-input">
+										<input type="text" class="input" class="member-inp" required="true"
+											id="receiverMenInp">
+									</div>
+								</div>
+								<div class="item-after select-member select-recievemen"
+									id="selectReceiver">
+									<span class="color99">请选择<span
+										class="icon icon-right marL5"></span></span>
+								</div>
+							</li>
+							<li class="item-content">
+								<div class="item-inner">
+									<div class="item-title label">收件单位：</div>
+									<div class="item-input">
+										<input type="text" class="input" id="receiverCompany" />
+									</div>
+								</div>
+							</li>
+							<li class="item-content">
+								<div class="item-inner">
+									<div class="item-title label">
+										<span class="colorff0 marR3">*</span>联系电话：
+									</div>
+									<div class="item-input">
+										<input type="text" class="input" required="true" type="tel"
+											id="receiverMobile">
+									</div>
+								</div>
+							</li>
+							<li class="item-content select-area" id="selectReceiverArea">
+								<div class="item-inner">
+									<div class="item-title label">
+										<span class="colorff0 marR3">*</span>所在地区：
+									</div>
+									<div class="item-input">
+										<div class="inp-area" id="receiverAddress"></div>
+									</div>
+								</div>
+								<div class="item-after">
+									<span class="color99">请选择<span
+										class="icon icon-right marL5"></span></span>
+								</div>
+							</li>
+							<li class="align-top">
+								<div class="item-content">
+									<div class="item-inner posRev">
+										<div class="item-input">
+											<textarea placeholder="请填写详细地址，不少于5个字(必填)" class="applay-txt"
+												id="receiverAddressDetail"></textarea>
+										</div>
+										<div class="count">
+											<span id="receiverNum">0</span>/100
+										</div>
+									</div>
+								</div>
+							</li>
+							<li class="item-content">
+								<div class="item-inner">
+									<div class="item-title label">邮编：</div>
+									<div class="item-input">
+										<input type="text" class="input" id="receiverPostcode">
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="row no-gutter opt-panel" style="position: fixed;">
+					<div class="col-50" id="div1">
+						<a href="#" id="saveDeliveryInfo" class="default-btn "
+							style="border-radius: 0rem;">暂存</a>
+					</div>
+					<div class="col-50" id="div2">
+						<a href="#" id="submitDeliveryInfo" class="sure-btn "
+							style="border-radius: 0rem;">提交</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--  新建寄件信息第二步popup 弹框结束 -->
+	<link rel="stylesheet" href="../../css/apps/mail.css">
+	<link rel="stylesheet"
+		href="//at.alicdn.com/t/font_ggqj8jnzmhl1sjor.css">
+	<script src="../../js/zepto/zepto.js"></script>
+	<script type="text/javascript" src="../../js/common/base.js"></script>
+	<script type="text/javascript" src="../../js/sm/sm.min.js"></script>
+	<script type="text/javascript" src="../../js/sm/sm-extend.min.js"></script>
+	<script type="text/javascript" src="../../js/sm/sm-city-picker.min.js"></script>
+	<script type="text/javascript" src="../../js/mail/mail_func.js"></script>
+	<!-- 启用钉钉的扫描功能 -->
+	<script type="text/javascript" src="../../js/common/dingtalk.js"></script>
+	<script type="text/javascript"
+		src="../../js/mail/mail.js?v=201703021132"></script>
+	<script type="text/javascript" src="../../js/mail/mail_scan.js"></script>
+	<script>
+		var s1 = document.createElement('script');
+		s1.src = '../../js/sm/sm.min.js';
+		document.getElementsByTagName('head')[0].appendChild(s1);
+
+		var s2 = document.createElement('script');
+		s2.src = '../../js/sm/sm-extend.min.js';
+		document.getElementsByTagName('head')[0].appendChild(s2);
+	</script>
+	<!--使用钉钉的JSAPI  -->
+	<script type="text/javascript"
+		src="http://g.alicdn.com/dingding/open-develop/0.8.4/dingtalk.js"></script>
+	<!--  <script type="text/javascript" src="../../js/common/dingPostTop.js"></script> -->
+	<script type="text/javascript" src="../../js/common/dingBase.js"></script>
+</body>
+</html>

@@ -1,0 +1,122 @@
+@charset "UTF-8";
+ul,li{list-style:none;padding:0;-webkit-padding-start:0}
+p{margin:0;}
+.font30{font-size:.75rem;}
+.font26{font-size:.65rem;}
+.color88{color:#888;}
+.color33{color:#333;}
+.color66{color:#666;}
+.color99{color:#999;}
+.mar1{margin:1rem 0;}
+.marL5{margin-left: .5rem;}
+.marR3{margin-right: .3rem;}
+.pad5{padding:.1rem .5rem 0;}
+.bgorg{background-color:#f36b23;}
+.colororg{color:#f36b23;}
+.colorff0{color:#ff0000;}
+.bar .button-nav.pull-right{padding-right:0.5rem;line-height:}
+a:focus{color:#f36b23;}
+.posRev{position: relative;}
+/***我的流程***/
+.buttons-tab{font-size:0.7rem;}
+.buttons-tab .button,.buttons-tab .button.active{font-size:.7rem;border:0;}
+.buttons-tab .button.active{border-color:#f36b23;color:#f36b23;border-bottom:2px solid #f36b23;}
+.list-block{margin:0;}
+.hide{display:none;}
+.list-content-txt{
+		font-size:0.65rem;
+		color:#888;
+	}
+.btn{
+	display:block;
+	border:1px solid;
+	border-radius:0.3rem;
+	min-width:3rem;
+	text-align:center;
+	height:1.5rem;
+	line-height:1.5rem;
+	font-size:0.75rem;
+	border-color:#bbb;color:#333;
+	padding:0 .2rem;
+}
+.icon-right{margin-right: -.15rem;}
+.bar-nav~.content{top:2rem;}
+.mail-list > li{background: #fff; position:relative;margin-bottom: .35rem;padding:.35rem;}
+.mail-list > li:after,.mail-detail-content:after{content: '';position: absolute;left:0;bottom: 0;height: 1px; width:100%;background: #dadada; display: block;z-index: 15;transform-origin:50% 0;-webkit-transform-origin:50% 0;transform:scaleY(.5);-webkit-transform:scaleY(.5);}
+.mail-list ul.mail-content{margin-left:.75rem;}
+.mail-content .item-content{width:100%;padding-left: 0;}
+.btn.org{border-color:#f36920;color:#f36920;margin-bottom:0.2rem;}
+.mail-content .item-after{display:block;max-height: 4rem;padding-right: .75rem;}
+.mail-content p{margin:0; white-space:nowrap; overflow: hidden;text-overflow: ellipsis;margin-bottom: .2rem;}
+.subsidiary-title-container{margin-left: .75rem; padding:0 .75rem 0 0;}
+.type{vertical-align:top;border:0.01rem solid #ff8e52;border-radius:1rem;margin-right:0.3rem; font-size:0.6rem;line-height:0.85rem; padding:0.1rem 0; color:#ff8e52;width:2.2rem;text-align:center; display:inline-block;margin-right:0.3rem;}
+.mail-content .item-after .icon{color:#c9c9c9;}
+.type-zc{border-color:#f76260; color:#f76260;}
+.type-ds{border-color:#ff8e52; color:#ff8e52;}
+.type-bh{border-color:#ffbe00; color:#ffbe00;}
+.type-jj{border-color:#39dc71; color:#39dc71;}
+.type-ysh{border-color:#0faeff; color:#0faeff;}
+.mail-detail-content{position:relative;color:#888;font-size: .65rem;background: #fff;margin:0 0 0.35rem; padding: .75rem; text-align: justify;}
+.mail-detail-content>p{margin-bottom: .5rem;}
+.mail-detail-list .item-title{white-space: normal;}
+.mail-detail-list .item-inner{display:block;}
+.mail-detail-list p{margin-bottom: .3rem;}
+.mail-detail-content>p:last-child,.mail-content p:last-child,.mail-detail-list p:last-child{margin-bottom: 0;}
+.list-title{font-size:.75rem;}
+.list-title > span:first-child{width:6.5rem; display:inline-block;}
+.round{display: block;width: 1.5rem; height: 1.5rem; border-radius: 50%;color:#fff;font-size: .75rem;text-align: center; line-height: 1.5rem;}
+.r-send{background:#39dc70;}
+.r-recieve{background: #10aeff;}
+.mail-detail-list li{padding:.25rem 0 .35rem;margin-left:.75rem;margin-bottom: 0;}
+.mail-detail-list .mail-list li:after{background: #e7e7e7;transform:scaleY(.5);-webkit-transform:scaleY(.5);}
+.mail-detail-list .item-inner:after,.mail-list ul.mail-content:after, 
+.mail-list li li:last-child .item-inner:after, .mail-list li:last-child li .item-inner:after,
+.mail-new-form .mail-list .item-inner:after{height: 0;}
+/****新建***/
+.mail-new-form{font-size:.75rem;color:#666;}
+.mail-new-form ul.mail-list{margin-bottom: .4rem;}
+div.mail-new-form *{font-size:.75rem;}
+.mail-new-form ul{padding-left: .75rem;}
+.mail-new-form .subsidiary-title-container{padding:0 0 0 .35rem;margin:0;color:#333;}
+.mail-new-form .subsidiary-title{font-size:.8rem;}
+.mail-new-form .mail-list > li{margin-bottom: 0;padding-right: .75rem;padding-left: 0;}
+.mail-new-form .item-content{padding-left:0;}
+.mail-new-form .item-title.label{width:4.5rem;text-align: right;}
+.mail-new-form .align-top{padding:.35rem 0;}
+.mail-new-form input[type=text], 
+.mail-new-form input[type=password], 
+.mail-new-form input[type=email], 
+.mail-new-form input[type=tel], 
+.mail-new-form input[type=url], 
+.mail-new-form input[type=date], 
+.mail-new-form input[type=datetime-local], 
+.mail-new-form input[type=time], 
+.mail-new-form input[type=number], 
+.mail-new-form input[type=search], 
+.mail-new-form select, .mail-new-form textarea{font-size: .75rem;padding:0;}
+.mail-new-form .align-top .item-inner{padding-right:0;}
+.mail-new-form .align-top .item-input{margin:0;}
+.mail-new-form .mail-list .item-inner{padding-right:0;}
+div.mail-new-form .count{color:#ccc; position: absolute; right:.75rem; bottom: .35rem; font-size:.65rem;}
+div.mail-new-form .count>span{font-size:.65rem;}
+div.mail-new-form .icon{font-size: .85rem;color:#c9c9c9;}
+.mail-new-form .mail-list > li:last-child:after{height:0;}
+.mail-new-form .item-after{padding-top:.15rem;}
+.mail-new-form .item-input{margin-left:.3rem;}
+.sumbitBtn,.sure-btn,.default-btn {
+  color:white;
+  height: 2rem;
+  width: 100%;
+  background: #f36920;
+  border-radius: 0.25rem;
+  font-size: 0.9rem;
+}
+.default-btn{ background: #fff;color:#333;float: left;margin-right: 0.75rem;}
+.opt-panel{ position: absolute;bottom:0;width:100%; height: 2.25rem; z-index: 10000; background: #fff;border-top: 1px solid #ddd;}
+.opt-panel .sure-btn,.opt-panel .default-btn{height: 2.25rem;display:block; line-height: 2.25rem; text-align: center;}
+.opt-panel .sure-btn:hover,.opt-panel .sure-btn:focus{color:#fff;}
+.opt-panel .default-btn:hover,.opt-panel .default-btn:focus{color:#333;}
+div.mail-new-form .icon-saomiao{color:#f36920; font-size: 1.3rem;margin-top: -.4rem;}
+div.mail-new-form .icon-rdo{color:#d7d7d7;font-size:1rem;margin:.5rem .2rem 0 0;}
+div.mail-new-form .icon-rdoselect{color:#f36920;font-size:1rem;margin:.5rem .2rem 0 0;}
+div.mail-new-form .rdopanel{width:5rem; display:inline-block;}

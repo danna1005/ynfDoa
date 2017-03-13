@@ -1,0 +1,121 @@
+@charset "UTF-8";
+.tranform{
+  		transform: rotate(180deg);
+  	}
+.dis{
+  		display: none;
+  	}
+  	.icon1{
+  		width:0.75rem;
+	height:0.75rem;
+	vertical-align:top;
+	margin-top:-5rem;
+  		
+  	}
+  	.list-block{
+  		margin-top:0.5rem;
+  		
+  	}
+  	.nextIcon{
+  		width:0.9rem;
+	height:0.9rem;
+	vertical-align:top;
+	margin-top:-0.8rem;
+  		
+  	}
+  	.company{
+  		margin:-1.7rem 0rem 0rem 0rem;
+  	}
+  	.details{
+  		margin:0.2rem 0rem 0rem 0rem;
+  		
+  	}
+  	.card-header{
+  		font-size:0.6rem; 
+  	}
+  	.vertical {
+  		height:1.5rem;
+  		width:1px;
+  		border-left:0.1rem #dddddd solid;
+  		margin-left:2.85rem;
+  		margin-top: -1rem;
+  		margin-bottom: -1rem;
+  		
+  	}
+  	.imgList{
+  		width:1.05rem;
+	height:1.05rem;
+	vertical-align:top;
+	margin-top:-0.8rem;
+  	
+  	}
+  	.icon2{
+  		width:1.05rem;
+	height:1.05rem;
+  	}
+  	.iconList{
+  		width:1.05rem;
+	height:1.05rem;
+	vertical-align:top;
+	margin-top:0rem;
+	margin-left: 0.75rem;
+	margin-right:  0.75rem;
+  	}
+  	.item-title{
+  		color: #888888;
+  		font-size: 0.65rem;
+  		
+  	}
+  	.card{box-shadow:none;border-bottom:1px solid #d6d6d6;}
+  	.card-header{
+  		color: #888888;
+  		font-size:  0.65rem;
+  	}
+  	.item-after{
+  		color: #666666;
+  		font-size:  0.65rem;
+  		margin-top:-0.5rem;
+  	}
+  	.startTime{
+  		color: #333333;
+  		font-size:  0.65rem;
+  		float: left;
+  	}
+  	.time{
+  		color: #888888;
+  		font-size:  0.6rem;
+  	}
+  	.site{
+  		color: #333333;
+  		font-size: 0.75rem;
+  	}
+  	.yuan{
+  		width:1.05rem; 
+  		height:1.05rem; 
+  		border-radius:50%; 
+  		overflow:hidden; 
+  		background-color: red;
+  		float: left;
+  		margin-left: 0.75rem;
+  		margin-right:0.25rem; 
+  		color: white;
+  		font-size: 0.65rem;
+  		text-align: center;  		
+  	}
+  	.hide{
+  		/* display: none; */
+  		z-index:9999;
+  		position:fixed;
+  		margin-left:2rem;
+  		margin-top:0rem;
+  		width: 14.5rem;
+  	
+  	}
+  	.icon-f7{
+  		 color: #f36b23;
+  	}
+  	p{
+  		font-size: 0.65rem;
+  	}
+  	.bar{padding-left:0.75rem;}
+.bar .button-nav.pull-left{margin-left:-0.35rem;}

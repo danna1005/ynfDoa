@@ -1,0 +1,684 @@
+<!doctype html>
+<html style="overflow-x:hidden;">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>首页</title>
+<meta name="viewport" content="initial-scale=1, maximum-scale=1">
+<meta http-equiv="expires" content="-1"/>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<link rel="stylesheet" href="../css/sui/sm.min.css">
+<link rel="stylesheet" href="../css/common/common.css">  
+<link rel="stylesheet" href="../css/home.css">  
+</head>
+<body>
+	<div class="page-group">
+		<div class="page">
+			<!-- 我要吐槽 -->
+			<div id="rel_div" class="tc-div">
+				<a href="apps/info/discontent.html" class="openLink-true">
+					<span class="feedback-icon"></span>
+				</a>
+			</div>
+			
+			<!-- 主体内容 -->
+            <div class="content h-content">
+            	<!-- 头部 -->
+            	<div class="header">
+            		<!-- 搜索框 -->
+	                <div class="content-block search-panel">
+		                <span class="pull-left logo-cls"><img src="../images/apps/new/yjh.png"/></span>
+		                <a class="pull-left searchPart">
+		                	<input type="text" name="searchKey"  placeholder="请输入关键词" disabled="true"/>
+			            	<i class="pull-right iconfont icon-sousuo" title="搜索"></i>	
+		                </a>
+		                <a class="pull-right pos-rev marT-5" href="news.html"><i class="iconfont icon-xiaoxi"></i><span class="corner pos-abs">900</span></a>
+		           </div>
+		           <!-- 四个角标应用 -->
+		           <div class="row no-gutter commonFn">
+				        <!-- 考勤打卡 -->
+				        <p class="col-25">
+				        	<a class="openLink-true" href="http://localhost:8080/ekp/third/doa/pages/apps/clock/clock.html">
+				                <span class="imgpanel">
+				                    <span class="iconfont icon-daqia" alt="K"></span>
+				                    <strong class="normal">210</strong>
+				                </span>
+				               	<em>考勤打卡</em>
+				            </a>
+				        </p>
+				        <!-- 待办事宜 -->
+				        <p class="col-25">          
+				            <a id="" href="http://localhost:8080/ekp/third/doa/pages/apps/restWork/rest-work.html" class="openLink-true">
+				                <span class="imgpanel">
+				                	<span class="iconfont icon-daibanshiyi" alt="D"></span>
+				                    <strong class="normal">2</strong>
+				                </span>
+				                <em>待办事宜</em>
+				            </a>
+				        </p>
+				        <!-- 钉邮 -->
+				        <p class="col-25">          
+				            <a href="dingtalk://dingtalkclient/action/switchtab?index=2&amp;name=work&amp;scene=1&amp;corpid=dingb18dd3dc01e82c7d&amp;appid=-5">
+				                <span class="imgpanel">
+				                	<span class="iconfont icon-dingyou1" alt="D"></span>
+				                    <strong class="hidden">0</strong>
+				                </span>
+				                <em>钉邮</em>
+				            </a>
+				        </p>
+				        <!-- IT服务 -->
+				        <p class="col-25">          
+				            <a id="itService" href="http://localhost:8080/ekp/third/doa/pages/apps/it/support.html" class="openLink-true">
+				                <span class="imgpanel">
+				                    <span class="iconfont icon-ITfuwu" alt="I"></span>
+				                    <strong class="hidden" style="width: 18.75px; border-radius: 50%;">0</strong>
+				                </span>
+				                <em>IT服务</em>
+				            </a>
+				        </p>
+				        <!-- 没了 你还想要什么！！！？ -->
+				    </div>
+	            </div>
+            	<!-- 个人办公 -->
+            	<div class="content-block">
+            		<div class="content-block-title"><i class="iconfont icon-briefcase"></i>个人办公</div>
+            		<div class="row no-gutter applist">
+            			<div class="commonFn selectionContent">
+            				<span class="col-25">
+            					<a href="http://localhost:8080/ekp/third/doa/pages/process/index.html" class="a1 openLink-true" data-anchor="icon-wodeliucheng1" onclick="aListClick(this)">
+            						<svg class="icon" aria-hidden="true">
+            							<use xlink:href="#icon-wodeliucheng1"></use>
+            						</svg>
+            						<b>我的流程</b>	 
+            						<span class="corner">1000</span>           
+            					</a>
+            				</span>
+            				<span class="col-25">
+            					<a href="dingtalk://dingtalkclient/action/switchtab?index=2&name=work&scene=1&corpid=dingb18dd3dc01e82c7d&appid=-4" class="a1 openLink-true" data-anchor="icon-dingdingshenpi" onclick="aListClick(this)">
+            						<svg class="icon" aria-hidden="true">
+            							<use xlink:href="#icon-dingdingshenpi"></use>
+            						</svg>
+            						<b>钉钉审批</b>	 
+            						<span class="corner">0</span>             
+            					</a>
+            				</span>
+            				<span class="col-25">
+            					<a href="http://localhost:8080/ekp/sys/task/mobile/" class="a1 openLink-true" data-anchor="icon-renwuguanli1" onclick="aListClick(this)">
+            						<svg class="icon" aria-hidden="true">
+            							<use xlink:href="#icon-renwuguanli1"></use>
+            						</svg>
+            						<b>任务管理</b>	      
+            						<span class="corner">0</span>        
+            					</a>
+            				</span>
+            				<span class="col-25">
+            					<a href="http://localhost:8080/ekp/km/calendar/mobile/" class="a1 openLink-true" data-anchor="icon-richengguanli1" onclick="aListClick(this)">
+            						<svg class="icon" aria-hidden="true">
+            							<use xlink:href="#icon-richengguanli1"></use>
+            						</svg>
+            						<b>日程管理</b>	     
+            						<span class="corner">1</span>          
+            					</a>
+            				</span>
+            				<span class="col-25">
+            					<a href="http://localhost:8080/ekp/km/imeeting/mobile/index_list.jsp" class="a1 openLink-true" data-anchor="icon-huiyiguanli1" onclick="aListClick(this)">
+            						<svg class="icon" aria-hidden="true">
+            							<use xlink:href="#icon-huiyiguanli1"></use>
+            						</svg>
+            						<b>会议管理</b>	    
+            						<span class="corner">0</span>        
+            					</a>
+            				</span>
+            				<span class="col-25">
+            					<a href="#" class="a1 openLink-true" data-anchor="icon-dianhuahuiyi1" onclick="aListClick(this)">
+            						<svg class="icon" aria-hidden="true">
+            							<use xlink:href="#icon-dianhuahuiyi1"></use>
+            						</svg>
+            						<b>电话会议</b>	  
+            						<span class="corner">0</span>          
+            					</a>
+            				</span>
+            				<span class="col-25">
+            					<a href="#" class="a1 openLink-true" data-anchor="icon-shipinhuiyi1" onclick="aListClick(this)">
+            						<svg class="icon" aria-hidden="true">
+            							<use xlink:href="#icon-shipinhuiyi1"></use>
+            						</svg>
+            						<b>视频会议</b>	 
+            						<span class="corner">0</span>           
+            					</a>
+            				</span>
+            				<span class="col-25">
+            					<a href="#" class="a1 openLink-true" data-anchor="icon-woderizhi1" onclick="aListClick(this)">
+            						<svg class="icon" aria-hidden="true">
+            							<use xlink:href="#icon-woderizhi1"></use>
+            						</svg>
+            						<b>我的日志</b>	  
+            						<span class="corner">0</span>          
+            					</a>
+            				</span>
+            				<span class="col-25">
+            					<a href="#" class="a1 openLink-true" data-anchor="icon-qiandao1" onclick="aListClick(this)">
+            						<svg class="icon" aria-hidden="true">
+            							<use xlink:href="#icon-qiandao1"></use>
+            						</svg>
+            						<b>签到</b>	     
+            						<span class="corner">0</span>       
+            					</a>
+            				</span>
+            				<span class="col-25">
+            					<a href="dingtalk://dingtalkclient/action/switchtab?index=2&name=work&scene=1&corpid=dingb18dd3dc01e82c7d&appid=-6" class="a1 openLink-true" data-anchor="icon-guanlirili1" onclick="aListClick(this)">
+            						<svg class="icon" aria-hidden="true">
+            							<use xlink:href="#icon-guanlirili1"></use>
+            						</svg>
+            						<b>管理日历</b>	 
+            						<span class="corner">0</span>           
+            					</a>
+            				</span>
+            				<span class="col-25">
+            					<a href="dingtalk://dingtalkclient/action/switchtab?index=2&name=work&scene=1&corpid=dingb18dd3dc01e82c7d&appid=-3" class="a1 openLink-true" data-anchor="icon-dingpan1" onclick="aListClick(this)">
+            						<svg class="icon" aria-hidden="true">
+            							<use xlink:href="#icon-dingpan1"></use>
+            						</svg>
+            						<b>盯盘</b>	    
+            						<span class="corner">0</span>        
+            					</a>
+            				</span>
+            				<span class="col-25">
+            					<a href="http://localhost:8080/ekp/third/doa/pages/apps/it/process-support.html?v=undefined" class="a1 openLink-true" data-anchor="icon-ITfuwu1" onclick="aListClick(this)">
+            						<svg class="icon" aria-hidden="true">
+            							<use xlink:href="#icon-ITfuwu1"></use>
+            						</svg>
+            						<b>IT支持</b>	  
+            						<span class="corner">0</span>          
+            					</a>
+            				</span>
+            			</div>
+            		</div>
+            	</div>
+            	<!-- 御家资讯 -->
+            	<div class="content-block">
+            		<div class="content-block-title"><i class="iconfont icon-zixun"></i>御家资讯</div>
+            		<div class="row no-gutter applist">
+            			<div class="selectionContent">
+            				<span class="col-25">
+            					<a href="http://localhost:8080/ekp/sys/news/mobile/index.jsp?moduleName=御家通知公告&filter=1&queryStr=/sys/news/sys_news_main/sysNewsMainIndex.do?method=listChildren&categoryId=13f89f0aecc9570a269328c4ea8b510d&q.docStatus=30&orderby=fdIsTop;fdTopTime;docAlterTime&ordertype=down" class="a1 openLink-true" data-anchor="icon-gonggao1" onclick="aListClick(this)">
+            						<svg class="icon" aria-hidden="true">
+            							<use xlink:href="#icon-gonggao1"></use>
+            						</svg>
+            						<b>御家公告</b>	
+            						<span class="corner">0</span>            
+            					</a>
+            				</span>
+            				<span class="col-25">
+            					<a href="http://localhost:8080/ekp/sys/news/mobile/index.jsp?moduleName=御家新闻&filter=1&queryStr=/sys/news/sys_news_main/sysNewsMainIndex.do?method=listChildren&categoryId=1519f8ec85c075cdcf4180241f491a79&q.docStatus=30&orderby=fdIsTop;fdTopTime;docAlterTime&ordertype=down&dd_share=false" class="a1 openLink-true" data-anchor="icon-yujiaxinwen" onclick="aListClick(this)">
+            						<svg class="icon" aria-hidden="true">
+            							<use xlink:href="#icon-yujiaxinwen"></use>
+            						</svg>
+            						<b>御家新闻</b>	
+            						<span class="corner">0</span>            
+            					</a>
+            				</span>
+            				<span class="col-25">
+            					<a href="http://localhost:8080/ekp/km/institution/mobile/" class="a1 openLink-true" data-anchor="icon-yujiazhidu" onclick="aListClick(this)">
+            						<svg class="icon" aria-hidden="true">
+            							<use xlink:href="#icon-yujiazhidu"></use>
+            						</svg>
+            						<b>御家制度</b>	
+            						<span class="corner">0</span>            
+            					</a>
+            				</span>
+            				<span class="col-25">
+            					<a href="http://localhost:8080/ekp/km/forum/mobile/" class="a1 openLink-true" data-anchor="icon-yujialuntan" onclick="aListClick(this)">
+            						<svg class="icon" aria-hidden="true">
+            							<use xlink:href="#icon-yujialuntan"></use>
+            						</svg>
+            						<b>御家论坛</b>	
+            						<span class="corner">0</span>            
+            					</a>
+            				</span>
+            			</div>
+            		</div>
+            	</div>
+            	<!-- 企业文化 -->
+            	<div class="content-block">
+            		<div class="content-block-title"><i class="iconfont icon-wenhua"></i>企业文化</div>
+            		<div class="row no-gutter applist">
+            			<div class="selectionContent">
+            				<span class="col-25">
+            					<a href="http://localhost:8080/ekp/third/doa/pages/apps/info/information.html?dd_share=false" class="a1 openLink-true" data-anchor="icon-gongsijianjie" onclick="aListClick(this)">
+            						<svg class="icon" aria-hidden="true">
+            							<use xlink:href="#icon-gongsijianjie"></use>
+            						</svg>
+            						<b>御家简介</b>	   
+            						<span class="corner">0</span>         
+            					</a>
+            				</span>
+            				<span class="col-25">
+            					<a href="http://localhost:8080/ekp/third/doa/pages/apps/info/concept.html" class="a1 openLink-true" data-anchor="icon-yujiaqijian1" onclick="aListClick(this)">
+            						<svg class="icon" aria-hidden="true">
+            							<use xlink:href="#icon-yujiaqijian1"></use>
+            						</svg>
+            						<b>御家七剑</b>	   
+            						<span class="corner">0</span>         
+            					</a>
+            				</span>
+            				<span class="col-25">
+            					<a href="http://localhost:8080/ekp/third/doa/pages/apps/info/plan.html" class="a1 openLink-true" data-anchor="icon-xiaomogu" onclick="aListClick(this)">
+            						<svg class="icon" aria-hidden="true">
+            							<use xlink:href="#icon-xiaomogu"></use>
+            						</svg>
+            						<b>小蘑菇</b>	     
+            						<span class="corner">0</span>       
+            					</a>
+            				</span>
+            			</div>
+            		</div>
+            	</div>
+            	<!-- 行政服务 -->
+            	<div class="content-block">
+            		<div class="content-block-title"><i class="iconfont icon-xingzheng"></i>行政服务</div>
+            		<div class="row no-gutter applist">
+            			<div class="selectionContent">
+            				<span class="col-25">
+            					<a href="http://localhost:8080/ekp/km/review/km_review_main/kmReviewMain.do?method=add&fdTemplateId=15553712603a55a7ceaee364d6c852eb" class="a1 openLink-true" data-anchor="icon-yongcheshenqing1" onclick="aListClick(this)">
+            						<svg class="icon" aria-hidden="true">
+            							<use xlink:href="#icon-yongcheshenqing1"></use>
+            						</svg>
+            						<b>用车申请</b>	   
+            						<span class="corner">0</span>         
+            					</a>
+            				</span>
+            				<span class="col-25">
+            					<a href="http://localhost:8080/ekp/third/doa/pages/apps/info/coach.html" class="a1 openLink-true" data-anchor="icon-mogudaba" onclick="aListClick(this)">
+            						<svg class="icon" aria-hidden="true">
+            							<use xlink:href="#icon-mogudaba"></use>
+            						</svg>
+            						<b>蘑菇大爸</b>	
+            						<span class="corner">0</span>            
+            					</a>
+            				</span>
+            				<span class="col-25">
+            					<a href="http://localhost:8080/ekp/third/doa/pages/mail/index.html" class="a1 openLink-true" data-anchor="icon-jijianguanli1" onclick="aListClick(this)">
+            						<svg class="icon" aria-hidden="true">
+            							<use xlink:href="#icon-jijianguanli1"></use>
+            						</svg>
+            						<b>寄件管理</b>	
+            						<span class="corner">0</span>            
+            					</a>
+            				</span>
+            			</div>
+            		</div>
+            	</div>
+            	<!-- 人力资源 -->
+            	<div class="content-block">
+            		<div class="content-block-title"><i class="iconfont icon-renliziyuan"></i>人力资源</div>
+            		<div class="row no-gutter applist">
+            			<div class="selectionContent">
+            				<span class="col-25">
+            					<a href="#" class="a1 openLink-true" data-anchor="icon-wodekaoqin" onclick="aListClick(this)">
+            						<svg class="icon" aria-hidden="true">
+            							<use xlink:href="#icon-wodekaoqin"></use>
+            						</svg>
+            						<b>我的考勤</b>	  
+            						<span class="corner">0</span>          
+            					</a>
+            				</span>
+            				<span class="col-25">
+            					<a href="javascript:void(0)" class="a1 openLink-true" data-anchor="icon-jiaqi1" onclick="aListClick(this)">
+            						<svg class="icon" aria-hidden="true">
+            							<use xlink:href="#icon-jiaqi1"></use>
+            						</svg>
+            						<b>我的假期</b>	   
+            						<span class="corner">0</span>         
+            					</a>
+            				</span>
+            				<span class="col-25">
+            					<a href="#" class="a1 openLink-true" data-anchor="icon-xinzi1" onclick="aListClick(this)">
+            						<svg class="icon" aria-hidden="true">
+            							<use xlink:href="#icon-xinzi1"></use>
+            						</svg>
+            						<b>我的薪酬</b>	   
+            						<span class="corner">0</span>         
+            					</a>
+            				</span>
+            				<span class="col-25">
+            					<a href="javascript:void(0)" class="a1 openLink-true" data-anchor="icon-fuli1" onclick="aListClick(this)">
+            						<svg class="icon" aria-hidden="true">
+            							<use xlink:href="#icon-fuli1"></use>
+            						</svg>
+            						<b>御家福利</b>	  
+            						<span class="corner">0</span>          
+            					</a>
+            				</span>
+            				<span class="col-25">
+            					<a href="javascript:void(0)" class="a1 openLink-true" data-anchor="icon-wodepeixun" onclick="aListClick(this)">
+            						<svg class="icon" aria-hidden="true">
+            							<use xlink:href="#icon-wodepeixun"></use>
+            						</svg>
+            						<b>我的培训</b>	   
+            						<span class="corner">0</span>         
+            					</a>
+            				</span>
+            				<span class="col-25">
+            					<a href="javascript:void(0)" class="a1 openLink-true" data-anchor="icon-wodejixiao" onclick="aListClick(this)">
+            						<svg class="icon" aria-hidden="true">
+            							<use xlink:href="#icon-wodejixiao"></use>
+            						</svg>
+            						<b>我的绩效</b>	  
+            						<span class="corner">0</span>          
+            					</a>
+            				</span>
+            				<span class="col-25">
+            					<a href="javascript:void(0)" class="a1 openLink-true" data-anchor="icon-wodexiashu" onclick="aListClick(this)">
+            						<svg class="icon" aria-hidden="true">
+            							<use xlink:href="#icon-wodexiashu"></use>
+            						</svg>
+            						<b>我的下属</b>	
+            						<span class="corner">0</span>            
+            					</a>
+            				</span>
+            			</div>
+            		</div>
+            	</div>
+            	<!-- 财务服务 -->
+            	<div class="content-block">
+            		<div class="content-block-title"><i class="iconfont icon-qian"></i>财务服务</div>
+            		<div class="row no-gutter applist">
+            			<div class="selectionContent">
+            				<span class="col-25">
+            					<a href="#" class="a1 openLink-true" data-anchor="icon-jiekuanshenqing1" onclick="aListClick(this)">
+            						<svg class="icon" aria-hidden="true">
+            							<use xlink:href="#icon-jiekuanshenqing1"></use>
+            						</svg>
+            						<b>借款申请</b>	
+            						<span class="corner">0</span>            
+            					</a>
+            				</span>
+            				<span class="col-25">
+            					<a href="#" class="a1 openLink-true" data-anchor="icon-fukuanshenqing1" onclick="aListClick(this)">
+            						<svg class="icon" aria-hidden="true">
+            							<use xlink:href="#icon-fukuanshenqing1"></use>
+            						</svg>
+            						<b>付款申请</b>	 
+            						<span class="corner">0</span>           
+            					</a>
+            				</span>
+            				<span class="col-25">
+            					<a href="#" class="a1 openLink-true" data-anchor="icon-feiyongshenqing" onclick="aListClick(this)">
+            						<svg class="icon" aria-hidden="true">
+            							<use xlink:href="#icon-feiyongshenqing"></use>
+            						</svg>
+            						<b>费用报销</b>	
+            						<span class="corner">0</span>            
+            					</a>
+            				</span>
+            				<span class="col-25">
+            					<a href="#" class="a1 openLink-true" data-anchor="icon-fapiao1" onclick="aListClick(this)">
+            						<svg class="icon" aria-hidden="true">
+            							<use xlink:href="#icon-fapiao1"></use>
+            						</svg>
+            						<b>发票信息</b>	
+            						<span class="corner">0</span>            
+            					</a>
+            				</span>
+            			</div>
+            		</div>
+            	</div>
+            	<!-- 生产管理 -->
+            	<div class="content-block">
+            		<div class="content-block-title"><i class="iconfont icon-shengchanguanli"></i>生产管理</div>
+            		<div class="row no-gutter applist">
+            			<div class="selectionContent">
+            				<span class="col-25">
+            					<a href="#" class="a1 openLink-true" data-anchor="icon-baohuodan1" onclick="aListClick(this)">
+            						<svg class="icon" aria-hidden="true">
+            							<use xlink:href="#icon-baohuodan1"></use>
+            						</svg>
+            						<b>报货审批</b>	
+            						<span class="corner">0</span>            
+            					</a>
+            				</span>
+            			</div>
+            		</div>
+            	</div>
+            </div>
+		 	
+		 	<!-- 人力资源提示框开始（待开发应用提示）-->
+		    <div class="prompt-panel hr-prompt-panel">
+				<div class="prompt-mask"></div>
+				<div class="prompt-content">
+					<span class="prompt-close">×</span>
+					<div class="content-padded">      
+						<div class="list-block">
+							<div class="card-header" style="text-align:center;"><img src="../images/apps/unnameed/developing.png" style="width: 5rem;margin:0.5rem auto 0;"></div>
+							<div class="card-content-inner" style="text-align:center;font-size:0.7rem;" >正在努力开发中，敬请期待...</div>
+						</div>					
+					</div>
+				</div>
+			</div>
+			<!-- 人力资源提示框结束-->
+			
+			<!-- 系统更新的通知 -->
+			<div class="prompt-panel sys-prompt-panel" id="sysUpdateNotice">
+				<div class="prompt-mask"></div>
+				<div class="prompt-content" style="top:2.2rem;">
+					<span class="prompt-close">×</span>
+					<header class="prompt-header"></header>
+					<div class="content-padded"></div>
+				</div>
+			</div>
+			
+			<!-- 新消息 -->
+			<div class="prompt-panel news-prompt-panel">
+				<div class="prompt-mask"></div>
+				<div class="prompt-content" style="top:2.2rem;">
+					<div class="list-block news-list-block">
+						<ul>
+							<li>								
+								<div class="content-block-title news-title"><i class="iconfont icon-new"></i><span>新闻</span><span class="time fr">26分钟前</span></div>
+								<div class="item-content">
+									<div class="item-media"><i class="iconfont icon-close"></i></div>
+									<div class="item-inner">
+										<a href="http://localhost:8080/ekp/sys/news/sys_news_main/sysNewsMain.do?method=view&fdId=159c3b236d4edeeeffe691142809ac1e&_mobile=1">新年将至，湖南御家化妆品制造有限公司取得新一轮飞跃，被正式认定为“2016年国家级高新技术企业”（证书编号 GR201634000172）。御家制造同时成为湖南省内首家获此称号的化妆品研发制造企业，荣誉榜又添浓墨重彩的一笔。</a>
+									</div>
+								</div>
+							</li>
+							<li>								
+								<div class="content-block-title news-title"><i class="iconfont icon-new"></i><span>公告</span><span class="time fr">26分钟前</span></div>
+								<div class="item-content">
+									<div class="item-media"><i class="iconfont icon-close"></i></div>
+									<div class="item-inner">
+										<a href="http://localhost:8080/ekp/sys/news/sys_news_main/sysNewsMain.do?method=view&fdId=15a036ca2f91685b56c0cd949f7a42d0&_mobile=1">金鸡振翅，万象更新，大年初七是御家汇开工的第一天。湖南省委副书记乌兰、省委统战部部长黄兰香、省委组织部部长王少峰、副省长何报翔、副省长、省政协副主席戴道晋、省委办公厅副主任叶建军以及省发改委、省经信委、省商务厅，长沙海关等单位相关负责人来到御家汇进行新春调研，与公司全体领导员工一起共庆新春、共话新开局。长沙市委副书记徐宏源、常务副市长张迎春、副市长李晓宏、市委副秘书长谭慧慧及市发改委、市经信委、市商务局负责人一同参与调研。</a>
+									</div>
+								</div>
+							</li>
+							<li>								
+								<div class="content-block-title news-title"><i class="iconfont icon-new"></i><span>新闻</span><span class="time fr">26分钟前</span></div>
+								<div class="item-content">
+									<div class="item-media"><i class="iconfont icon-close"></i></div>
+									<div class="item-inner">
+										<a href="http://localhost:8080/ekp/sys/news/sys_news_main/sysNewsMain.do?method=view&fdId=15a8d291b80ebd280bbbbdb4cfc92f67&_mobile=1">经查，人力资源学院对于部分签到考勤的部门，长期未统计具体签到出勤情况，除了请假审批的名单外，其它一律默认按部门提供的考勤数据核算工资福利，未根据签到表统计真实出勤情况，更没有核查部门提供考勤数据的真实性，整个考勤形同虚设，严重助长工厂、行政、仓库的部分员工弄虚作假，同时对公司人力资源造成严重浪费。</a>
+									</div>
+								</div>
+							</li>
+							<li>								
+								<div class="content-block-title news-title"><i class="iconfont icon-new"></i><span>新闻</span><span class="time fr">26分钟前</span></div>
+								<div class="item-content">
+									<div class="item-media"><i class="iconfont icon-close"></i></div>
+									<div class="item-inner">
+										<a href="http://localhost:8080/ekp/sys/news/sys_news_main/sysNewsMain.do?method=view&fdId=159c3b236d4edeeeffe691142809ac1e&_mobile=1">新年将至，湖南御家化妆品制造有限公司取得新一轮飞跃，被正式认定为“2016年国家级高新技术企业”（证书编号 GR201634000172）。御家制造同时成为湖南省内首家获此称号的化妆品研发制造企业，荣誉榜又添浓墨重彩的一笔。</a>
+									</div>
+								</div>
+							</li>
+							<li>								
+								<div class="content-block-title news-title"><i class="iconfont icon-new"></i><span>公告</span><span class="time fr">26分钟前</span></div>
+								<div class="item-content">
+									<div class="item-media"><i class="iconfont icon-close"></i></div>
+									<div class="item-inner">
+										<a href="http://localhost:8080/ekp/sys/news/sys_news_main/sysNewsMain.do?method=view&fdId=15a036ca2f91685b56c0cd949f7a42d0&_mobile=1">金鸡振翅，万象更新，大年初七是御家汇开工的第一天。湖南省委副书记乌兰、省委统战部部长黄兰香、省委组织部部长王少峰、副省长何报翔、副省长、省政协副主席戴道晋、省委办公厅副主任叶建军以及省发改委、省经信委、省商务厅，长沙海关等单位相关负责人来到御家汇进行新春调研，与公司全体领导员工一起共庆新春、共话新开局。长沙市委副书记徐宏源、常务副市长张迎春、副市长李晓宏、市委副秘书长谭慧慧及市发改委、市经信委、市商务局负责人一同参与调研。</a>
+									</div>
+								</div>
+							</li>
+							<li>								
+								<div class="content-block-title news-title"><i class="iconfont icon-new"></i><span>新闻</span><span class="time fr">26分钟前</span></div>
+								<div class="item-content">
+									<div class="item-media"><i class="iconfont icon-close"></i></div>
+									<div class="item-inner">
+										<a href="http://localhost:8080/ekp/sys/news/sys_news_main/sysNewsMain.do?method=view&fdId=15a8d291b80ebd280bbbbdb4cfc92f67&_mobile=1">经查，人力资源学院对于部分签到考勤的部门，长期未统计具体签到出勤情况，除了请假审批的名单外，其它一律默认按部门提供的考勤数据核算工资福利，未根据签到表统计真实出勤情况，更没有核查部门提供考勤数据的真实性，整个考勤形同虚设，严重助长工厂、行政、仓库的部分员工弄虚作假，同时对公司人力资源造成严重浪费。</a>
+									</div>
+								</div>
+							</li>
+							<li>								
+								<div class="content-block-title news-title"><i class="iconfont icon-new"></i><span>新闻</span><span class="time fr">26分钟前</span></div>
+								<div class="item-content">
+									<div class="item-media"><i class="iconfont icon-close"></i></div>
+									<div class="item-inner">
+										<a href="http://localhost:8080/ekp/sys/news/sys_news_main/sysNewsMain.do?method=view&fdId=159c3b236d4edeeeffe691142809ac1e&_mobile=1">新年将至，湖南御家化妆品制造有限公司取得新一轮飞跃，被正式认定为“2016年国家级高新技术企业”（证书编号 GR201634000172）。御家制造同时成为湖南省内首家获此称号的化妆品研发制造企业，荣誉榜又添浓墨重彩的一笔。</a>
+									</div>
+								</div>
+							</li>
+							<li>								
+								<div class="content-block-title news-title"><i class="iconfont icon-new"></i><span>公告</span><span class="time fr">26分钟前</span></div>
+								<div class="item-content">
+									<div class="item-media"><i class="iconfont icon-close"></i></div>
+									<div class="item-inner">
+										<a href="http://localhost:8080/ekp/sys/news/sys_news_main/sysNewsMain.do?method=view&fdId=15a036ca2f91685b56c0cd949f7a42d0&_mobile=1">金鸡振翅，万象更新，大年初七是御家汇开工的第一天。湖南省委副书记乌兰、省委统战部部长黄兰香、省委组织部部长王少峰、副省长何报翔、副省长、省政协副主席戴道晋、省委办公厅副主任叶建军以及省发改委、省经信委、省商务厅，长沙海关等单位相关负责人来到御家汇进行新春调研，与公司全体领导员工一起共庆新春、共话新开局。长沙市委副书记徐宏源、常务副市长张迎春、副市长李晓宏、市委副秘书长谭慧慧及市发改委、市经信委、市商务局负责人一同参与调研。</a>
+									</div>
+								</div>
+							</li>
+							<li>								
+								<div class="content-block-title news-title"><i class="iconfont icon-new"></i><span>新闻</span><span class="time fr">26分钟前</span></div>
+								<div class="item-content">
+									<div class="item-media"><i class="iconfont icon-close"></i></div>
+									<div class="item-inner">
+										<a href="http://localhost:8080/ekp/sys/news/sys_news_main/sysNewsMain.do?method=view&fdId=15a8d291b80ebd280bbbbdb4cfc92f67&_mobile=1">经查，人力资源学院对于部分签到考勤的部门，长期未统计具体签到出勤情况，除了请假审批的名单外，其它一律默认按部门提供的考勤数据核算工资福利，未根据签到表统计真实出勤情况，更没有核查部门提供考勤数据的真实性，整个考勤形同虚设，严重助长工厂、行政、仓库的部分员工弄虚作假，同时对公司人力资源造成严重浪费。</a>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<!-- 返回顶部 -->
+			<div class="return-top"></div>   
+		</div>
+	</div>
+	
+    <!--搜索弹框-->
+    <div class="popup popup-search">
+        <div class="bar">
+            <div class="searchbar">
+                <a href="#" class="searchbar-cancel close-popup">取消</a>
+                <div class="search-input">
+                  <label class="icon icon-search" for="search"></label>
+                  <input type="search" id="search" placeholder='应用名称、流程主题、公告标题'/>
+                  <i class="iconfont icon-close"></i>
+                </div>
+            </div>
+        </div>    
+        <div class="content" id="searchUL">            
+            <!--近期搜索-->     
+            <div class="record-block" >
+                <div class="list-block rencent-block">
+                    <div class="item-inner content-block-title" style="font-size:0.75rem">近期搜索{{title}}</div>
+                    <ul class="appslist">
+                        <li v-for="key in keys">
+                            <a href="#" class="apps" v-text="key"></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="list-block search-more-block">
+                	<div class="title"><span>在这里可以搜索到</span></div>
+                	<div class="list">
+                		<span><i class="icon-app"></i>应用</span>
+                		<span><i class="icon-process"></i>流程</span>
+                		<span><i class="icon-news"></i>新闻公告</span>
+                	</div>
+                </div>
+            </div>
+            <!--搜索结果-->
+            <div class="result-block dis-none">
+                <!-- 功能 -->
+                <div class="list-block">
+                    <div class="subsidiary-title-container" style="padding: 0rem 0rem;" >
+		       			<div class="subsidiary-title-flag">┃</div>
+		       			<div class="subsidiary-title" style="color: #888888;">应用</div>
+		       		</div>
+                    <ul>
+                        <li v-for="app in apps">
+                            <a href="{{app.url}}" class="aaa openLink-true" >
+                                <div class="item-inner">
+                                  <div class="item-title" v-text="app.name"></div>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="graybg"></div>
+                <!-- 流程 -->
+                <div class="list-block">
+                    <div class="subsidiary-title-container" style="padding: 0rem 0rem;" >
+		       			<div class="subsidiary-title-flag">┃</div>
+		       			<div class="subsidiary-title" style="color: #888888;">流程</div>
+		       		</div>
+                    <ul>
+                        <li v-for="flow in flows">
+                            <a href="{{flow.url}}" class="openLink-true">
+                                <div class="item-inner">
+                                  <div class="item-title" v-text="flow.title"></div>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="graybg"></div>
+                <!-- 资讯 -->
+                <div class="list-block">
+                    <div class="subsidiary-title-container" style="padding: 0rem 0rem;" >
+		       			<div class="subsidiary-title-flag">┃</div>
+		       			<div class="subsidiary-title" style="color: #888888;">资讯</div>
+		       		</div>
+                    <ul>
+                        <li v-for="news_ in news">
+                            <a href="{{news_.url}}" class="openLink-true">
+                                <div class="item-inner">
+                                  <div class="item-title" v-text="news_.title"></div>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!--无搜索结果则removeClass(dis-none)-->
+            <div class="empty-block dis-none">
+                <img src="../images/common/empty.png" class="empty-img"/>
+                <p>没有搜索到您想要的结果</p>
+            </div>
+        </div>
+    </div>    
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_z8zuj5sedtnbfbt9.css">
+
+	<script src="../js/zepto/zepto.js"></script>
+	<script src="../js/vue/vue.min.js"></script>
+	<script src="../js/common/base.js"></script>
+	<script src="../js/index/index_func.js"></script>
+	<script src="../js/index/home_func.js"></script>
+	<script src="../js/index/index_search.js"></script>		
+	<script type="text/javascript" src="http://g.alicdn.com/dingding/open-develop/0.8.4/dingtalk.js?"></script>
+	<script type="text/javascript" src="../js/index/dingTopIndex.js"></script>
+	<script type="text/javascript" src="../js/common/dingBase.js"></script>
+	<script>
+		var iconfontJs = document.createElement('script');
+		iconfontJs.src="//at.alicdn.com/t/font_ozj6f00a8tdibe29.js";
+		document.getElementsByTagName('head')[0].appendChild(iconfontJs);
+		
+		var s1 = document.createElement('script'); 
+		 s1.src = '../js/sm/sm.min.js?'; 
+		 document.getElementsByTagName('head')[0].appendChild(s1);
+		 
+		 var s2 = document.createElement('script'); 
+		 s2.src = '../js/sm/sm-extend.min.js?'; 
+		 document.getElementsByTagName('head')[0].appendChild(s2);	
+	</script> 
+</body>
+</html>

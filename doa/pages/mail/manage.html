@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="css/new_file.css"/>
+    <title></title>
+   <style>
+	*{
+	  margin: 0;
+	  padding: 0;
+	  list-style: none;
+	  text-decoration: none;
+	}
+	.main{
+	  padding: 10px 30px 0px 30px;
+	  margin: 20px;
+	  width: 1300px;
+	  height: 660px;
+	  border: 1px solid #c1c1c1;
+	}
+	.btn{
+	  width: 100%;
+	  height: auto;
+	  margin-bottom: 14px;
+	  
+	}
+	.btn:after{
+	  content: '';
+	  clear: both;
+	  display: block;
+	}
+	button{
+	  width: 60px;
+	  height: 20px;
+	  float: left;
+	  text-align: center;
+	  margin-right: 20px;
+	}
+	.box{
+	  margin-right: 10px;
+	  float: left;
+	}
+	select{
+	  width: 90px;
+	}
+	.box input{
+	  width: 130px;
+	}
+	.subbtn{
+	  width: 36px;
+	}
+	td{
+	  width: 60px;
+	  height:25px ;
+	  border: 1px solid #c1c1c1;
+	  text-align: center;
+	  font-size: 10px;  
+	}
+	table{
+	  border-collapse: collapse;
+	  caption-side: bottom;
+	  margin-top: 10px;
+	}
+  </style>
+  </head>
+  <body>
+    <div class="main">
+      <div class="btn">
+        <button>完成</button>
+        <button>导入</button>
+      </div>
+      
+      <form>
+        <div class="box">
+          寄件类型：
+          <select>
+            <option>全部</option>
+            <option></option>
+            <option></option>
+            <option></option>
+          </select>
+        </div>
+        <div class="box">
+          收费方式：
+          <select>
+            <option>全部</option>
+            <option></option>
+            <option></option>
+            <option></option>
+          </select>
+        </div>
+        <div class="box">
+          快递公司：
+          <select>
+            <option>全部</option>
+            <option></option>
+            <option></option>
+            <option></option>
+          </select>
+        </div>
+        <div class="box">
+          快递单号：
+          <input type="text"/>
+        </div>
+        <div class="box">
+          寄件人：
+          <input type="text"/>
+        </div>
+        <div class="box">
+          寄件部门：
+          <input type="text"/>
+        </div>
+        
+        <input type="submit" value="查询" class="subbtn"/>
+      </form>
+      <table>
+        <tr>
+          <td rowspan="2">选择</td>
+          <td rowspan="2">序号</td>
+          <td rowspan="2">寄件类型</td>
+          <td rowspan="2">收寄方式</td>
+          <td rowspan="2">快递公司</td>
+          <td rowspan="2">快递单号</td>
+          <td rowspan="2">说明</td>
+          <td colspan="7">寄件人</td>
+          <td colspan="7">收件人</td>
+        </tr>
+        <tr>
+          <td>寄件人</td>
+          <td>联系电话</td>
+          <td>省份</td>
+          <td>城市</td>
+          <td>区域</td>
+          <td>详情地址</td>
+          <td>邮编</td>
+          <td>寄件人</td>
+          <td>联系电话</td>
+          <td>省份</td>
+          <td>城市</td>
+          <td>区域</td>
+          <td>详情地址</td>
+          <td>邮编</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      
+      
+      
+    </div>
+    <script>
+    	
+    
+    </script>
+    
+  </body>
+  
+</html>

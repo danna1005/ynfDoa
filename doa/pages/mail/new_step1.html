@@ -1,0 +1,141 @@
+<!doctype html>
+<html style="overflow:hidden;">
+<head>
+<meta charset="utf-8">
+<title>新建寄件信息</title>  
+<meta name="viewport" content="initial-scale=1, maximum-scale=1">
+<link rel="shortcut icon" href="/favicon.ico">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<link rel="stylesheet" href="//g.alicdn.com/msui/sm/0.6.2/css/??sm.min.css,sm-extend.min.css">
+<link rel="stylesheet" href="../../css/common/common.css">
+</head>
+
+<body>
+     <div class="page-group">
+        <div class="page page-current">
+       		<header class="bar bar-nav m-header-container">
+       			<a class="button button-link button-nav pull-left m-header-return doa-go-back" href="#">
+       				<span class="icon icon-left"></span>
+       			</a>
+       			<div class="title m-header-title">新建寄件信息</div>
+       		</header>
+            <div class="content m-content" style="bottom:2.2rem;">
+                <div class="list-block mail-new-form">
+                    <!-- 寄件栏 -->
+                    <ul class="mail-list">
+                        <li class="item-content">
+                            <div class="item-inner">
+                                <div class="item-title label"><span class="colorff0 marR3">*</span>寄件类型：</div>
+                                <div class="item-input">
+                                  <span class="rdopanel"><i class="iconfont icon-rdoselect"></i><label for="rdbPublic">公件</label></span>
+                                  <span class="rdopanel"><i class="iconfont icon-rdo"></i><label for="rdbPrivate">私件</label></span>
+                                </div>
+                            </div>
+                        </li>  
+                        <li class="item-content">
+                            <div class="item-inner">
+                                <div class="item-title label"><span class="colorff0 marR3">*</span>收寄方式：</div>
+                                <div class="item-input">
+                                  <span class="rdopanel"><i class="iconfont icon-rdoselect"></i><label for="rdbPublic">寄件寄付</label></span>
+                                  <span class="rdopanel"><i class="iconfont icon-rdo"></i><label for="rdbPrivate">收件到付</label></span>
+                                </div>
+                            </div>
+                        </li>  
+                        <li class="item-content">
+                            <div class="item-inner">
+                                <div class="item-title label"><span class="colorff0 marR3">*</span>快递公司：</div>
+                                <div class="item-input">
+                                  <input type="text" required="true" readonly="readonly" id="expressInp">
+                                </div>
+                            </div>
+                            <div class="item-after">
+                                <span class="color99" id="selectExpress">请选择<span class="icon icon-right marL5"></span></span>
+                            </div>
+                        </li>          
+                        <li class="item-content">
+                            <div class="item-inner">
+                                <div class="item-title label">快递单号：</div>
+                                <div class="item-input">
+                                  <input type="text">
+                                </div>
+                            </div>
+                             <div class="item-after">
+                                <span class="iconfont icon-saomiao"></span>
+                            </div>
+                        </li>   
+                        <li class="align-top">
+                            <div class="item-content">
+                              <div class="item-inner posRev">
+                                <div class="item-input">
+                                  <textarea placeholder="请输入申请详情(必填)" class="applay-txt"></textarea>
+                                </div>
+                                <div class="count"><span>0</span>/100</div>
+                              </div>
+                            </div>
+                        </li>                                   
+                    </ul>
+                </div>
+            </div>     
+            <div class="row no-gutter opt-panel" style="position: fixed;">                  
+                  <div id="nextStepButton"><a href="#" class="sure-btn" style="border-radius: 0rem;">下一步</a></div>
+            </div>  
+         </div>
+    </div>
+    <link rel="stylesheet" href="../../css/apps/mail.css">
+	<link rel="stylesheet" href="//at.alicdn.com/t/font_ggqj8jnzmhl1sjor.css">
+	<script src="../../js/zepto/zepto.js"></script>	
+	<script type="text/javascript" src="../../js/common/base.js"></script>
+    <script type="text/javascript" src="../../js/sm/sm.js"></script>
+    <script type="text/javascript" src="../../js/sm/sm-extend.js"></script>
+    <script type="text/javascript" src="../../js/sm/sm-city-picker.min.js"></script>
+    <script>
+    	//单选框操作 
+    	$('.mail-list').find('li').each(function(){
+    		var _this = $(this);
+    		_this.on('click','.rdopanel>i',function(){
+    			$(this).parent().siblings().find('i').removeClass('icon-rdoselect').addClass('icon-rdo');
+    			$(this).removeClass('icon-rdo').addClass('icon-rdoselect');
+    		});
+    	});
+    	//选择快递
+    	var expValues =['顺丰快递', '邮政快递', '中通快递', '圆通快递', '申通快递', '百世汇通', '韵达快递', '国通快递', '天天快递', '快捷快递 ', '速尔快递', '全峰快递','全一快递','联邦快递','优速快递'] ;
+    	$('#expressInp').cityPicker({
+    		toolbarTemplate: '<header class="bar bar-nav">\
+		  	<button class="button button-link pull-right close-picker">确定</button>\
+		  	</header>',
+		  	cols: [
+			    {
+			      textAlign: 'center',
+			      values: expValues
+			    }
+		  	]
+        });
+    	$('#selectExpress').cityPicker({
+    		toolbarTemplate: '<header class="bar bar-nav">\
+   		  	<button class="button button-link pull-right close-picker">确定</button>\
+   		  	</header>',
+   		  	cols: [
+   			    {
+   			      textAlign: 'center',
+   			      values: expValues
+   			    }
+   		  	],
+   		  	onClose:function(){
+   		  		var selectValue = $('.picker-modal-inner').find('.picker-selected').attr('data-picker-value');
+   		  		$('#expressInp').val(selectValue);
+   		  	}
+    	})
+    	$(".applay-txt").bind('input propertychange', function() {	
+    		var num = $('.count>span');
+    		console.log($('.applay-txt').val().length);
+    		num.html($(".applay-txt").val().length);
+    		if($('.applay-txt').val().length>100){
+    			num.css("color","red")
+    		}else{
+    			num.css("color","#ccc")
+    		}     	 				
+    	});
+    </script> 
+</body>
+</html>

@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>IT服务</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <meta http-equiv="pragma" content="no-cache"/>
+	<meta http-equiv="cache-control" content="no-cache"/>
+	<meta http-equiv="expires" content="-1"/>
+    <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">	
+    <link rel="stylesheet" href="http://g.alicdn.com/msui/sm/0.6.2/css/sm.css">
+    <link rel="stylesheet" href="http://g.alicdn.com/msui/sm/0.6.2/css/sm-extend.css">
+    <link rel="stylesheet" href="../../../css/common/common.css?v=20170215">
+    <link rel="stylesheet" href="../../../css/apps/it/server.css">    
+  </head>
+  <body>
+    <div class="page-group">
+        <div class="page page-current">
+       		<!-- <header class="bar bar-nav m-header-container">
+       			<a class="button button-link button-nav pull-left m-header-return doa-go-back" href="#">
+       				<span class="icon icon-left"></span>
+       			</a>
+       			<div class="title m-header-title">IT服务</div>       			
+       		</header> -->
+       		<!-- <div class="help-icon">
+				<img src="../../../images/common/help.png" style="width: 0.9rem; height: 0.9rem" />
+			</div> -->
+			<!-- 帮助 -->
+			<div class="prompt-panel">
+				<div class="prompt-mask"></div>
+				<div class="prompt-content">
+					<span class="prompt-close">×</span>
+					<header class="prompt-header">帮助</header>
+					<div class="content-padded">
+						<ul class="list-block">
+							<li>
+								<p>您可以点击“反馈问题”标签页，选择对应的问题分类，输入问题描述，选择问题事件所在的位置，进行问题反馈。反馈后系统将自动分配处理人，并创建钉钉消息窗口，供您直接联系当前处理人。</p>
+							</li>
+							<li>
+								<p>您可以点击“我的问题”标签页，查看问题的处理状态，如果是待评价状态的问题，还可以进入详情页面对本次IT服务进行评价哦。</p>
+							</li>
+							<li>
+								<p>您可以点击“自动服务”标签页，输入您的问题关键字进行搜索，说不定会有已经存在的帮助文档。又能get到新技能，又能快速自行解决，真棒。</p>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+       		<div class="content m-content">
+	  			<div class="buttons-tab fixed-tab" data-offset="40">
+				    <a id="taba1" href="#tab1" class="tab-link button  m-list-main-txt active">反馈问题</a>
+				    <a id="taba2" href="#tab2" class="tab-link button m-list-main-txt">我的问题</a>
+				    <a id="taba3" href="#tab3" class="tab-link button m-list-main-txt">自助服务</a>
+				</div>
+		  		<div class="content-block">
+				    <div class="tabs">
+						<div id="tab1" class="tab active">
+				          <div class="list-block m-list-block" style="border-bottom:1px solid #e7e7e7;">
+						    <ul style="padding:0rem 0.5rem 0rem 0.5rem;">
+						      <!-- Text inputs -->
+						      <li>
+						        <div class="item-content  m-list-block" >
+						          <div class="item-inner" style="-webkit-align-items: flex-start;">
+						            <div class="item-title label" style="width:5rem;font-size:0.7rem;"><span style="color: red">*</span>一级问题分类:</div>
+						            <div class="item-input" >
+						            	<select  id="question" style="font-size: 0.7rem;padding-top:.1rem" onchange="func(this)">
+										</select>
+										
+									   
+						            </div>
+						          </div>
+						        </div>
+						      </li>
+						      
+						       <li>
+						        <div class="item-content  m-list-block" >
+						          <div class="item-inner" style="-webkit-align-items: flex-start;">
+						            <div class="item-title label" style="width:5rem;font-size:0.7rem;">二级问题分类:</div>
+						            <div class="item-input" >
+						            	
+										<select  id="question1" style="font-size: 0.7rem;padding-top:.1rem;"onchange="func1(this)">
+											  <option value="null">请选择</option>
+											 
+										</select>
+									    <input type="hidden" id="fdId" />
+						            </div>
+						          </div>
+						        </div>
+						      </li>
+						      <li>
+						        <div class="item-content m-list-block" >
+						          <div class="item-inner" style="padding-top:0.3rem">
+						            <div class="item-input">
+						            	<div class="item-title label label2 " ><span>问题描述:</span></div>
+              							<textarea id="description" style="border:1px solid #dedede;border-radius:10px;"></textarea>
+						            </div>
+						          </div>
+						        </div>
+						      </li>
+						      <li>
+						        <div class="item-content  m-list-block" style="min-height:0rem;">
+						          <div class="item-inner">
+						            <div class="item-title label" style="font-size:0.7rem;width:3.5rem;"><span style="color: red">*</span>位置描述:</div>
+						            <div class="item-input" style="margin-bottom: -0.2rem">
+              							<a href="#" class="open-location" id="userLocation" style="font-size:0.7rem;color:#f36920;text-decoration:underline;">选择</a>
+						            </div>
+						          </div>
+						        </div>
+						      </li>
+						    </ul>
+						  </div>
+						  
+						  <div class="list-block media-list m-list-block" >
+							  		<ul id="knowledgeList1" style="padding:0rem 0rem 0rem 0.7rem;">
+										
+									</ul>
+								</div>
+						  <div class="content-block" style="margin:0.4rem 0rem 0.4rem 0rem;">
+						    <div class="row">
+						      <div class="col-100" ><a  href="#" id="big-button" class="button button-big button-fill button-success "  style="background-color:#f36b23" >实时反馈</a></div>
+						    </div>
+						  </div>
+				      	</div>
+				      	<div id="tab2" class="tab">
+							<div class="list-block media-list m-list-block" >
+								<ul id="questionList"style="padding:0rem 0rem 0rem 0.7rem;">
+									
+								</ul>
+							</div>
+				      	</div>
+				      	<div id="tab3" class="tab">
+							<div class="content-block">
+								<div class="card">
+									<div class="searchbar">
+										<div class="search-input">
+							  				<input type="search" id="search" value="" placeholder='输入关键字...'  style="background-color:#eee;"/>
+							  				<label  class="icon icon-search" for="search" style="float:right;"onclick="searchClick(this)"></label>
+							  				 
+										</div>
+						  			</div>
+						  		</div>
+						  		
+						  	
+						 		
+							</div>
+								 <div class="list-block media-list m-list-block" >
+										  		<ul id="knowledgeList" style="padding:0rem 0rem 0rem 0.7rem;">
+													
+												</ul>
+									</div>
+									
+				      	</div>
+				    </div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- 选择位置  style="-webk-transform: translate3d(0,0,0);display:block" -->
+	<div class="popup popup-location" id="locationPopup">
+	  <div  class="content-block">
+	    <div class="list-block m-list-block">
+		    <ul>
+		        <div class="item-content" style="min-height:0rem">
+		          <div class="item-inner" style="padding:0.3rem 0rem 0 0.25rem;margin:0rem;min-height: 0rem">
+		            <div class="item-title label" style="font-size:0.6rem;width:10%;color:#777;">位置</div>
+		            <div class="item-input" id="tempUserLocation" style="font-size:0.6rem;"></div>
+		          </div>
+		        </div>
+		      </li>
+		      <li>
+		        <div class="item-content" style="min-height:0rem">
+		          <div class="item-inner" style="padding:0rem 0rem 0rem 0.25rem;margin:0rem 0rem 0rem 0rem;min-height: 0rem">
+		            <div class="item-title choose">大楼</div>
+		            <div class="item-input input1">
+		            	<div class="roundDiv1" id ="building">
+						</div>
+		            </div>
+		          </div>
+		        </div>
+		      </li>
+		      <li>
+		        <div class="item-content" style="min-height:0rem">
+		          <div class="item-inner" style="padding:0rem 0rem 0rem 0.25rem;margin:0rem 0rem 0rem 0rem;min-height: 0rem">
+		            <div class="item-title choose">楼层</div>
+		            <div class="item-input input1">
+		            	<div class="roundDiv1" id="floor">
+						</div>
+		            </div>
+		          </div>
+		        </div>
+		      </li>
+		      <li>
+		        <div class="item-content" style="min-height:0rem">
+		          <div class="item-inner" style="padding:0rem 0rem 0rem 0.25rem;margin:0rem 0rem 0rem 0rem;min-height: 0rem">
+		            <div class="item-title choose">区域</div>
+		            <div class="item-input input1">
+		            	<div class="roundDiv1" id="area">
+						</div>
+		            </div>
+		          </div>
+		        </div>
+		      </li>
+		      <li>
+		        <div class="item-content" style="min-height:0rem">
+		          <div class="item-inner" style="padding:0rem 0rem 0rem 0.25rem;margin:0rem 0rem 0rem 0rem;min-height: 0rem">
+		            <div class="item-title choose">排号</div>
+		            <div class="item-input input1">
+		            	<div class="roundDiv1" id="yrow">
+						</div>
+		            </div>
+		          </div>
+		        </div>
+		      </li>
+		      <li>
+		        <div class="item-content" style="min-height:0rem">
+		          <div class="item-inner" style="padding:0rem 0rem 0rem 0.25rem;margin:0rem 0rem 0rem 0rem;min-height: 0rem">
+		            <div class="item-title choose">列号</div>
+		            <div class="item-input input1">
+		            	<div class="roundDiv1" id="column">
+						</div>
+		            </div>
+		          </div>
+		        </div>
+		      </li>
+		      <li>
+		       <div class="item-content" style="min-height:0rem">
+		          <div class="item-inner " style="padding:0rem 0rem 0rem 0.25rem;min-height: 0rem">
+		            <div class="item-title choose">位置</div>
+		            <div class="item-input" style="min-height: 0rem;padding:0.3rem 0rem 0.7rem 0rem">
+		            	<div style="float:left;padding-top:0.25rem;"id="zwh">
+		            		<input type="text" id="seat" class="highlight" />
+		            		<div class="highlight">(餐厅->窗户)</div>
+						</div>
+		            </div>
+		          </div>
+		        </div>
+		      </li>
+		    </ul>
+		  </div>
+		  <div class="content-block button-panel" style="width:100%; position:absolute; height:2rem; bottom:0;">
+		    <div class="row no-gutter">
+              <div class="col-50"><a href="#" id="enterUserLocation" class="button button-big button-fill button-success" style="background-color:#f36b23">确定</a></div>
+		      <div class="col-50"><a href="#" class="close-popup button button-big button-fill button-danger" style="background-color:#ffffff;color:#333333">取消</a></div>		      
+		    </div>
+		  </div>
+	  </div>
+	</div>
+	<div class="popup popup-detail" style="height:100%" id="popupDetail">
+		<header class="bar bar-nav">
+			<a class="button button-link button-nav close-popup pull-left">
+				<span class="icon icon-left m-header-return"></span>
+			</a>
+			<h1 class="title">资料详情</h1>
+		</header>
+	  <div class="content-block">
+         <!-- 反馈资料详情-->
+		 <div class="list-block m-list-block">
+			<ul style="padding-top:2.8rem;">
+				<li>
+					<div class="round" id="roundDiv1" ></div>
+				</li>
+				<li>
+					<div class="titleDiv">
+						<img src="..\..\..\images\apps\it\problem.png" class="imgList">&nbsp;问题详情
+					</div>
+				</li>
+				<li>
+					<div class="textDiv" id="pDetails">
+					
+					</div>
+				</li>
+			</ul>
+		</div>
+ 		<div class="list-block topDiv m-list-block">
+			<ul class="ul">
+				<li>
+					<div class="titleDiv">
+						<img src="..\..\..\images\apps\it\result.png" class="imgList">&nbsp;解决方案
+					</div>
+				</li>
+				<li>
+					<div class="textDiv" id="resolve">
+							
+					</div>
+				</li>
+			</ul>
+			<div class="item-subtitle" style="margin:0 0 0.75rem 0.75rem;">
+				<img src="..\..\..\images\apps\it\good.png" class="img1"/>
+				<span class="praiseSpan m-list-subtitle-txt" id="thumbUp">100</span>
+			</div>
+		</div>
+		<!-- <div style="margin-bottom: 5rem;margin-right: 0.5rem">
+		<div style="float:right;">
+			<img src="..\..\..\images\apps\it\good.png" class="img1"/>
+			<span class="praiseSpan m-list-subtitle-txt" id="thumbUp">100</span>
+		</div> -->
+		</div>
+		
+		<div class="content-block button1">
+			<div class="row">
+			  <div class="col-50"><a href="support.html" class="close-popup button button-big button-fill button-danger" style="background-color:#ffffff;border:1px solid #dedede;color:#333333">提交新问题</a></div>
+			  <div class="col-50">
+			  	<a href="#" id="enterUserLocation2" class="button button-big button-fill button-success" style="background-color:#f36b23;">
+			  		<img src="..\..\..\images\apps\it\good.png" class="img3"/>
+			  		<span style="float:left;margin-left:0.5rem">有用</span>
+			  	</a><input type="hidden" id="totalGoodId" />
+			  </div>
+			</div>
+		  </div>
+	  </div>
+	</div>
+	<!-- style="-webkit-transform: translate3d(0,0,0);display:block;height:100%" -->
+	<div class="popup popup-question" id="popupQuestion"  style="height:100%">
+		<header class="bar bar-nav">
+			<a class="button button-link button-nav close-popup pull-left">
+				<span class="icon icon-left m-header-return"></span>
+			</a>
+			<h1 class="title">问题详情</h1>
+		</header>
+		<div class="content-block">
+	         <!-- 反馈资料详情-->
+			<div class="list-block m-list-block">
+				<ul style="padding-top:2.8rem;">
+					<li>
+						<div class="round" id="roundDiv2"></div>
+					</li>
+					<li>
+						<div class="titleDiv">
+							<img src="..\..\..\images\apps\it\problem.png" class="imgList">&nbsp;问题详情
+						</div>
+					</li>
+					<li>
+						<div  class="stepsDiv" id="problemDescription">
+						
+						</div>
+					</li>
+				</ul>
+			</div>
+			
+			
+	 		<div class="list-block m-list-block" >
+				<ul class="ul">
+					<li>
+						<div class="titleDiv">
+							<img src="..\..\..\images\apps\it\result.png" class="imgList">&nbsp;处理结果
+						</div>
+					</li>
+					<li>
+						<div  class="stepsDiv" id="handleResult">
+						
+						</div>
+					</li>					
+				</ul>
+			</div>
+			<div class="list-block topDiv m-list-block">
+				<ul class="ul">
+					<li>
+						<div class="titleDiv">
+							<img src="..\..\..\images\apps\it\status.png" class="imgList">&nbsp;状态
+						</div>
+					</li>
+					<li>
+						<div  class="stepsDiv" id="evaluate">
+								
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class="list-block m-list-block" >
+				<ul class="ul">
+					<li>
+						<div class="titleDiv">
+							<img src="../../../images/apps/questionDetail/me.png" class="imgList">&nbsp;处理人
+						</div>
+					</li>
+					<li>
+						<div  class="stepsDiv" id="currentHandlerName">
+						
+						</div>
+					</li>					
+				</ul>
+			</div>
+			<div class="list-block topDiv m-list-block hide" id="evaluation" style="border-bottom:0">
+				<ul class="ul">
+					<li>
+						<div class="titleDiv">
+							<img src="..\..\..\images\apps\it\evaluate.png" class="imgList">&nbsp;评价
+						</div>
+					</li>
+					<li>
+						<div  class="titleDiv">
+							<input type="hidden" id="score" value="5"/>						
+							<img  id="img1" class="starImg" src="..\..\..\images\apps\it\star1.png"  >	<img id="img2"  class="starImg" src="..\..\..\images\apps\it\star1.png">
+							<img id="img3"  class="starImg"src="..\..\..\images\apps\it\star1.png"  ><img id="img4" style="margin-left:0.35rem;" class="starImg" src="..\..\..\images\apps\it\star1.png"  >
+							<img id="img5"  class="starImg"src="..\..\..\images\apps\it\star1.png"   >
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class="content-block button1 hide" id="buttonList">
+				<div class="row">
+				  <div class="col-60"><a href="#" id="enterUserLocation4"class="close-popup button button-big button-fill button-danger" style="background-color:#ffffff;border:1px solid #dedede;color:#333333" >未解决，重新提交</a></div>
+				  <div class="col-40">
+				  	<a href="#" id="enterUserLocation1" class="button button-big button-fill button-success" style="background-color:#f36b23;">提交</a><input type="hidden" id="questionId" value=""/>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+  </body>
+  	<script src="../../../js/zepto/zepto.js"></script>
+    <script type='text/javascript' src='//g.alicdn.com/msui/sm/0.6.2/js/sm.min.js' charset='utf-8'></script>
+    <script type='text/javascript' src='//g.alicdn.com/msui/sm/0.6.2/js/sm-extend.min.js' charset='utf-8'></script>
+    <script type="text/javascript" src="../../../js/common/base.js"></script>
+
+		
+	<!-- 钉钉弹出聊天框需要的JS -->
+    <script type="text/javascript" src="http://g.alicdn.com/dingding/open-develop/0.8.4/dingtalk.js"></script>
+	<script type="text/javascript" src="../../../js/apps/info/infoTopMenu.js"></script>
+	<script type="text/javascript" src="../../../js/common/dingBase.js"></script>
+	
+	<script type="text/javascript" src="../../../js/apps/it/support.js?v=20170103"></script>
+</html>

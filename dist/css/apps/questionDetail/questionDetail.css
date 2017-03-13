@@ -1,0 +1,188 @@
+@charset "UTF-8";
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: 'Microsoft YaHei'; }
+
+html {
+  font-size: 38.4px; }
+
+li {
+  list-style: none; }
+
+input {
+  outline: none;
+  border: none; }
+
+/* start rem */
+/*search */
+.header {
+  width: 100%;
+  height: 2.08333rem;
+  background: #eeeeee; }
+
+.content {
+
+  width: 100%;
+}
+.header img {
+  position: absolute;
+  top: 0.52083rem;
+  left: 0.78125rem;
+  width: 0.9375rem;
+  height: 0.9375rem; }
+
+.header p {
+  position: absolute;
+  left: 7.8125rem;
+  line-height: 2.08333rem;
+  height: 2.08333rem;
+  color: #989898;
+  font-size: 0.78125rem; }
+
+.title {
+  height: 3.22917rem;
+  width: 100%;
+  display: flex;
+  align-items: center; }
+
+.title p {
+  width: 4.0625rem;
+  height: 1.35417rem;
+  background: #eeeeee;
+  border-radius: 0.41667rem;
+  font-size: 0.625rem;
+  color: black;
+  line-height: 1.35417rem;
+  text-align: center;
+  margin-left: 0.78125rem; }
+
+.speCon {
+  height: 4.11458rem;
+  width: 100%;
+  position: relative; }
+
+.speCon .person {
+  width: 1.09375rem;
+  height: 1.09375rem;
+  position: absolute;
+  top: 0rem;
+  left: 0rem; }
+
+.speCon .personText {
+  position: absolute;
+  left: 1.30208rem;
+  top: 0rem;
+  font-size: 0.78125rem;
+  font-weight: normal; }
+
+.speCon p {
+  position: relative;
+  top: 1.38021rem;
+  height: 1.97917rem;
+  line-height: 0.98958rem;
+  font-size: 0.625rem;
+  color: #888888;
+  padding-left: 0.78125rem;
+  overflow: hidden; }
+
+.speCon h2 {
+  margin-left: 0.78125rem;
+  position: relative; }
+
+/*common style*/
+/* resultList */
+.resultList, .location, .status, .footer {
+  width: 17.96875rem;
+  padding-left: 0.78125rem;
+  position: relative; }
+
+.resultList h2, .location h2, .status h2 {
+  font-size: 0.78125rem;
+  font-weight: normal; }
+
+.resultList {
+  height: 6.69271rem; }
+
+.resultList h2 {
+  position: absolute;
+  top: 0.96354rem; }
+
+.resultIcon, .statusIcon, .locationIcon {
+  width: 1.09375rem;
+  height: 1.09375rem;
+  position: absolute; }
+
+.resultList h2 span, .location h2 span, .status h2 span {
+  position: absolute;
+  left: 1.30208rem;
+  display: inline-block;
+  width: 15.88542rem;
+  height: 1.51042rem; }
+
+.resultList .infor, .location .infor, .status .infor {
+  height: 1.35417rem;
+  font-size: 0.625rem;
+  position: absolute;
+  top: 2.42188rem; }
+
+.solList {
+  position: absolute;
+  top: 3.75rem;
+  font-size: 0.625rem; }
+
+/* location */
+.location {
+  padding-top: 0.78125rem;
+  height: 3.51563rem; }
+
+.location h2 {
+  position: relative; }
+
+.location .infor, .status .infor {
+  top: 2.21354rem; }
+
+/* status */
+.status {
+  padding-top: 0.85938rem;
+  height: 3.22917rem; }
+
+.status h2 {
+  position: relative; }
+
+/*footer*/
+.footer {
+  padding-top: 0.91146rem;
+  background: #eeeeee;
+  height: 2.60417rem; }
+
+.footerBtn {
+  width: 8.07292rem;
+  height: 2.03125rem;
+  text-align: center;
+  line-height: 2.03125rem;
+  color: white;
+  background: #f36920;
+  border-radius: 0.26042rem; }
+
+#other {
+  background: white;
+  color: black;
+  margin-left: 0.05208rem; }
+
+#confirm {
+  margin-left: 0.88542rem; }
+
+.bg {
+  width: 18.75rem;
+  height: 0.26042rem;
+  background: #eeeeee;
+  left: 0rem; }
+
+.firstBg {
+  position: absolute;
+  top: 0rem; }
+
+.lastBg {
+  position: absolute;
+  bottom: 0rem; }

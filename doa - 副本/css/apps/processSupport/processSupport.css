@@ -1,0 +1,217 @@
+@charset "UTF-8";
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: 'Microsoft YaHei'; }
+
+html {
+  font-size: 38.4px; }
+
+li {
+  list-style: none; }
+
+input {
+  outline: none;
+  border: none; }
+
+/* start rem */
+/*search */
+.header {
+  width: 100%;
+  height: 2.08333rem;
+  background: #eeeeee; }
+
+.content {
+  /*height: 25.41667rem;*/
+  width: 100%;
+  /*background: green;*/ }
+
+.content .conTitle {
+  height: 2.08333rem;
+  width: 100%;
+  position: relative;
+  /*background:green;*/ }
+
+.conTitleBg {
+  height: 0.05208rem;
+  background: #eeeeee;
+  width: 17.96875rem;
+  margin-left: 0.78125rem; }
+
+.header img {
+  position: absolute;
+  top: 0.52083rem;
+  left: 0.78125rem;
+  width: 0.9375rem;
+  height: 0.9375rem; }
+
+.header p {
+  position: absolute;
+  left: 7.8125rem;
+  line-height: 2.08333rem;
+  height: 2.08333rem;
+  color: #989898;
+  font-size: 0.78125rem; }
+
+.content .conList {
+  width: 100%; }
+
+.conTitle p {
+  margin-left: 0.78125rem;
+  width: 100%;
+  padding-top: 0.67708rem;
+  height: 1.40625rem;
+  position: relative;
+  font-size: 0rem; }
+
+.conTitle .titleBg {
+  display: inline-block;
+  width: 0.15625rem;
+  height: 0.72917rem;
+  background: #f36920; }
+
+.conTitle .titleRest {
+  display: inline-block;
+  font-weight: normal;
+  font-size: 0.78125rem;
+  position: absolute;
+  left: 0.39063rem;
+  line-height: 0.6317rem;
+  height: 0.72917rem; }
+
+.conTitle .restTip {
+  position: absolute;
+  left: 3.77604rem;
+  font-size: 0.625rem;
+  line-height: 0.57917rem;
+  height: 0.72917rem;
+  display: inline-block;
+  color: #888888; }
+
+/*以上是重复样式，可以考虑提取为公共样式*/
+.searchPart {
+  height: 2.08333rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /*background: blue;*/ }
+
+.searchPart p {
+  position: relative;
+  width: 17.1875rem; }
+
+.searchPart p input {
+  width: 100%;
+  height: 1.5625rem;
+  display: block;
+  background: #f1f1f1;
+  border-radius: 0.20833rem;
+  text-indent: 0.52083rem;
+  font-size: 0.625rem;
+  color: #999999;
+  line-height: 0.625rem; 
+}
+
+.searchPart p .searchBtn {
+  width:0.94737rem;
+  height:0.94737rem;
+  position: absolute;
+  top: 0.3125rem;
+  right: 0.52083rem; }
+
+.proList {
+  border-top: 0.26042rem solid #eeeeee; }
+
+.proList li {
+  width: 17.1875rem;
+  padding: 1.09375rem 0.78125rem 0.88542rem 0.78125rem;
+  height: 3.22917rem;
+  position: relative;
+  font-size: 0rem; }
+
+.proList li .liLeft {
+  width: 2.76042rem;
+  left: 0rem;
+  height: 3.22917rem;
+  /*background: blue;*/
+  position: relative; }
+
+.proList li .liLeft img {
+  position: absolute;
+  top: 0.20833rem;
+  width: 1.875rem;
+  height: 1.875rem;
+  display: block; }
+
+.proList li p {
+  display: inline-block; }
+
+.proList li .liLeft span {
+  font-size: 0.72917rem;
+  height: 0.78125rem;
+  line-height: 0.78125rem;
+  position: absolute;
+  bottom: 0.18229rem;
+  left: 0.10417rem;
+  color: #ff5353; }
+
+.proList li .liMiddle {
+  width: 11.30208rem;
+  height: 3.22917rem;
+  /*background: green;*/
+  overflow: hidden; }
+
+.liMiddle > * {
+  display: block; }
+
+.liMiddle span em {
+  font-size: 0.9375rem;
+  height: 1.40625rem;
+  font-style: normal;
+  color: #333333; }
+
+.liMiddle span strong {
+  color: #a1a1a1;
+  font-size: 0.57292rem;
+  margin-left: 0.65104rem;
+  font-weight: normal; }
+
+.liMiddle b {
+  font-size: 0.78125rem;
+  height: 1.14583rem;
+  font-weight: normal;
+  color: #666666; }
+
+.liMiddle i {
+  height: 0.72917rem;
+  font-size: 0.625rem;
+  font-style: normal;
+  color: #888888; }
+
+.proList li .liRight {
+  width: 3.125rem;
+  height: 3.125rem;
+  position: relative;
+  overflow: hidden; }
+
+.liRight span {
+  margin-top: 0.75521rem;
+  border: 0.05208rem solid #f36920;
+  border-radius: 0.13021rem;
+  width: 3.02083rem;
+  height: 1.51042rem;
+  line-height: 1.51042rem;
+  display: inline-block;
+  color: #f36920;
+  font-size: 0.78125rem;
+  text-align: center; }
+
+.liRight .rightEnter {
+  position: absolute;
+  width: 0.94737rem;
+  height:0.94737rem ;
+  right: 0rem;
+  top: 0.75521rem; }
+
+

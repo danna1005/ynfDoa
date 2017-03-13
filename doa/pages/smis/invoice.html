@@ -1,0 +1,654 @@
+<!doctype html>
+<html style="overflow:hidden;">
+<head>
+<meta charset="utf-8">
+<title>报货单管理</title>  
+<meta name="viewport" content="initial-scale=1, maximum-scale=1">
+<link rel="shortcut icon" href="/favicon.ico">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<link rel="stylesheet" href="//g.alicdn.com/msui/sm/0.6.2/css/??sm.min.css,sm-extend.min.css">
+<link rel="stylesheet" href="../../css/common/common.css">
+<link rel="stylesheet" href="../../css/apps/supportResult/supportResult.css">
+<style>
+
+#btn{
+	
+	left: 0rem;
+	bottom: 0rem;
+	width: 100%;
+}
+.div1,.div2{
+	width: 6rem;
+	height: 40px;
+	float: left;
+	margin-right: 20px;
+	border-radius: 8px;
+	border: 1px solid #E0E0E0;
+	text-align: center;
+	line-height: 40px;
+}
+.div1{
+	background: white;
+}
+.div1 a{
+	color: #000000;
+}
+.div2{	
+	background: #FF6600;
+}
+.div2 a{
+	color: white;
+}
+
+</style>
+</head>
+
+<body>
+     <div class="page-group">
+        <div class="page page-current">
+       		<!-- <header class="bar bar-nav m-header-container">
+       			<a class="button button-link button-nav pull-left m-header-return doa-go-back" href="#">
+       				<span class="icon icon-left"></span>
+       			</a>
+       			<div class="title m-header-title">报货单管理</div>
+       		</header> -->
+            <div class="content m-content">
+            	<!-- 时间段筛选 -->
+                <div class="salary-list-block">
+                	<div class="nav"></div>
+                	<div class="nav-filter">
+                		<div class="buttons-tab invoice-tab"> 
+						    <a href="#tab1" class="tab-link active button">已提交<span id="num">(0)</span></a>
+						    <a href="#tab2" class="tab-link button">已审核</a>
+						</div> 
+					</div>
+                	<div class="search-panel">
+                		<div class="search-input">
+			  				<input type="search" id="search" placeholder="输入仓库名称、店铺名称、报货月份、单号、产品池单号" style="background-color:#eee;border:0px;font-size:0.6rem;padding:0 .3rem;">
+			  				<label class="icon icon-search" for="search" style="float:right;"></label>
+						</div>
+                	</div>
+                </div>                	
+                <div class="graybg"></div>
+                <div class="list-block tabs invoice-list-block">
+                	<div class="tab active" id="tab1">
+                	    <div class="empty-block" id="empty-block2"><img src="../../images/common/empty.png" class="empty-img"><p id="tips">暂无已提交数据</p></div>
+                	
+                		<ul id = "invoiceList">
+	                		<!-- <li>
+	                			<div class="item-content">
+									<div class="item-inner">									  
+							          <div class="item-title">
+							          	<span class="tit" ></span>
+							          	<div class="item-subtitle">
+							          		<span class="fl">报货月份:2017-01</span>
+							          		<span>预计计销售时间:2017-01</span>
+							          		<span class="fl">总货值:5648787</span>
+							          		<span>暂估销售额:654878.65</span>
+							          		<span>报货单号:PBH201712345447</span>
+							          		<span>产品池单号:PBH201712345447</span>
+							          	</div>
+							          </div>
+							          <div class="item-after">汤米</div>
+							        </div>
+	                			</div>
+	                		</li>	     
+	                		<li>
+	                			<div class="item-content">
+									<div class="item-inner">									  
+							          <div class="item-title">
+							          	<span class="tit">仓库：京东仓库</span>
+							          	<div class="item-subtitle">
+							          		<span class="fl">报货月份:2017-01</span>
+							          		<span>预计计销售时间:2017-01</span>
+							          		<span class="fl">总货值:1</span>
+							          		<span>暂估销售额:654878.65</span>
+							          		<span>报货单号:PBH201712345447</span>
+							          		<span>产品池单号:PBH201712345447</span>
+							          	</div>
+							          </div>
+							          <div class="item-after">汤米</div>
+							        </div>
+	                			</div>
+	                		</li>	             -->		
+	                	</ul>     		 
+                	</div>                	
+                	<div class="tab" id="tab2">
+                		<div class="empty-block" id="empty-block1"><img src="../../images/common/empty.png" class="empty-img"><p id="tips">暂无已审核数据</p></div>
+                		<ul id = "invoiceList1">
+                		</ul>
+                	</div>
+                </div>
+            </div>     
+            <div class="return-top"></div>       
+         </div>         
+    </div>    
+    <div class="popup popup-detail">
+    	<div class="page page-current" style="background: #fff;">
+    		<header class="bar bar-nav m-header-container">
+				<a class="button button-link button-nav pull-left m-header-return close-popup"><span class="icon icon-left"></span>
+				</a>
+				<div class="title m-header-title">报货单详情</div>
+			</header>
+			<div class="content m-content popup-m-content" style="bottom:2.2rem;">
+				<div class="detail-list-block">
+            		<ul>
+						<li class="item-content">
+							<div class="item-inner">
+								<div class="item-title">报货单号：</div>
+								<div class="item-after" id="code">BH201701120038</div>
+							</div>
+						</li>
+						<li class="item-content">
+							<div class="item-inner">
+								<div class="item-title">产品池单号：</div>
+								<div class="item-after" id="pool_code">CPC20161230014</div>
+							</div>
+						</li>
+						<li class="item-content">
+							<div class="item-inner">
+								<div class="item-title">店铺：</div>
+								<div class="item-after" id="shop_name";>御泥坊旗舰店</div>
+							</div>
+						</li>
+						<li class="item-content">
+							<div class="item-inner">
+								<div class="item-title">仓库：</div>
+								<div class="item-after" id="warehouse_name">长沙仓库</div>
+							</div>
+						</li>
+						<li class="item-content">
+							<div class="item-inner">
+								<div class="item-title">报货月份：</div>
+								<div class="item-after" id="month">2017-01</div>
+							</div>
+						</li>
+						<li class="item-content">
+							<div class="item-inner">
+								<div class="item-title">预计销售时间：</div>
+								<div class="item-after" id="pre_sale_time">2017-01</div>
+							</div>
+						</li>
+						<li class="item-content">
+							<div class="item-inner">
+								<div class="item-title">总货值：</div>
+								<div class="item-after" id="total_amount">15374</div>
+							</div>
+						</li>
+						<li class="item-content">
+							<div class="item-inner">
+								<div class="item-title">暂估销售额：</div>
+								<div class="item-after" id="pre_sale_amount">110</div>
+							</div>
+						</li>
+						<li class="item-content">
+							<div class="item-inner">
+								<div class="item-title">创建人：</div>
+								<div class="item-after" id="create_user">汤米</div>
+							</div>
+						</li>
+					</ul>
+					<input type="hidden" id="invoiceId">
+            	</div>
+                <div class="graybg"></div>
+                <div class="subsidiary-title-container">
+	       			<div class="common-title-flag"></div>
+	       			<div class="subsidiary-title">产品报货单品明细</div>
+	       		</div>
+	       		<div class="detail-content-block">
+	       			<span class="icon icon-left"></span>
+	       			<span class="icon icon-right"></span>
+		       		<div class="detail-tab-panel">	 
+		       			<div class="detail-move">      			
+			       			<div class="detail-tab-header">
+			       				<span class="num">序号</span>
+			       				<span>商品品牌</span>
+			       				<span class="name">商品名称</span>
+			       				<span>条形码</span>
+			       				<span>报货总数</span>
+			       				<span>项目号</span>
+			       				<span>规格</span>
+			       			</div>
+			       			<ul class="detail-ul" id="detailsList">
+			       				<li>
+			       					<span class="num">1</span>
+			       					<span>花瑶花</span>
+			       					<span class="name">花瑶花卸妆油深层清洁脸部温和卸妆水液眼唇部彩淡妆 正品卸妆油</span>
+			       					<span>9787302225157</span>
+			       					<span>9892</span>
+			       					<span>111</span>
+			       					<span>12</span>
+			       				</li>
+			       				<li>
+			       					<span class="num">2</span>
+			       					<span>花瑶花</span>
+			       					<span class="name">花瑶花卸妆油深层清洁脸部温和卸妆水液眼唇部彩淡妆 正品卸妆油</span>
+			       					<span>97873022251978730222515757</span>
+			       					<span>9892</span>
+			       					<span>111</span>
+			       					<span>12</span>
+			       				</li>
+			       				<li>
+			       					<span class="num">3</span>
+			       					<span>泥浆男</span>
+			       					<span class="name">泥浆男 正品卸妆油</span>
+			       					<span>9787302225157</span>
+			       					<span>9892</span>
+			       					<span>111</span>
+			       					<span>12</span>
+			       				</li>
+			       				<li>
+			       					<span class="num">4</span>
+			       					<span>花瑶花</span>
+			       					<span class="name">花瑶花卸妆油深层清洁脸部温 正品卸妆油</span>
+			       					<span>9787302225157</span>
+			       					<span>9892</span>
+			       					<span>111</span>
+			       					<span>12</span>
+			       				</li>
+			       				<li>
+			       					<span class="num">5</span>
+			       					<span>花瑶花</span>
+			       					<span class="name">花瑶花卸妆油深层清洁脸部温和卸妆水液眼唇部彩淡妆 正品卸妆油</span>
+			       					<span>9787302225157</span>
+			       					<span>9892</span>
+			       					<span>111</span>
+			       					<span>12</span>
+			       				</li>
+			       				<li>
+			       					<span class="num">6</span>
+			       					<span>丽得资</span>
+			       					<span class="name">丽得资卸妆水液眼唇部彩淡妆 正品卸妆油</span>
+			       					<span>9787302225157</span>
+			       					<span>9892</span>
+			       					<span>111</span>
+			       					<span>12</span>
+			       				</li>
+			       				<li>
+			       					<span class="num">7</span>
+			       					<span>小迷糊</span>
+			       					<span class="name">小迷糊滋润面膜</span>
+			       					<span>9787302225157</span>
+			       					<span>9892</span>
+			       					<span>111</span>
+			       					<span>12</span>
+			       				</li>
+			       			</ul>
+			       		</div>
+			       	</div>
+		       	</div>
+		       	<div id = "newline">
+		       	
+		       	</div>
+		  		
+			 <div class="row no-gutter opt-panel" id="no-gutter" style="position: fixed;">
+                      <div class="col-50" id="div1"><a href="#"  id="approveProductDeclare" class="sure-btn close-popup" style="border-radius: 0rem;">审批</a></div>
+                      <div class="col-50" id="div2"><a href="#" id="rejectProductDeclare" class="default-btn " style="border-radius: 0rem;">驳回</a></div>
+             </div>
+		       	
+			</div>
+		</div>
+	</div>
+    
+
+    <link rel="stylesheet" href="../../css/apps/process.css">
+	<script src="../../js/zepto/zepto.js"></script>
+	<script src="../../js/jquery/jquery.js"></script>
+	<script type='text/javascript' src='//g.alicdn.com/msui/sm/0.6.2/js/sm.min.js' charset='utf-8'></script>
+	<script type='text/javascript' src='//g.alicdn.com/msui/sm/0.6.2/js/sm-extend.min.js' charset='utf-8'></script>
+	<script src="../../js/vue/vue.js"></script>
+    <script type="text/javascript" src="../../js/common/base.js"></script>
+    <script type="text/javascript" src="../../js/common/commonAjax.js"></script>
+     <script type="text/javascript" src="../../js/common/smisUrl.js"></script>
+
+	<script>
+	  var datas = new Array();
+	  var datas1 = new Array();
+	  var invoiceId = 0;
+	  var LtpaToken = null;
+	  var url  = makeUrl("third/doa/doa_invoice/doaInvoice.do?method=list");
+		//流程类型筛选
+		$('.category-tab').on('click','a',function(e){
+			e.preventDefault();
+			$(this).addClass('active').siblings().removeClass('active');
+		})
+		//返回顶部
+		$('.m-content').scroll(function(){ 
+			if ($('.m-content').scrollTop()>50){ 
+				$(".return-top").show(); 
+			}else{ 
+				$(".return-top").hide();
+			} 
+		})
+		$(".page-current").on('click','.return-top',function(){ 	
+			$('.m-content').scrollTop(0);
+			$(".return-top").hide();
+		});
+		$('.invoice-list-block').on('click','li',function(){
+			$.popup('.popup-detail');
+		})
+		
+		//android、ios 客户端判断,如果ios 系统的默认滑动，如果android 点击按钮左右平移表格
+		/* var u = navigator.userAgent;
+	    var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
+	    var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+	    if(isiOS){
+	    	$('.detail-content-block').find('.icon').hide();
+	    	$('.detail-tab-panel').css('overflow','auto');
+	    }else{
+	    	$('.detail-content-block').find('.icon').show();
+	    	$('.detail-tab-panel').css('overflow','hidden');
+	    } */
+		
+		jQuery.noConflict();  //防止jquery和zepto冲突
+		//jquery 方法
+		jQuery(function($){
+			//使用jquery $			
+			var slide = ($('body').width() -30)/2 +'px'  //位移宽
+				, index = 1 //当前页码索引
+			function slideArrow(){
+				if(index<=1){
+					$('.detail-content-block').find('.icon-left').hide();
+				}else if(index>=3){
+					$('.detail-content-block').find('.icon-right').hide();
+				}else{
+					$('.detail-content-block').find('.icon-left').show();
+					$('.detail-content-block').find('.icon-right').show();
+				}			
+			}
+			
+			//右移
+			$('.detail-content-block').on('click','.icon-right',function(){		
+				index++;
+				$(".detail-move").animate({'left': '-='+slide},500);
+				var left = Math.abs($(".detail-move").offset().left);
+				slideArrow();
+			})
+			//左移
+			$('.detail-content-block').on('click','.icon-left',function(){
+				index--;
+				$(".detail-move").animate({'left': '+='+slide},500);
+				var left = Math.abs($(".detail-move").offset().left);
+				slideArrow(left);
+			})						
+		});	
+		
+		
+		function getOrderList(keyWord){
+			var num = 0;
+			$.ajax({
+				url : url,
+				type : 'POST',
+				data : {serviceName:"getProductDeclares",pageNo:1,pageSize:1000,status:2,LtpaToken:LtpaToken},
+				dataType : 'json',
+				async:true,
+				//薪资查询需要加上，不然不能记住密码，以及不能传cookie
+				xhrFields:
+				{
+			    	withCredentials:true
+			  	},
+				crossDomain:true,
+				success : function(data) {
+					if(data.datas != undefined&&data.datas.length > 0){
+						$("#empty-block2").css("display","none");
+						$("#invoiceList").html("");
+						var id = 0;
+						for(var i = 0;i < data.datas.length;i++){
+							var isNull = true;
+							if(keyWord != null){
+								isNull = isContains(keyWord, JSON.stringify( data.datas[i]) );
+								/*  if(isContains(keyWord,data.datas[i].warehouse_name)&&data.datas[i].month!=keyWord&&data.datas[i].pool_code!=keyWord&&data.datas[i].code!=keyWord&&data.datas[i].shop_name!=keyWord){
+									data.datas[i] = null;
+								}	  */
+							}
+							
+							 var str = null;
+							 if(isNull){
+								 id = data.datas[i].id;
+								 if(data.datas[i].warehouse_name == undefined){
+									 str = "店铺：" + data.datas[i].shop_name;
+								 }else if(data.datas[i].shop_name == undefined){
+									 str = "仓库：" + data.datas[i].warehouse_name;
+								 }
+								$("#invoiceList").append("<li onclick = 'invoiceClick("+id+")'><div class='item-content'><div class='item-inner'><div class='item-title'><span class='tit' >"+str+"</span><div class='item-subtitle'><span class='fl'>报货月份:"+data.datas[i].month+"</span><span>预计计销售时间:"+data.datas[i].pre_sale_time+"</span><span class='fl'>总货值:"+data.datas[i].total_amount+"</span><span>暂估销售额:"+data.datas[i].pre_sale_amount+"</span><span>报货单号:"+data.datas[i].code+"</span><span>产品池单号:"+data.datas[i].pool_code+"</span></div></div><div class='item-after'>"+data.datas[i].create_user+"</div></div></div></li>");
+							 }
+							num++;
+						}
+						$("#num").html("("+num+")");
+						num = 0;
+						datas = data.datas;
+					}else{
+						$("#empty-block2").css("display","block");
+					}
+				}
+				
+			});
+		}
+		
+		function getOrderList1(keyWord){
+			var num = 0;
+			$.ajax({
+				url : url,
+				type : 'POST',
+				data : {serviceName:"getProductDeclares",pageNo:1,pageSize:1000,status:3,LtpaToken:LtpaToken},
+				dataType : 'json',
+				async:true,
+				//薪资查询需要加上，不然不能记住密码，以及不能传cookie
+				xhrFields:
+				{
+			    	withCredentials:true
+			  	},
+				crossDomain:true,
+				success : function(data) {
+					
+				 	if(data.datas != undefined&&data.datas.length > 0){
+						$("#empty-block1").css("display","none");
+						$("#invoiceList1").html("");
+						var id = 0; 
+						var isNull = true;
+						 for(var i = 0;i < data.datas.length;i++){
+							if(keyWord != null){
+								isNull = isContains(keyWord, JSON.stringify( data.datas[i]) );
+								/* if(data.datas[i].warehouse_name!=keyWord&&data.datas[i].month!=keyWord&&data.datas[i].pool_code!=keyWord&&data.datas[i].code!=keyWord&&data.datas[i].shop_name!=keyWord){
+									data.datas[i]=null;
+								}	 */
+							}
+							
+							if(isNull){
+								 var str = null;
+								 id = data.datas[i].id;
+								 if(data.datas[i].warehouse_name == undefined){
+									 str = "店铺：" + data.datas[i].shop_name;
+								 }else if(data.datas[i].shop_name == undefined){
+									 str = "仓库：" + data.datas[i].warehouse_name;
+								 }
+								$("#invoiceList1").append("<li onclick = 'invoiceClick("+id+")'><div class='item-content'><div class='item-inner'><div class='item-title'><span class='tit' >"+str+"</span><div class='item-subtitle'><span class='fl'>报货月份:"+data.datas[i].month+"</span><span>预计计销售时间:"+data.datas[i].pre_sale_time+"</span><span class='fl'>总货值:"+data.datas[i].total_amount+"</span><span>暂估销售额:"+data.datas[i].pre_sale_amount+"</span><span>报货单号:"+data.datas[i].code+"</span><span>产品池单号:"+data.datas[i].pool_code+"</span></div></div><div class='item-after'>"+data.datas[i].create_user+"</div></div></div></li>");
+							}
+						}
+						datas1 = data.datas; 
+				 	}else{
+						$("#empty-block1").css("display","block");
+					}
+				}
+				
+			});
+		}
+		function updateList(){
+			
+		}
+		function isContains(substr,str) {
+			var reg = eval("/"+substr+"/ig");
+			return reg.test(str);
+		}
+	
+		function invoiceClick(id){
+			var obj = null;
+		
+			for(var i =0;i < datas.length;i++){
+				if(datas[i].id==id){
+					$("#no-gutter").css("display","block");
+					$("#div1").css("display","block");
+					$("#div2").css("display","block");
+					$("#newline").append("<br/><br/>");
+					newline
+					obj=datas[i];
+				}
+			}
+			for(var i =0;i < datas1.length;i++){
+				if(datas1[i].id==id){
+					$("#newline").html("");
+					$("#no-gutter").css("display","none");
+					$("#div1").css("display","none");
+					$("#div2").css("display","none");
+					obj=datas[i];
+				}
+			}
+			$("#month").html(obj.month);
+			$("#pre_sale_time").html(obj.pre_sale_time);
+			$("#total_amount").html(obj.total_amount);
+			$("#pre_sale_amount").html(obj.pre_sale_amount);
+			$("#code").html(obj.code);
+			$("#pool_code").html(obj.pool_code);
+			$("#warehouse_name").html(obj.warehouse_name);
+			$("#shop_name").html(obj.shop_name);
+			$("#create_user").html(obj.create_user);
+			invoiceId = obj.id ;
+			$("#detailsList").html("");
+			for(var i = 0;i < obj.details.length;i++){
+				var j = i+1;
+				if(obj.details[i].commodity_spec==undefined){
+					obj.details[i].commodity_spec = "";
+				}
+				$("#detailsList").append('<li><span class="num">'+j+'</span><span>'+obj.details[i].brand_name+'</span><span class="name">'+obj.details[i].commodity_name+'</span><span>'+obj.details[i].commodity_barcode+'</span><span>'+obj.details[i].total_num+'</span><span>'+obj.details[i].commodity_art_no+'</span><span>'+obj.details[i].commodity_spec+'</span></li>');
+			}
+		}
+		$("#approveProductDeclare").click(function() {	
+			 $.showPreloader('正在提交');
+			$.ajax({
+				url : url,
+				type : 'POST',
+				data : {serviceName:"approveProductDeclare",productDeclareId:invoiceId,LtpaToken:LtpaToken},
+				dataType : 'json',
+				async:true,
+				//薪资查询需要加上，不然不能记住密码，以及不能传cookie
+				xhrFields:
+				{
+			    	withCredentials:true
+			  	},
+				crossDomain:true,
+				success : function(data) {
+					if(data.result){
+						$.toast("审批成功"); 
+						getOrderList(null);
+						getOrderList1(null);
+						window.location.href="invoice.html";
+					}else{
+						$.toast(data.errorMsg); 
+					}
+				}
+				
+			});
+		});
+		
+		$("#rejectProductDeclare").click(function() {
+			
+			$.modal({
+        		title:"提示",
+        		text: "是否驳回",
+        		buttons:[
+        			{
+        				text:"确认",
+        				onClick:function()
+        				{
+        					rejectProductDeclare()
+        				}
+        			},
+        			{
+        				text:"取消",
+        				onClick:function(){
+        					
+        				}
+        			}
+        		]
+        	});
+		       
+			
+			
+		});
+		function rejectProductDeclare(){
+			$.ajax({
+				url : url,
+				type : 'POST',
+				data : {serviceName:"rejectProductDeclare",productDeclareId:invoiceId,LtpaToken:LtpaToken},
+				dataType : 'json',
+				async:true,
+				//薪资查询需要加上，不然不能记住密码，以及不能传cookie
+				xhrFields:
+				{
+			    	withCredentials:true
+			  	},
+				crossDomain:true,
+				success : function(data) {
+					if(data.result){
+						$.toast("驳回成功"); 
+						getOrderList(null);
+						window.location.href="invoice.html";
+					}else{
+						$.toast(data.errorMsg); 
+					}
+				}
+				
+			});
+		}
+		
+		$("#search").bind('input propertychange', function() {					
+			if($("#search").val()==""){
+				 getOrderList1(null);
+				 getOrderList(null);
+			}else{
+				getOrderList1($("#search").val());
+				getOrderList($("#search").val());
+			} 
+		});
+		
+		$(document).ready(function() {
+			//setCookie("LtpaToken","AAECAzU4QUY5MzkyNThCMDNDNTJ0YW5nbWlsONSVMbibAmhGWr8MUvO0jlXXPw==");
+			LtpaToken = getCookie("LtpaToken");
+		    getOrderList(null);
+		    getOrderList1(null);
+		  
+		   
+		});
+		$("#tab1").click(function() {
+			 getOrderList(null);
+		});
+		$("#tab2").click(function() {
+			 getOrderList1(null);
+		});
+		
+		function setCookie(name,value){
+			var Days = 30;
+			var exp = new Date();
+			exp.setTime(exp.getTime() + Days*24*60*60*1000);
+			document.cookie = name + "="+ escape (value) + ";expires=" + exp.toGMTString();
+		}
+		
+		function getCookie(name){
+			var arr,reg=new RegExp("(^| )"+name+"=([^;]*)(;|$)");
+			if(arr=document.cookie.match(reg)){
+				return unescape(arr[2]);
+			}else{
+				return null;
+			}
+		
+		}
+		
+		           
+	</script>
+		<!--使用钉钉的JSAPI  -->
+    <script type="text/javascript" src="http://g.alicdn.com/dingding/open-develop/0.8.4/dingtalk.js"></script>
+    <script type="text/javascript" src="../../js/common/dingTop.js"></script>
+    <script type="text/javascript" src="../../js/common/dingBase.js"></script> 
+</body>
+</html>

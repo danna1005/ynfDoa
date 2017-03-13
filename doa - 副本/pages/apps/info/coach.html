@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>蘑菇大爸</title>
+<meta name="viewport" content="initial-scale=1, maximum-scale=1">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+<link rel="stylesheet" href="http://g.alicdn.com/msui/sm/0.6.2/css/sm.min.css">
+<link rel="stylesheet" href="http://g.alicdn.com/msui/sm/0.6.2/css/sm-extend.min.css">
+<link rel="stylesheet" href="../../../css/common/common.css">
+<link rel="stylesheet" href="../../../css/apps/info/info.css">
+</head>
+<body>
+	<div class="page-group">
+		<div class="page page-current">
+			<!-- <header class="bar bar-nav m-header-container">
+				<a class="button button-link button-nav pull-left m-header-return doa-go-back"
+					href="#"> <span class="icon icon-left"></span>
+				</a>
+				<div class="title m-header-title">蘑菇大爸</div>
+			</header>
+			<div class="help-icon">
+				<img src="../../../images/common/tip.png" style="width: 0.9rem; height: 0.9rem" />
+			</div> -->
+			<!-- 帮助 -->
+			<div class="prompt-panel" id="panel" style="display:none;">
+				<div class="prompt-mask"></div>
+				<div class="prompt-content">
+					<span class="prompt-close">×</span>
+					<header class="prompt-header">【蘑菇大爸】乘车提示</header>
+					<div class="content-padded">
+						<ul class="list-block">
+							<li>
+								<p>请佩戴工牌上车。搭乘早班车的御家亲在“到站时间”之前到达指定站点等候班车；请搭乘晚班车的御家亲提前做好下车准备，从车辆前门下车。</p>
+							</li>
+							<li>
+								<p>需在途经道路沿线临时停车时，可提前2站向司机提出临时停车要求，司机将根据道路状况选择合适的停车地点；基于行车安全的考虑，司机保留拒绝停车的权利，尽请谅解。</p>
+							</li>
+							<li>
+								<p>在亲乘坐班车期间，请您注意卫生，请勿乱丢果皮纸屑等杂物，谢谢您的配合。</p>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="content m-content">				
+				<div class="list-block" style="margin-top: 0rem">
+					<ul>
+						<li class="item-content">
+							<div class="item-media">
+								<img calss="icon2" src="../../../images/apps/unnameed/mg.png"
+									style="width: 1.05rem" />
+							</div>
+							<div class="item-inner">
+								<div class="item-title">红星美凯龙——晟通仓库(南线)</div>
+								<div class="item-after">上班</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<div class="card company">
+					<div class="card-content" onclick="imgList(this,'card1')" >
+						<div class="card-content-inner">
+							<div>
+								<div class="startTime">07:00</div>
+								<div class="yuan" style="background-color: #39dc71">起</div>
+								<span class="site">红星美凯龙</span>
+							</div>
+							<span><img src="../../../images/apps/new/nextIcon.png"
+								class="nextIcon down" style="float: right;"/></span>
+							<div>
+								<div class="startTime">08:35</div>
+								<div class="yuan" style="background-color: #ff5353">终</div>
+								<span class="site">晟通仓库</span>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="card details dis" id="card1">
+					<div class="card-header">详细信息</div>
+					<div class="card-content">
+						<div class="card-content-inner">
+							<p>
+								<span class="time">07:00 </span><img
+									src="..\..\..\images\apps\unnameed\time.png" class="iconList"><span
+									class="site">红星美凯龙</span>
+							</p>
+							<div class="vertical"></div>
+
+							<p>
+								<span class="time">07:02 </span><img
+									src="..\..\..\images\apps\unnameed\time.png" class="iconList"><span
+									class="site">高升村北</span>
+							</p>
+							<div class="vertical"></div>
+
+							<p>
+								<span class="time">07:05 </span><img
+									src="..\..\..\images\apps\unnameed\time.png" class="iconList"><span
+									class="site">井湾子南</span>
+							</p>
+							<div class="vertical"></div>
+
+							<p>
+								<span class="time">07:08 </span><img
+									src="..\..\..\images\apps\unnameed\time.png" class="iconList"><span
+									class="site">林科大</span>
+							</p>
+							<div class="vertical"></div>
+
+							<p>
+								<span class="time">07:12 </span><img
+									src="..\..\..\images\apps\unnameed\time.png" class="iconList"><span
+									class="site">潇湘晨报</span>
+							</p>
+							<div class="vertical"></div>
+
+							<p>
+								<span class="time">07:15 </span><img
+									src="..\..\..\images\apps\unnameed\time.png" class="iconList"><span
+									class="site">铁道学院（原和一大酒店）</span>
+							</p>
+							<div class="vertical"></div>
+
+							<p>
+								<span class="time">07:20 </span><img
+									src="..\..\..\images\apps\unnameed\time.png" class="iconList"><span
+									class="site">南郊公园</span>
+							</p>
+							<div class="vertical"></div>
+
+							<p>
+								<span class="time">07:25 </span><img
+									src="..\..\..\images\apps\unnameed\time.png" class="iconList"><span
+									class="site">阳光100国际新城</span>
+							</p>
+							<div class="vertical"></div>
+
+							<p>
+								<span class="time">07:30 </span><img
+									src="..\..\..\images\apps\unnameed\time.png" class="iconList"><span
+									class="site">王家湾</span>
+							</p>
+							<div class="vertical"></div>
+
+							<p>
+								<span class="time">07:48 </span><img
+									src="..\..\..\images\apps\unnameed\time.png" class="iconList"><span
+									class="site">人人乐西</span>
+							</p>
+							<div class="vertical"></div>
+
+							<p>
+								<span class="time">07:52 </span><img
+									src="..\..\..\images\apps\unnameed\time.png" class="iconList"><span
+									class="site">中和制药</span>
+							</p>
+							<div class="vertical"></div>
+
+							<p>
+								<span class="time">07:55 </span><img
+									src="..\..\..\images\apps\unnameed\time.png" class="iconList"><span
+									class="site">管委会桐梓坡公交站</span>
+							</p>
+							<div class="vertical"></div>
+
+							<p>
+								<span class="time">08:00 </span><img
+									src="..\..\..\images\apps\unnameed\time.png" class="iconList"><span
+									class="site">保利麓谷林语</span>
+							</p>
+							<div class="vertical"></div>
+
+							<p>
+								<span class="time">08:05 </span><img
+									src="..\..\..\images\apps\unnameed\time.png" class="iconList"><span
+									class="site">御家汇大楼</span>
+							</p>
+							<div class="vertical"></div>
+
+							<p>
+								<span class="time">08:35 </span><img
+									src="..\..\..\images\apps\unnameed\time.png" class="iconList"><span
+									class="site">晟通仓库</span>
+							</p>
+
+
+
+						</div>
+					</div>
+				</div>
+
+				<div class="list-block">
+					<ul>
+						<li class="item-content">
+
+							<div class="item-media">
+								<img calss="icon2" src="../../../images/apps/unnameed/mg.png"
+									style="width: 1.05rem" />
+							</div>
+							<div class="item-inner">
+								<div class="item-title">晟通仓库——红星美凯龙(南线)</div>
+								<div class="item-after">下班</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+
+				<div class="card company">
+					<div class="card-content" onclick="imgList(this,'card2')">
+						<div class="card-content-inner">
+							<div>
+								<div class="startTime">17:40</div>
+								<div class="yuan" style="background-color: #39dc71">起</div>
+								<span class="site">晟通仓库</span>
+							</div>
+							<span><img src="../../../images/apps/new/nextIcon.png"
+								class="nextIcon down" style="float: right;" /></span>
+							<div>
+								<div class="startTime">19:35</div>
+								<div class="yuan" style="background-color: #ff5353">终</div>
+								<span class="site">红星美凯龙</span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="card details dis" id="card2">
+					<div class="card-header">详细信息</div>
+					<div class="card-content">
+						<div class="card-content-inner">
+							<p>
+								<span class="time">17:40 </span><img
+									src="..\..\..\images\apps\unnameed\time.png" class="iconList"><span
+									class="site">晟通仓库</span>
+							</p>
+							<div class="vertical"></div>
+							<p>
+								<span class="time">18:15 </span><img
+									src="..\..\..\images\apps\unnameed\time.png" class="iconList"><span
+									class="site">御家汇大楼</span>
+							</p>
+							<div class="vertical"></div>
+							<p>
+								<span class="time">18:20 </span><img
+									src="..\..\..\images\apps\unnameed\time.png" class="iconList"><span
+									class="site">保利麓谷林语（后门）</span>
+							</p>
+							<div class="vertical"></div>
+							<p>
+								<span class="time">18:28 </span><img
+									src="..\..\..\images\apps\unnameed\time.png" class="iconList"><span
+									class="site">省少管所公交站</span>
+							</p>
+							<div class="vertical"></div>
+							<p>
+								<span class="time">18:32 </span><img
+									src="..\..\..\images\apps\unnameed\time.png" class="iconList"><span
+									class="site">人人乐（西）</span>
+							</p>
+							<div class="vertical"></div>
+							<p>
+								<span class="time">18:50 </span><img
+									src="..\..\..\images\apps\unnameed\time.png" class="iconList"><span
+									class="site">王家湾</span>
+							</p>
+							<div class="vertical"></div>
+							<p>
+								<span class="time">19:00 </span><img
+									src="..\..\..\images\apps\unnameed\time.png" class="iconList"><span
+									class="site">阳光100国际新城</span>
+							</p>
+							<div class="vertical"></div>
+							<p>
+								<span class="time">19:05 </span><img
+									src="..\..\..\images\apps\unnameed\time.png" class="iconList"><span
+									class="site">南郊公园</span>
+							</p>
+							<div class="vertical"></div>
+							<p>
+								<span class="time">19:10 </span><img
+									src="..\..\..\images\apps\unnameed\time.png" class="iconList"><span
+									class="site">铁道学院</span>
+							</p>
+							<div class="vertical"></div>
+							<p>
+								<span class="time">19:15 </span><img
+									src="..\..\..\images\apps\unnameed\time.png" class="iconList"><span
+									class="site">潇湘晨报</span>
+							</p>
+							<div class="vertical"></div>
+							<p>
+								<span class="time">19:20 </span><img
+									src="..\..\..\images\apps\unnameed\time.png" class="iconList"><span
+									class="site">林科大</span>
+							</p>
+							<div class="vertical"></div>
+							<p>
+								<span class="time">19:25 </span><img
+									src="..\..\..\images\apps\unnameed\time.png" class="iconList"><span
+									class="site">井湾子南</span>
+							</p>
+							<div class="vertical"></div>
+							<p>
+								<span class="time">19:30 </span><img
+									src="..\..\..\images\apps\unnameed\time.png" class="iconList"><span
+									class="site">高升村南</span>
+							</p>
+							<div class="vertical"></div>
+							<p>
+								<span class="time">19:35 </span><img
+									src="..\..\..\images\apps\unnameed\time.png" class="iconList"><span
+									class="site">红星美凯龙</span>
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="list-block">
+					<ul>
+						<li class="item-content">
+
+							<div class="item-media">
+								<img calss="icon1" src="../../../images/apps/unnameed/mg.png"
+									style="width: 1.05rem" />
+							</div>
+							<div class="item-inner">
+								<div class="item-title">长沙火车站——御家汇大楼(东线)</div>
+								<div class="item-after">上班</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<div class="card company">
+					<div class="card-content" onclick="imgList(this,'card3')" >
+						<div class="card-content-inner">
+							<div>
+								<div class="startTime">17:40</div>
+								<div class="yuan" style="background-color: #39dc71">起</div>
+								<span class="site">长沙火车站</span>
+							</div>
+							<span><img src="../../../images/apps/new/nextIcon.png"
+								class="nextIcon down" style="float: right;"/></span>
+							<div>
+								<div class="startTime">19:35</div>
+								<div class="yuan" style="background-color: #ff5353">终</div>
+								<span class="site">御家汇大楼</span>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="card details dis" id="card3">
+					<div class="card-header">详细信息</div>
+					<div class="card-content">
+						<div class="card-content-inner">
+							<p>
+								<span class="time">07:10 </span><img
+									src="..\..\..\images\apps\unnameed\time.png" class="iconList"><span
+									class="site">长沙火车站</span>
+							</p>
+							<div class="vertical"></div>
+
+							<p>
+								<span class="time">07:14 </span><img
+									src="..\..\..\images\apps\unnameed\time.png" class="iconList"><span
+									class="site">曙光路口</span>
+							</p>
+							<div class="vertical"></div>
+
+							<p>
+								<span class="time">07:16 </span><img
+									src="..\..\..\images\apps\unnameed\time.png" class="iconList"><span
+									class="site">韭菜园</span>
+							</p>
+							<div class="vertical"></div>
+
+							<p>
+								<span class="time">07:20 </span><img
+									src="..\..\..\images\apps\unnameed\time.png" class="iconList"><span
+									class="site">五一广场（118站）</span>
+							</p>
+							<div class="vertical"></div>
+
+							<p>
+								<span class="time">07:25 </span><img
+									src="..\..\..\images\apps\unnameed\time.png" class="iconList"><span
+									class="site">望月湖</span>
+							</p>
+							<div class="vertical"></div>
+
+							<p>
+								<span class="time">07:30 </span><img
+									src="..\..\..\images\apps\unnameed\time.png" class="iconList"><span
+									class="site">六沟垅</span>
+							</p>
+							<div class="vertical"></div>
+
+							<p>
+								<span class="time">07:34 </span><img
+									src="..\..\..\images\apps\unnameed\time.png" class="iconList"><span
+									class="site">桐梓坡</span>
+							</p>
+							<div class="vertical"></div>
+
+							<p>
+								<span class="time">07:36 </span><img
+									src="..\..\..\images\apps\unnameed\time.png" class="iconList"><span
+									class="site">湘雅三医院</span>
+							</p>
+							<div class="vertical"></div>
+
+							<p>
+								<span class="time">07:38 </span><img
+									src="..\..\..\images\apps\unnameed\time.png" class="iconList"><span
+									class="site">省肿瘤医院</span>
+							</p>
+							<div class="vertical"></div>
+
+							<p>
+								<span class="time">07:41 </span><img
+									src="..\..\..\images\apps\unnameed\time.png" class="iconList"><span
+									class="site">咸嘉新村</span>
+							</p>
+							<div class="vertical"></div>
+
+							<p>
+								<span class="time">07:45 </span><img
+									src="..\..\..\images\apps\unnameed\time.png" class="iconList"><span
+									class="site">商学院</span>
+							</p>
+							<div class="vertical"></div>
+
+							<p>
+								<span class="time">07:49 </span><img
+									src="..\..\..\images\apps\unnameed\time.png" class="iconList"><span
+									class="site">人人乐西</span>
+							</p>
+							<div class="vertical"></div>
+
+							<p>
+								<span class="time">07:52 </span><img
+									src="..\..\..\images\apps\unnameed\time.png" class="iconList"><span
+									class="site">中和制药</span>
+							</p>
+							<div class="vertical"></div>
+
+							<p>
+								<span class="time">07:55 </span><img
+									src="..\..\..\images\apps\unnameed\time.png" class="iconList"><span
+									class="site">管委会桐梓坡公交站</span>
+							</p>
+							<div class="vertical"></div>
+
+							<p>
+								<span class="time">08:00 </span><img
+									src="..\..\..\images\apps\unnameed\time.png" class="iconList"><span
+									class="site">保利麓谷林语</span>
+							</p>
+							<div class="vertical"></div>
+
+							<p>
+								<span class="time">08:05 </span><img
+									src="..\..\..\images\apps\unnameed\time.png" class="iconList"><span
+									class="site">御家汇大楼</span>
+							</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="list-block">
+					<ul>
+						<li class="item-content">
+
+							<div class="item-media">
+								<img calss="icon1" src="../../../images/apps/unnameed/mg.png"
+									style="width: 1.05rem" />
+							</div>
+							<div class="item-inner">
+								<div class="item-title">御家汇大楼——长沙火车站(东线)</div>
+								<div class="item-after">下班</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+
+				<div class="card company">
+					<div class="card-content" onclick="imgList(this,'card4')" >
+						<div class="card-content-inner">
+							<div>
+								<div class="startTime">17:40</div>
+								<div class="yuan" style="background-color: #39dc71">起</div>
+								<span class="site">御家汇大楼</span>
+							</div>
+							<span><img src="../../../images/apps/new/nextIcon.png"
+								class="nextIcon down" style="float: right;"/></span>
+							<div>
+								<div class="startTime">19:35</div>
+								<div class="yuan" style="background-color: #ff5353">终</div>
+								<span class="site">长沙火车站</span>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="card details dis" id="card4">
+					<div class="card-header">详细信息</div>
+					<div class="card-content">
+						<div class="card-content-inner">
+							<p>
+								<span class="time">18:15 </span><img
+									src="..\..\..\images\apps\unnameed\time.png" class="iconList"><span
+									class="site">御家汇大楼</span>
+							</p>
+							<div class="vertical"></div>
+
+							<p>
+								<span class="time">18:20 </span><img
+									src="..\..\..\images\apps\unnameed\time.png" class="iconList"><span
+									class="site">保利麓谷林语（后门）</span>
+							</p>
+							<div class="vertical"></div>
+
+							<p>
+								<span class="time">18:28 </span><img
+									src="..\..\..\images\apps\unnameed\time.png" class="iconList"><span
+									class="site">省少管所公交站</span>
+							</p>
+							<div class="vertical"></div>
+
+							<p>
+								<span class="time">18:32 </span><img
+									src="..\..\..\images\apps\unnameed\time.png" class="iconList"><span
+									class="site">人人乐（西）</span>
+							</p>
+							<div class="vertical"></div>
+
+							<p>
+								<span class="time">18:38 </span><img
+									src="..\..\..\images\apps\unnameed\time.png" class="iconList"><span
+									class="site">商学院</span>
+							</p>
+							<div class="vertical"></div>
+
+							<p>
+								<span class="time">18:45 </span><img
+									src="..\..\..\images\apps\unnameed\time.png" class="iconList"><span
+									class="site">咸嘉新村</span>
+							</p>
+							<div class="vertical"></div>
+
+							<p>
+								<span class="time">18:48 </span><img
+									src="..\..\..\images\apps\unnameed\time.png" class="iconList"><span
+									class="site">省肿瘤医院</span>
+							</p>
+							<div class="vertical"></div>
+
+							<p>
+								<span class="time">18:50 </span><img
+									src="..\..\..\images\apps\unnameed\time.png" class="iconList"><span
+									class="site">湘雅三医院</span>
+							</p>
+							<div class="vertical"></div>
+
+							<p>
+								<span class="time">18:52 </span><img
+									src="..\..\..\images\apps\unnameed\time.png" class="iconList"><span
+									class="site">桐梓坡</span>
+							</p>
+							<div class="vertical"></div>
+
+							<p>
+								<span class="time">18:58 </span><img
+									src="..\..\..\images\apps\unnameed\time.png" class="iconList"><span
+									class="site">望月湖小区</span>
+							</p>
+							<div class="vertical"></div>
+
+							<p>
+								<span class="time">19:05 </span><img
+									src="..\..\..\images\apps\unnameed\time.png" class="iconList"><span
+									class="site">五一广场（118站）</span>
+							</p>
+							<div class="vertical"></div>
+
+							<p>
+								<span class="time">19:10 </span><img
+									src="..\..\..\images\apps\unnameed\time.png" class="iconList"><span
+									class="site">韭菜园</span>
+							</p>
+							<div class="vertical"></div>
+
+							<p>
+								<span class="time">19:15 </span><img
+									src="..\..\..\images\apps\unnameed\time.png" class="iconList"><span
+									class="site">曙光路口</span>
+							</p>
+							<div class="vertical"></div>
+
+							<p>
+								<span class="time">19:20 </span><img
+									src="..\..\..\images\apps\unnameed\time.png" class="iconList"><span
+									class="site">长沙火车站</span>
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="../../../js/zepto/zepto.js"></script>
+	<script src="../../../js/jquery/jquery.js" type="text/javascript"></script>
+	<script type='text/javascript' src='http://g.alicdn.com/msui/sm/0.6.2/js/sm.min.js' charset='utf-8'></script>
+	<script type='text/javascript' src='http://g.alicdn.com/msui/sm/0.6.2/js/sm-extend.min.js' charset='utf-8'></script>
+	 <script type="text/javascript" src="../../../js/common/base.js"></script>
+	<script>
+		var falg = true;
+		function imgList(obj,id){
+			obj =  obj.getElementsByTagName("img")[0];
+			if(obj.className=="nextIcon down"){
+				$(".details").addClass("dis");
+				$(".down").removeClass("tranform");			 
+				 falg = true;			
+			}		
+			 
+			 if(falg){
+					 $("#"+id).removeClass("dis");
+					obj.className="nextIcon down tranform"; 
+			    	
+			    	falg = false;
+			 }else{
+				 obj.className="nextIcon down";  
+			    	$("#"+id).addClass("dis"); 
+			    	falg = true;
+			 }		
+		}
+		$('.page').on('click','.help-icon',function(){
+			$('.prompt-panel').fadeIn();		
+		})
+		
+		$('.prompt-panel').on('click','.prompt-close',function(){
+			$('.prompt-panel').fadeOut();		
+		})
+	$(function() {
+	
+		var busUrl = makeUrl("third/doa/doa_notice/doaNotice.do?method=getNotice&model=bus");
+		if(window.localStorage.getItem('readBusinfo')!=1){
+			commonGet(busUrl,null,function(r){	
+					if (r.errCode!=0){
+						window.localStorage.setItem("readBusinfo",1);
+					}else{	
+						$('#panel').css("display"," block");
+						$.ajax({			            
+				            type:"POST",	 
+				            url:makeUrl("third/doa/doa_notice_read/doaNoticeRead.do?method=save"),			            
+				            data:{noticeId:r.data.fdId}, 
+				            datatype: "json",
+				            success:function(data){
+				            	window.localStorage.setItem("readBusinfo",1);
+				            },
+				            error: function(){
+				            }         
+						});
+					}
+				
+		  	},false);
+		}
+		
+	});
+	</script>
+	<!--使用钉钉的JSAPI  -->
+    <script type="text/javascript" src="http://g.alicdn.com/dingding/open-develop/0.8.4/dingtalk.js"></script>
+    <script type="text/javascript" src="../../../js/apps/info/infoTopMenu.js"></script>
+    <script type="text/javascript" src="../../../js/common/dingBase.js"></script>
+</body>
+</html>

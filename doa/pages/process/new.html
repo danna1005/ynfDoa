@@ -1,0 +1,152 @@
+<!doctype html>
+<html style="overflow:hidden;">
+<head>
+<meta charset="utf-8">
+<title>我的流程</title>  
+<meta name="viewport" content="initial-scale=1, maximum-scale=1">
+<link rel="shortcut icon" href="/favicon.ico">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<link rel="stylesheet" href="//g.alicdn.com/msui/sm/0.6.2/css/??sm.min.css,sm-extend.min.css">
+<link rel="stylesheet" href="../../css/common/common.css">
+</head>
+
+<body>
+     <div class="page-group page-first-cate">
+        <div class="page page-current">
+       		<header class="bar bar-nav m-header-container m-category-header">
+       			<div class="title m-header-title">分类选择</div>
+       			<a class="button button-link button-nav pull-right" href="#" style="color:#fff;">
+       				取消
+       			</a>
+       		</header>
+            <div class="content m-content" style="top:2.2rem !important">
+            	<div class="list-block category-list">
+            		<ul>
+            			<li class="item-content">
+					        <div class="item-inner">
+					        	<div class="item-media">
+					        		<i class="iconfont icon-fenlei"></i>
+					        		<div class="item-title">业务部门</div>
+					        	</div>
+					          	<div class="item-after">
+					          		<span class="icon icon-right"></span>
+					          	</div>
+					        </div>
+				       	</li>
+				       	<li class="item-content">
+					        <div class="item-inner">
+					        	<div class="item-media">
+					        		<i class="iconfont icon-fenlei"></i>
+					        		<div class="item-title">供应链</div>
+					        	</div>
+					          	<div class="item-after">
+					          		<span class="icon icon-right"></span>
+					          	</div>
+					        </div>
+				       	</li>
+				       	<li class="item-content">
+					        <div class="item-inner">
+					        	<div class="item-media">
+					        		<i class="iconfont icon-fenlei"></i>
+					        		<div class="item-title">客服</div>
+					        	</div>
+					          	<div class="item-after">
+					          		<span class="icon icon-right"></span>
+					          	</div>
+					        </div>
+				       	</li>
+				       	<li class="item-content">
+					        <div class="item-inner">
+					        	<div class="item-media">
+					        		<i class="iconfont icon-fenlei"></i>
+					        		<div class="item-title">设计</div>
+					        	</div>
+					          	<div class="item-after">
+					          		<span class="icon icon-right"></span>
+					          	</div>
+					        </div>
+				       	</li>
+            		</ul>
+            	</div>              	
+            </div>          
+         </div>
+    </div>
+    <div class="page-group page-second-cate">
+    	<div class="page page-current">
+    		<header class="bar bar-nav m-header-container m-category-header">
+    			<a class="button button-link button-nav pull-left goback" href="#" style="color:#fff;margin-left:.25rem;">
+       				上一级
+       			</a>
+       			<div class="title m-header-title">业务部门</div>
+       			<a class="button button-link button-nav pull-right" href="#" style="color:#fff;">
+       				取消
+       			</a>
+       		</header>
+	    	<div class="content m-content" style="top:2.2rem !important">
+	    		<div class="list-block category-list">
+	           		<ul>
+	           			<li class="item-content">
+					        <div class="item-inner">
+					        	<div class="item-media">
+					        		<span class="iconfont icon-duigou catesel"></span>
+					        		<i class="iconfont icon-fenlei"></i>
+					        		<div class="item-title">优惠券申请表</div>
+					        	</div>
+					        </div>
+				       	</li>
+				       	<li class="item-content">
+					        <div class="item-inner">
+					        	<div class="item-media">
+					        		<span class="iconfont icon-duigou catesel"></span>
+					        		<i class="iconfont icon-fenlei"></i>
+					        		<div class="item-title">摄影摄像下单申请</div>
+					        	</div>
+					        </div>
+				       	</li>
+				       	<li class="item-content">
+					        <div class="item-inner">
+					        	<div class="item-media">
+					        		<span class="iconfont icon-duigou catesel"></span>
+					        		<i class="iconfont icon-fenlei"></i>
+					        		<div class="item-title">线下市场活动/费用核销申报 </div>
+					        	</div>
+					        </div>
+				       	</li>
+	           		</ul>
+	           	</div> 
+	    	</div>
+	    </div>
+    </div>
+    
+
+    <link rel="stylesheet" href="../../css/apps/process.css">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_dr3una4blqnf80k9.css">
+	<script src="../../js/zepto/zepto.js"></script>
+	<script>
+		var s1 = document.createElement('script'); 
+		s1.src = '../../js/sm/sm.min.js'; 
+		document.getElementsByTagName('head')[0].appendChild(s1);
+		 
+		var s2 = document.createElement('script'); 
+		s2.src = '../../js/sm/sm-extend.min.js'; 
+		document.getElementsByTagName('head')[0].appendChild(s2);	
+		
+		
+		//到第二级分类
+		$('.page-first-cate').on('click','li',function(){
+			$('.page-first-cate').hide();
+			$('.page-second-cate').show();
+		})
+		//返回上一级
+		$('.m-category-header').on('click','a.goback',function(){
+			$('.page-second-cate').hide();
+			$('.page-first-cate').show();
+		})
+		$('.page-second-cate').on('click','li',function(){
+			$(this).find('.catesel').addClass('.cateselected');
+			$.closeModal(popup);
+		})
+	</script> 
+</body>
+</html>

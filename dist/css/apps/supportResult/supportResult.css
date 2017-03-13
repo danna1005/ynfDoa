@@ -1,0 +1,146 @@
+@charset "UTF-8";
+body{color:#666; font-size: 0.7rem;}
+ul{padding:0;margin:0;}
+li {list-style: none;}
+input {
+  outline: none;
+  border: none; }
+p{margin:0;}
+.con-title{font-size:0.7rem;background: #fff;}
+.con-title p{margin:1rem 0 0 0.75rem;color:#333; background: #eee;border-radius: 1rem; padding:0.1rem 0.75rem; display: inline-block;}
+.speCon {
+  padding:0.25rem 0.75rem 0.75rem;
+  position: relative; 
+  border-bottom: 1px solid #d6d6d6;
+  background: #fff;
+}
+
+.speCon .person {
+  width: 1rem;
+  height: 1rem;
+  float:left;
+}
+
+.speCon .personText {
+ float:left;
+  margin-left: 0.25rem;
+  top: 0rem;
+  font-size: 0.75rem;
+  font-weight: normal; 
+  white-space: nowrap;
+  overflow: hidden;
+}
+.graybg{width: 100%; background: #eee; height: 0.3rem;}
+.speCon p {
+  height: 1.9rem;
+  line-height: 0.95rem;
+  font-size: 0.7rem;
+  color: #888888;
+  overflow: hidden;
+  margin:0;
+}
+
+.speCon h2 {overflow: hidden; line-height: 1rem; overflow: hidden; margin:0.5rem 0 0.3rem;}
+
+.speResult {
+  width: 100%; 
+  padding:0.75rem 0.75rem 0;
+  border-bottom: 1px solid #d6d6d6;
+  background: #fff;
+  color:#666;
+}
+.resultTitle{margin-bottom:0.3rem; overflow: hidden; line-height: 1rem;}
+.resultTitle .resultImg {
+  width: 1rem;
+  height: 1rem;
+  float:left;
+}
+
+.resultTitle .resultText {
+  font-size: 0.75rem;
+  float:left;
+  margin-left: 0.25rem;
+  white-space: nowrap;
+  overflow: hidden;
+    color:#333;
+}
+
+.textarea-panel{
+  width:100%;
+  display: block;
+  height: 10rem;
+  font-size: 0.7rem;
+  text-indent: 0px;
+  border:1px solid #ddd;
+  border-radius: 0.25rem;
+  margin:0.5rem 0;
+  padding:0.25rem;
+  position: relative;
+}
+.remind-text{color:#ccc; position: absolute; right:0.5rem; bottom: 0.25rem;font-size:0.65rem;}
+.remind-text em{font-style: normal;}
+#resultArea {
+  width:100%;
+  height: 9.5rem;
+  box-shadow: none;
+  color:#666;
+  resize:none;
+  background:#fff;
+  -webkit-appearance: none;
+  border:none;
+}
+
+.recordCon {
+  display: flex;
+  align-items: center; 
+  margin-bottom: 0.75rem;
+}
+
+.recordRadio {
+  display: inline-block;
+  width: 0.9rem;
+  height: 0.9rem; 
+  background: url("../../../images/apps/supportResult/radio.png?v=4eb8e89") 0 0 no-repeat;
+  background-size: 0.9rem 0.9rem;
+/*
+  border-radius: 50%;
+  background: white;
+  border:0.05rem solid #ccc;
+*/
+}
+.recordRadio.checked{background-image: url("../../../images/apps/supportResult/checked.png?v=96562b5");}
+.recordCon span {font-size: 0.7rem;margin-left: 0.35rem;}
+.recordCon span.recordRadio{margin-left: 0;}
+.footer {
+  background: none;
+  margin:0.5rem 0.75rem;
+}
+.solList{font-size: 0.7rem;padding:0;margin:0.35rem 0 0.75rem;}
+.infor{color:#666;}
+.solList li{color:#666;}
+.location p,.status p{height: auto;color: #666;}
+.sumbitBtn,.sure-btn,.default-btn {
+  color:white;
+  height: 2rem;
+  width: 100%;
+  background: #f36920;
+  border-radius: 0.25rem;
+  font-size: 0.9rem;
+}
+.default-btn{ background: #fff;color:#333;float: left;margin-right: 0.75rem;}
+.content-block{margin: 0; padding: 0; position: absolute;bottom: 0;padding-bottom: 2.25rem;background:#fff; max-height: 22.5rem; width: 100%; z-index: 10402;}
+.popup-member .default-btn,.popup-member .sure-btn{border-radius: 0;}
+.popup-mask{ position: absolute; top:0; width: 100%; height: 100%;background: #000; opacity: 0.4; z-index: 10401}
+.opt-panel{ position: absolute;bottom:0;width:100%; height: 2.25rem; z-index: 10000; background: #fff;border-top: 1px solid #ddd;}
+.opt-panel .sure-btn,.opt-panel .default-btn{height: 2.25rem;display:block; line-height: 2.25rem; text-align: center;}
+.opt-panel .sure-btn:hover,.opt-panel .sure-btn:focus{color:#fff;}
+.opt-panel .default-btn:hover,.opt-panel .default-btn:focus{color:#333;}
+.popup, .login-screen{overflow: hidden;background: none;}
+.member-item{max-height: 20rem; overflow: auto;}
+.member-item > li{padding-right:0.75rem;margin-left:0.75rem;height: 2rem; line-height: 2rem;font-size: 0.7rem; border-bottom: 1px solid #ddd;color:#666;}
+.member-item > li:last-child{border-bottom: 0;}
+.member-item > li > p{float:left;}
+.member-item > li >.name{margin-left:0.35rem;}
+.member-item > li > .gou{width:0.9rem;height: 0.9rem;margin:0.55rem 0; float:right; display: none;}
+.member-item > li.select > .gou{ display: block;}
+.member-item > li:first-child > .gou{}

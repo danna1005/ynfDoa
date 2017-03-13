@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>我要吐槽</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+	
+    <link rel="stylesheet" href="http://g.alicdn.com/msui/sm/0.6.2/css/sm.min.css">
+    <link rel="stylesheet" href="http://g.alicdn.com/msui/sm/0.6.2/css/sm-extend.min.css">
+ 	<link rel="stylesheet" href="../../../css/apps/it/server.css"> 
+    <style>
+    
+    	
+    	.button-link{
+			color:#c0c0c0 !important;
+		}
+    	
+    </style>
+	</head>
+	<body>
+	<div class="page-group">
+		<div class="page page-current">
+			<!-- <header class="bar bar-nav m-header-container">
+		       			<a class="button button-link button-nav pull-left m-header-return doa-go-back" href="#">
+		       				<span class="icon icon-left" ></span>
+		       			</a>
+		       			<div class="title m-header-title" style="color: #888888 !important;font-size: 0.75rem !important;">我要吐槽</div>
+		     </header> -->
+			<div class="content m-content">
+				<div class="card">
+			 	<div class="item-content m-list-block" >
+		         <div class="item-inner" style="padding-top:0rem">
+		           <div class="item-input" style="position:relative;">
+		           	<div class="item-title label label2" style="margin-top: 0.75rem;margin-bottom: 0.5rem;color: #666666">问题描述:</div>
+		       		<textarea id="description" style="border:1px solid #dedede;border-radius:10px;height: 10rem;width: 100%;-webkit-appearance: none;resize:none;" placeholder='BUG、优化、需求'></textarea>
+		           <span id="statistical"style="position:absolute;right:0.5rem;bottom: 0.5rem;font-size: 0.65rem;">0/1000</span>
+		           </div>
+		         </div>
+		       </div>
+		       </div>
+								        
+				<div class="content-block" style="margin:0.4rem 0rem 0.4rem 0rem">
+			    <div class="row">
+			      <div class="col-100" ><a   id="big-button" class="button button-big button-fill button-success"  style="background-color:#f36b23" >提交</a></div>
+			    </div>
+			  </div>
+			
+				
+			</div>
+		</div>
+	</div>
+	
+	
+	<script src="../../../js/zepto/zepto.js"></script>
+ 	<script type='text/javascript' src='http://g.alicdn.com/msui/sm/0.6.2/js/sm.min.js' charset='utf-8'></script>
+    <script type='text/javascript' src='http://g.alicdn.com/msui/sm/0.6.2/js/sm-extend.min.js' charset='utf-8'></script>
+	<script type="text/javascript" src="../../../js/common/base.js"></script>
+	<script>
+	
+	
+	$("#description").bind('input propertychange', function() {					
+		
+		if($("#description").val().length>1000){
+			
+			$("#statistical").css("color","red")
+			$("#statistical").html($("#description").val().length+"/1000");
+		}else{
+			$("#statistical").css("color","#333333")
+			$("#statistical").html($("#description").val().length+"/1000");
+		} 
+	 				
+	});
+	
+	$("#big-button").click(function(){
+		var url = makeUrl("third/doa/doa_feedback/doaFeedback.do?method=save");
+		if($("#description").val().length>1000){
+			$.alert("字数超出","提交失败");
+		}else{
+			var para = new Object();
+	   		para.content = $("#description").val();
+	   		$.showPreloader('正在提交');
+			commonPost(url,para,function(data){
+				$.hidePreloader();
+				if(data.status){
+					dd.biz.navigation.close({
+	        		    onSuccess : function(result) {
+	        		       $.alert('我们已经收到您反馈的问题，稍后会有产品经理跟您沟通处理方案。对您造成的不便，深感抱歉。','反馈成功');
+	        		    },
+	        		    onFail : function(err) {
+	        		    }
+	        		});
+					
+				}else{
+					$.alert(data.title, '失败');
+				}
+			})
+		}
+		
+		
+	});
+
+	</script>
+		<!--使用钉钉的JSAPI  -->
+    <script type="text/javascript" src="http://g.alicdn.com/dingding/open-develop/0.8.4/dingtalk.js"></script>
+    <script type="text/javascript" src="../../../js/common/dingTop.js"></script>
+    <script type="text/javascript" src="../../../js/common/dingBase.js"></script>
+	</body>
+</html>

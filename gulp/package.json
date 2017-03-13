@@ -1,0 +1,29 @@
+{
+  "name": "doatest",
+  "version": "1.0.0",
+  "description": "doatestdesc",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "cli": "^1.0.1",
+    "console-browserify": "^1.1.0",
+    "date-now": "^1.0.1",
+    "del": "^2.2.2",
+    "exit": "^0.1.2",
+    "gulp": "^3.9.1",
+    "gulp-asset-rev": "^0.0.15",
+    "gulp-jshint": "^2.0.4",
+    "gulp-rev": "^7.1.2",
+    "gulp-rev-collector": "^1.1.1",
+    "is-path-inside": "^1.0.0",
+    "jshint": "^2.9.4",
+    "path-is-inside": "^1.0.2",
+    "run-sequence": "^1.2.2",
+    "shelljs": "^0.7.6",
+    "strip-json-comments": "^2.0.1"
+  }
+}

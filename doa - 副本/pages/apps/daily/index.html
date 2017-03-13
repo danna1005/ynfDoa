@@ -1,0 +1,188 @@
+<!doctype html>
+<html style="overflow:hidden;">
+<head>
+<meta charset="utf-8">
+<title>日常管理</title>  
+<meta name="viewport" content="initial-scale=1, maximum-scale=1">
+<link rel="shortcut icon" href="/favicon.ico">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<link rel="stylesheet" href="../../../css/common/common.css">
+<link rel="stylesheet" href="//g.alicdn.com/msui/sm/0.6.2/css/??sm.min.css,sm-extend.min.css">
+<script type="text/javascript" src="//at.alicdn.com/t/font_1t9xm4x8oofg8pvi.js"></script>
+</head>
+
+<body>
+     <div class="page-group">
+        <div class="page page-current">
+       		<!-- <header class="bar bar-nav m-header-container">
+       			<a class="button button-link button-nav pull-left m-header-return doa-go-back" 
+                href="#" id="go_back">
+       				<span class="icon icon-left"></span>
+       			</a>
+       			<div class="title m-header-title">日常管理</div>
+       		</header> -->
+            <div class="content m-content">
+                <div class="subsidiary-title-container" style="padding:0 0.75rem;">
+                    <span class="subsidiary-title">已添加应用</span>
+                    <span class="subsidiary-explain fr">拖拽可以排序</span>
+                </div>
+                <div class="list-block">
+                    <ul class="selectionContent" id="appsAdded">
+                        <li class="list" v-for="(key, value)  in appsAddedList" v-bind:sort="value.sort">
+                            <p>	<span style="display:none" v-text="value.id"></span>
+                                <!-- <img v-bind:src="value.icon" style="height:1.5rem;width:1.5rem" alt=""> -->
+                                <svg class="icon" aria-hidden="true">
+				                	<use xlink:href="#{{value.icon}}"></use>
+				                </svg>
+                                <b v-text="value.name"></b>
+                              
+                                <i class="close"><img src="../../../images/apps/new/close.png"/></i>
+                            </p>
+                        </li>
+                    </ul> 
+                </div>
+                <div class="subsidiary-title-container" style="padding:0 0.75rem;">
+                    <span class="subsidiary-title">可添加应用</span>
+                    <span class="subsidiary-explain fr">点击添加应用</span>
+                </div>
+                <div class="list-block">
+                    <ul class="selectionContent" id="appsOther">
+                        <li  v-for="(key, value)  in appsAddList" v-bind:sort="value.sort">
+                            <p>	<span style="display:none" v-text="value.id"></span>
+                                <!-- <img v-bind:src="value.icon" style="height:1.5rem;width:1.5rem" alt=""> -->
+                                <svg class="icon" aria-hidden="true">
+				                	<use xlink:href="#{{value.icon}}"></use>
+				                </svg>
+                                <b v-text="value.name"></b>
+                              
+                                <i class="close hide"><img src="../../../images/apps/new/close.png"/></i>
+                            </p>
+                        </li>
+                    </ul>  
+                </div>
+            </div>            
+         </div>
+    </div>    
+    <link rel="stylesheet" href="../../../css/apps/daily.css">
+	<script src="../../../js/zepto/zepto.js"></script>
+	<script type='text/javascript' src='//g.alicdn.com/msui/sm/0.6.2/js/sm.min.js' charset='utf-8'></script>
+	<script type='text/javascript' src='//g.alicdn.com/msui/sm/0.6.2/js/sm-extend.min.js' charset='utf-8'></script>
+	<script type="text/javascript" src="../../../js/common/base.js"></script>
+	<script src="../../../js/vue/vue.js"></script>
+	<script src="../../../js/apps/daily/Sortable.min.js"></script>  
+	<script>
+		$(function(){
+			 var detailData = new Vue({
+			  	el:'.content',            
+			  	data:{ 
+			  		appsAddedList:'',		  	
+		            appsAddList:'',   
+		        },
+			  	ready:function(){
+			  		var url = makeUrl("third/doa/doa_diary_app/doaDiaryApp.do?method=getMyDailyApp");
+					 $.getJSON(url, function(data) {
+						
+						 detailData.appsAddList = data.data.otherApp;
+						 detailData.appsAddedList = data.data.dialyApp;
+						logJsonText(detailData.appsAddedList);
+						logJsonText(detailData.appsAddList);
+						for(var i=0;i<detailData.appsAddList.length;i++){
+							detailData.appsAddList[i].icon = detailData.appsAddList[i].icon
+						}
+						for(var i=0;i< detailData.appsAddedList.length;i++){
+							detailData.appsAddedList[i].icon = detailData.appsAddedList[i].icon
+						}
+						
+					 });			
+					
+			  	}
+			});
+		});
+	</script>
+    <script type="text/javascript"> 
+        var byId = function (id) { return document.getElementById(id); }
+        //拖拽排序
+        Sortable.create(byId('appsAdded'), {
+            group: "apps",
+            animation: 300,
+            onStart:function(evt){},
+            onSort:function(evt){},
+            onEnd: function(evt){
+                //获取排序
+                getSort();
+                update();
+            }
+        });
+
+        //获取排序
+        function getSort(){
+            var data = $("#appsAdded li").map(function() { return $(this).attr('sort'); }).get();
+            $("input[name=list1SortOrder]").val(data.join(","));
+            logJsonText(data );
+            var newSort = data.join(",");
+        }
+        $(function(){
+        	
+        	
+        	
+        	//alert($("li").length);
+            //移除
+            $('#appsAdded').on('click','li>p', function(event) {
+            	
+                var _this = $(this),
+                    _parent = _this.parents('li');
+                    oCopyLi = _parent.clone(true);
+                $('#appsOther').append(oCopyLi);
+                _parent.remove();
+                $('#appsOther>li').find('i.close').addClass('hide');
+                //更新排序
+                getSort();
+                update();
+               
+           });
+           //添加
+           $('#appsOther').on('click','li',function(event){
+        	  // $(this).addeClass("list");
+                var _this = $(this);
+                oCopyLi = _this.clone(true);
+               
+                _this.remove();
+                $('#appsAdded').append(oCopyLi);
+                $('#appsAdded>li').find('i.close').removeClass('hide');
+                //更新排序
+                getSort();
+                update();
+           });            
+        })
+        
+         function update() {
+			
+		
+			 var appsId = "";
+			 for(var i=0;i<$("#appsAdded").find("li").length;i++){
+				 appsId = appsId+$("#appsAdded").find("li").eq(i).find("span").eq(0).text()+",";
+				 
+			 }		
+	        	var url = makeUrl("third/doa/doa_diary_app/doaDiaryApp.do?method=updateMyDailyApp");
+		    	 $.ajax({			            
+			            type:"POST",	 
+			            url:url,			            
+			            data:{apps:appsId}, 
+			            datatype: "json",
+			            success:function(data){
+			            	
+			            },
+			            error: function(){
+			            	 $.toast("更新失败，系统异常");
+			            }         
+		         });
+			}
+    </script>
+    
+   	<!--使用钉钉的JSAPI  -->
+    <script type="text/javascript" src="http://g.alicdn.com/dingding/open-develop/0.8.4/dingtalk.js"></script>
+    <script type="text/javascript" src="../../../js/common/dingTop.js"></script>
+    <script type="text/javascript" src="../../../js/common/dingBase.js"></script>
+</body>
+</html>

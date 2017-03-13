@@ -1,0 +1,138 @@
+<!doctype html>
+<html style="overflow:hidden;">
+<head>
+<meta charset="utf-8">
+<title>it支持提交结果</title>
+<meta name="viewport" content="initial-scale=1, maximum-scale=1">
+<link rel="shortcut icon" href="/favicon.ico">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<link rel="stylesheet" href="http://g.alicdn.com/msui/sm/0.6.2/css/sm.css">
+<link rel="stylesheet" href="http://g.alicdn.com/msui/sm/0.6.2/css/sm-extend.css">
+<link rel="stylesheet" href="../../../css/common/common.css?v=20170302174246">
+</head>
+<body>
+    <div class="page-group">
+        <div class="page page-current">
+           <!--  <header class="bar bar-nav m-header-container">
+       			<a class="button button-link button-nav pull-left m-header-return doa-go-back" href="#">
+       				<span class="icon icon-left"></span>
+       			</a>
+       			<div class="title m-header-title">IT支持</div>
+       		</header> -->
+            <div class="content m-content">
+                <div class="con-title">
+                    <p>{{typeName}}</p>
+                </div>
+                <div class="speCon">
+                    <h2>
+                        <img src="../../../images/apps/supportResult/me.png" alt="人物" class="person">
+                        <span class="personText">{{docCreatorName}}</span>
+                    </h2>
+                    <p> 
+                       {{description}}
+                    </p>
+                </div>
+                <div class="graybg"></div>
+                <div class="speResult">
+                    <p class="resultTitle">
+                        <img src="../../../images/apps/supportResult/result.png" alt="人物" class="resultImg">
+                        <span class="resultText">{{currentHandlerName}}</span>
+                    </p>
+                    <div class="textarea-panel">
+                        <textarea name="" id="resultArea" maxlength="200"></textarea>
+                    </div>
+                    <p class="recordCon">
+                        <span  class="recordRadio"></span>
+                        <span>记录到知识库</span>
+                    </p>
+                </div>
+                <div class="graybg"></div>
+                <div class="footer">
+                    <input type="submit" class="sumbitBtn" id="sumbitBtn" value="提交">
+                </div>
+            </div>
+        </div>        
+    </div>
+<script src="../../../js/zepto/zepto.js?v=20170302174246"></script>
+<script type='text/javascript' src='//g.alicdn.com/msui/sm/0.6.2/js/sm.min.js' charset='utf-8'></script>
+<script type='text/javascript' src='//g.alicdn.com/msui/sm/0.6.2/js/sm-extend.min.js' charset='utf-8'></script>
+<link rel="stylesheet" href="http://g.alicdn.com/msui/sm/0.6.2/css/sm-extend.css">
+<link rel="stylesheet" href="../../../css/apps/supportResult/supportResult.css?v=20170302174246">	
+<script type="text/javascript" src="../../../js/common/base.js?v=20170302174246"></script>
+<script src="../../../js/vue/vue.js?v=20170302174246"></script>
+<script>
+var fdId = null;
+
+var itKnowledge = false;
+
+$(function() {
+    var arr = window.location.href.split("?");
+    fdId = arr[1].substr(3, arr[1].length);
+    getProplem(fdId);
+    contentData = null;
+    function getProplem(fdId) {
+        //alert(contentData);
+        var url = makeUrl("third/doa/doa_problem/doaProblem.do?method=view&fdId=" + fdId);
+        $.getJSON(url, function(data) {
+            loadProplemsHandle(data);
+        });
+    }
+    function loadProplemsHandle(data) {
+        //alert(data.data.typeName);
+        contentData = data.data;
+        new Vue({
+            el:".content",
+            data:contentData
+        });
+    }
+    function pxToNum(i) {
+        return +i.replace(/rem|em|px/g, "");
+    }
+    function defer(fn) {
+        setTimeout(function() {
+            fn();
+        }, 10);
+    }
+    $(".recordRadio").click(function() {
+        $(this).toggleClass("checked");
+        itKnowledge = !itKnowledge;
+    });
+    $("#sumbitBtn").click(function() {
+        var url = makeUrl("third/doa/doa_problem/doaProblem.do?method=update");
+        $.showPreloader('正在提交');
+        $.ajax({
+            type:"POST",
+            //contentType: "application/json;charset=utf-8", 
+            url:url,
+            data:{
+                fdId:fdId,
+                status:3,
+                handleResult:$("#resultArea").val(),
+                itKnowledge:itKnowledge
+            },
+            datatype:"html",
+            success:function(data) {
+            	 $.hidePreloader();
+                $.toast("提交成功");
+                window.location.href = "process-support.html";
+            },
+            error:function() {
+            	 $.hidePreloader();
+                $.toast("提交失败，系统异常");
+            }
+        });
+    });
+});
+
+	
+
+
+</script>
+
+	<!-- 钉钉弹出聊天框需要的JS -->
+    <script type="text/javascript" src="http://g.alicdn.com/dingding/open-develop/0.8.4/dingtalk.js"></script>
+	<script type="text/javascript" src="../../../js/common/dingTop.js?v=20170302174246"></script>
+	<script type="text/javascript" src="../../../js/common/dingBase.js?v=20170302174246"></script>    
+</body>
+</html>

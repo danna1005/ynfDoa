@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>发票信息</title>
+<meta name="viewport" content="initial-scale=1, maximum-scale=1">
+
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+<link rel="stylesheet" href="http://g.alicdn.com/msui/sm/0.6.2/css/sm.min.css">
+<link rel="stylesheet" href="http://g.alicdn.com/msui/sm/0.6.2/css/sm-extend.min.css">
+<link rel="stylesheet" href="../../../css/common/common.css">
+<style>
+body {
+	font-family: '微软雅黑';
+}
+
+.card {
+	margin: 0rem 0rem 0rem 0rem;
+	box-shadow: none;
+	border-bottom: 1px solid #d6d6d6;
+}
+
+.nextIcon down {
+	float: right;
+}
+
+.tranform {
+	transform: rotate(180deg);
+}
+
+.dis {
+	display: none;
+}
+
+.region1 {
+	display: block;
+	height: 0.75rem;
+	width: 0.15rem;
+	background-color: #f36b23;
+	float: left;
+	margin-top: 0.15rem;
+	margin-right: 0.3rem;
+}
+
+.card-header {
+	font-size: 0.65rem;
+}
+
+.company {
+	margin-top: 0.5rem;
+}
+
+.details {
+	margin-top: 0.2rem;
+}
+
+.area {
+	margin-bottom: -0.45rem;
+	font-size: 0.7rem;
+}
+
+.nextIcon {
+	width: 0.9rem;
+	height: 0.9rem;
+	vertical-align: top;
+	margin-top: 0.1rem;
+}
+
+p {
+	margin-bottom: -0.6rem;
+}
+
+.button-link {
+	color: #c0c0c0 !important;
+}
+
+.button-big {
+	float: right;
+	border: 1px solid #f36b23;
+	color: white;
+	line-height: normal;
+	background-color: #f36b23;
+}
+</style>
+</head>
+<body>
+	<div class="page-group">
+		<div class="page page-current">
+			<!-- <header class="bar bar-nav m-header-container">
+				<a
+					class="button button-link button-nav pull-left m-header-return doa-go-back"
+					href="#"> <span class="icon icon-left"></span>
+				</a>
+				<div class="title m-header-title"
+					style="color: #888888 !important; font-size: 0.75rem !important;">发票信息</div>
+			</header> -->
+			<div class="content m-content">
+
+				<div class="card area" style="border-bottom: 0">
+					<div class="card-content">
+						<div class="card-content-inner">
+							<span class="region1"></span><span>大陆公司开票信息</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="card company">
+					<div class="card-content" onclick="imgList(this,'card1')">
+						<div class="card-content-inner">
+							<span id="title1">湖南御泥坊化妆品有限公司</span><span><img
+								src="../../../images/apps/new/nextIcon.png"
+								class="nextIcon down" style="float: right;" /></span>
+						</div>
+					</div>
+				</div>
+
+				<div class="card details dis" name='details' id="card1">
+					<div class="card-header">
+						详细信息
+						<div onclick="copy('title1','content1')" class="button button-big"
+							style="font-size: 0.65rem; line-height: 1.1rem; height: 1.2rem;">复制</div>
+					</div>
+					<div class="card-content">
+						<div class="card-content-inner" id="content1">
+							<p>税号:91430100055848041X</p>
+							<p>地址:长沙高新开发区岳麓西大道588号芯城科技园9栋2层201号</p>
+							<p>电话:0731-83387337</p>
+							<p>开户行:上海浦东发展银行股份有限公司长沙麓谷科技支行</p>
+							<p>账号:66150154700001574</p>
+
+						</div>
+					</div>
+				</div>
+
+				<div class="card company">
+					<div class="card-content" onclick="imgList(this,'card2')">
+						<div class="card-content-inner">
+							<span id="title2">湖南师夷家化妆品有限公司</span><span><img
+								src="../../../images/apps/new/nextIcon.png"
+								class="nextIcon down" style="float: right;" /></span>
+						</div>
+					</div>
+				</div>
+
+
+				<div class="card details dis" name='details' id="card2">
+					<div class="card-header">
+						详细信息
+						<div onclick="copy('title2','content2')" class="button button-big"
+							style="font-size: 0.65rem; line-height: 1.1rem; height: 1.2rem;">复制</div>
+					</div>
+					<div class="card-content">
+						<div class="card-content-inner" id="content2">
+							<p>税号:91430100058004688U</p>
+							<p>地址:长沙高新开发区岳麓西大道588号芯城科技园9栋15层1501-1号</p>
+							<p>电话:0731-83387337</p>
+							<p>开户行:上海浦东发展银行股份有限公司长沙麓谷科技支行</p>
+							<p>账号:66150155200003205</p>
+
+						</div>
+					</div>
+				</div>
+
+				<div class="card company">
+					<div class="card-content" onclick="imgList(this,'card3')">
+						<div class="card-content-inner">
+							<span id="title3">长沙小迷糊化妆品有限公司</span><span><img
+								src="../../../images/apps/new/nextIcon.png"
+								class="nextIcon down" style="float: right;" /></span>
+						</div>
+					</div>
+				</div>
+
+
+				<div class="card details dis" name='details' id="card3">
+					<div class="card-header">
+						详细信息
+						<div onclick="copy('title3','content3')" class="button button-big"
+							style="font-size: 0.65rem; line-height: 1.1rem; height: 1.2rem;">复制</div>
+					</div>
+					<div class="card-content">
+						<div class="card-content-inner" id="content3">
+							<p>税号:91430100058041147H</p>
+							<p>地址:长沙高新开发区岳麓西大道588号芯城科技园9栋15层1501-2号</p>
+							<p>电话:0731-83387337</p>
+							<p>开户行:上海浦东发展银行股份有限公司长沙麓谷科技支行</p>
+							<p>账号:66150155200003184</p>
+
+						</div>
+					</div>
+				</div>
+
+				<div class="card company">
+					<div class="card-content" onclick="imgList(this,'card18')">
+						<div class="card-content-inner">
+							<span id="title4">湖南汇美丽电子商务有限公司</span><span><img
+								src="../../../images/apps/new/nextIcon.png"
+								class="nextIcon down" style="float: right;" /></span>
+						</div>
+					</div>
+				</div>
+
+
+				<div class="card details dis" name='details' id="card18">
+					<div class="card-header">
+						详细信息
+						<div onclick="copy('title4','content4')" class="button button-big"
+							style="font-size: 0.65rem; line-height: 1.1rem; height: 1.2rem;">复制</div>
+					</div>
+					<div class="card-content">
+						<div class="card-content-inner" id="content4">
+							<p>税号:91430100060115029Q</p>
+							<p>地址:长沙高新开发区尖山路39号长沙中电软件园总部大楼3楼317室</p>
+							<p>电话:0731-83387337</p>
+							<p>开户行:上海浦东发展银行长沙麓谷科技支行</p>
+							<p>账号:66150155200003213</p>
+
+						</div>
+					</div>
+				</div>
+
+				<div class="card company">
+					<div class="card-content" onclick="imgList(this,'card4')">
+						<div class="card-content-inner">
+							<span id="title5">湖南花瑶花化妆品有限公司</span><span><img
+								src="../../../images/apps/new/nextIcon.png"
+								class="nextIcon down" style="float: right;" /></span>
+						</div>
+					</div>
+				</div>
+
+
+				<div class="card details dis" name='details' id="card4">
+					<div class="card-header">
+						详细信息
+						<div onclick="copy('title5','content5')" class="button button-big"
+							style="font-size: 0.65rem; line-height: 1.1rem; height: 1.2rem;">复制</div>
+					</div>
+					<div class="card-content">
+						<div class="card-content-inner" id="content5">
+							<p>税号:914301000601150021</p>
+							<p>地址:长沙高新开发区岳麓西大道588号芯城科技园9栋15层1501-3号</p>
+							<p>电话:0731-83387337</p>
+							<p>开户行:上海浦东发展银行长沙麓谷科技支行</p>
+							<p>账号:66150155200003192</p>
+
+						</div>
+					</div>
+				</div>
+				<div class="card company">
+					<div class="card-content" onclick="imgList(this,'card5')">
+						<div class="card-content-inner">
+							<span id="title6">湖南御家化妆品制造有限公司</span><span><img
+								src="../../../images/apps/new/nextIcon.png"
+								class="nextIcon down" style="float: right;" /></span>
+						</div>
+					</div>
+				</div>
+
+				<div class="card details dis" name='details' id="card5">
+					<div class="card-header">
+						详细信息
+						<div onclick="copy('title6','content6')" class="button button-big"
+							style="font-size: 0.65rem; line-height: 1.1rem; height: 1.2rem;">复制</div>
+					</div>
+					<div class="card-content">
+						<div class="card-content-inner" id="content6">
+							<p>税号:914301003958429221</p>
+							<p>地址:长沙高新开发区青山路668号</p>
+							<p>电话:0731-83387337</p>
+							<p>开户行:长沙银行股份有限公司科技支行</p>
+							<p>账号:800149080702015</p>
+
+						</div>
+					</div>
+				</div>
+				<div class="card company">
+					<div class="card-content" onclick="imgList(this,'card6')">
+						<div class="card-content-inner">
+							<span id="title7">湖南花花草草化妆品有限公司</span><span><img
+								src="../../../images/apps/new/nextIcon.png"
+								class="nextIcon down" style="float: right;" /></span>
+						</div>
+					</div>
+				</div>
+
+				<div class="card details dis" name='details' id="card6">
+					<div class="card-header">
+						详细信息
+						<div onclick="copy('title7','content7')" class="button button-big"
+							style="font-size: 0.65rem; line-height: 1.1rem; height: 1.2rem;">复制</div>
+					</div>
+					<div class="card-content">
+						<div class="card-content-inner" id="content7">
+							<p>税号:430524070572629</p>
+							<p>地址:湖南省邵阳市隆回县城东南工业园</p>
+							<p>电话:0731-83387337</p>
+							<p>开户行:中国工商银行股份有限公司隆回支行</p>
+							<p>账号:1906020209200047029</p>
+
+						</div>
+					</div>
+				</div>
+				<div class="card company">
+					<div class="card-content" onclick="imgList(this,'card7')">
+						<div class="card-content-inner">
+							<span id="title8">御家汇股份有限公司</span><span><img
+								src="../../../images/apps/new/nextIcon.png"
+								class="nextIcon down" style="float: right;" /></span>
+						</div>
+					</div>
+				</div>
+
+				<div class="card details dis" name='details' id="card7">
+					<div class="card-header">
+						详细信息
+						<div onclick="copy('title8','content8')" class="button button-big"
+							style="font-size: 0.65rem; line-height: 1.1rem; height: 1.2rem;">复制</div>
+					</div>
+					<div class="card-content">
+						<div class="card-content-inner" id="content8">
+							<p>税号:914301000558312826</p>
+							<p>地址:长沙高新开发区岳麓西大道588号芯城科技园9栋1层101号</p>
+							<p>电话:0731-83387337</p>
+							<p>开户行:上海浦东发展银行长沙麓谷科技支行</p>
+							<p>账号:66150155200001912</p>
+
+						</div>
+					</div>
+				</div>
+				<div class="card company">
+					<div class="card-content" onclick="imgList(this,'card8')">
+						<div class="card-content-inner">
+							<span id="title9">湖南御家科技有限公司</span><span><img
+								src="../../../images/apps/new/nextIcon.png"
+								class="nextIcon down" style="float: right;" /></span>
+						</div>
+					</div>
+				</div>
+
+				<div class="card details dis" name='details' id="card8">
+					<div class="card-header">
+						详细信息
+						<div onclick="copy('title9','content9')" class="button button-big"
+							style="font-size: 0.65rem; line-height: 1.1rem; height: 1.2rem;">复制</div>
+					</div>
+					<div class="card-content">
+						<div class="card-content-inner" id="content9">
+							<p>税号:914301003941916113</p>
+							<p>地址:长沙高新开发区岳麓西大道588号芯城科技园9栋1501-4号</p>
+							<p>电话:0731-83387337</p>
+							<p>开户行:上海浦东发展银行长沙麓谷科技支行</p>
+							<p>账号:66150155200003176</p>
+
+						</div>
+					</div>
+				</div>
+				<div class="card company">
+					<div class="card-content" onclick="imgList(this,'card9')">
+						<div class="card-content-inner">
+							<span id="title10">湖南御家化妆品有限公司</span><span><img
+								src="../../../images/apps/new/nextIcon.png"
+								class="nextIcon down" style="float: right;" /></span>
+						</div>
+					</div>
+				</div>
+
+				<div class="card details dis" name='details' id="card9">
+					<div class="card-header">
+						详细信息
+						<div onclick="copy('title10','content10')"
+							class="button button-big"
+							style="font-size: 0.65rem; line-height: 1.1rem; height: 1.2rem;">复制</div>
+					</div>
+					<div class="card-content">
+						<div class="card-content-inner" id="content10">
+							<p>税号:430524060115010</p>
+							<p>地址:湖南省邵阳市隆回县桃洪镇城东南工业园</p>
+							<p>电话:0731-83387337</p>
+							<p>开户行:长沙银行股份有限公司科技支行</p>
+							<p>账号:800121834109010</p>
+
+						</div>
+					</div>
+				</div>
+				<div class="card company">
+					<div class="card-content" onclick="imgList(this,'card10')">
+						<div class="card-content-inner">
+							<span id="title11">长沙御家化妆品有限公司</span><span><img
+								src="../../../images/apps/new/nextIcon.png"
+								class="nextIcon down" style="float: right;" /></span>
+						</div>
+					</div>
+				</div>
+
+				<div class="card details dis" name='details' id="card10">
+					<div class="card-header">
+						详细信息
+						<div onclick="copy('title11','content11')"
+							class="button button-big"
+							style="font-size: 0.65rem; line-height: 1.1rem; height: 1.2rem;">复制</div>
+					</div>
+					<div class="card-content">
+						<div class="card-content-inner" id="content11">
+							<p>税号:91430100MA4L2JAE4L</p>
+							<p>地址:长沙高新开发区岳麓西大道588号芯城科技园9栋15层1501-6号</p>
+							<p>电话:0731-83387337</p>
+							<p>开户行:上海浦东发展银行股份有限公司长沙麓谷科技支行</p>
+							<p>账号:66150155200003432</p>
+
+						</div>
+					</div>
+				</div>
+				<div class="card company">
+					<div class="card-content" onclick="imgList(this,'card19')">
+						<div class="card-content-inner">
+							<span id="title12">长沙薇风化妆品有限公司</span><span><img
+								src="../../../images/apps/new/nextIcon.png"
+								class="nextIcon down" style="float: right;" /></span>
+						</div>
+					</div>
+				</div>
+
+				<div class="card details dis" name='details' id="card19">
+					<div class="card-header">
+						详细信息
+						<div onclick="copy('title12','content12')"
+							class="button button-big"
+							style="font-size: 0.65rem; line-height: 1.1rem; height: 1.2rem;">复制</div>
+					</div>
+					<div class="card-content">
+						<div class="card-content-inner" id="content12">
+							<p>税号:91430100MA4L2UMC42</p>
+							<p>地址:长沙高新开发区岳麓西大道588号芯城科技园9栋15层1501-5号</p>
+							<p>电话:0731-83387337</p>
+							<p>开户行:上海浦东发展银行股份有限公司长沙麓谷科技支行</p>
+							<p>账号:66150155200003596</p>
+
+						</div>
+					</div>
+				</div>
+				<div class="card company">
+					<div class="card-content" onclick="imgList(this,'card11')">
+						<div class="card-content-inner">
+							<span id="title13">湖南御泥坊男士化妆品有限公司</span><span><img
+								src="../../../images/apps/new/nextIcon.png"
+								class="nextIcon down" style="float: right;" /></span>
+						</div>
+					</div>
+				</div>
+
+				<div class="card details dis" name='details' id="card11">
+					<div class="card-header">
+						详细信息
+						<div onclick="copy('title13','content13')"
+							class="button button-big"
+							style="font-size: 0.65rem; line-height: 1.1rem; height: 1.2rem;">复制</div>
+					</div>
+					<div class="card-content">
+						<div class="card-content-inner" id="content13">
+							<p>税号:91430100MA4L33NT17</p>
+							<p>地址:长沙高新开发区岳麓西大道588号芯城科技园9栋5层501-1号</p>
+							<p>电话:0731-83387337</p>
+							<p>开户行:上海浦东发展银行长沙麓谷科技支行</p>
+							<p>账号:66150155200004021</p>
+
+						</div>
+					</div>
+				</div>
+				<div class="card company">
+					<div class="card-content" onclick="imgList(this,'card12')">
+						<div class="card-content-inner">
+							<span id="title14">湖南御泥坊化妆品有限公司天心区一分公司</span><span><img
+								src="../../../images/apps/new/nextIcon.png"
+								class="nextIcon down" style="float: right;" /></span>
+						</div>
+					</div>
+				</div>
+
+				<div class="card details dis" name='details' id="card12">
+					<div class="card-header">
+						详细信息
+						<div onclick="copy('title14','content14')"
+							class="button button-big"
+							style="font-size: 0.65rem; line-height: 1.1rem; height: 1.2rem;">复制</div>
+					</div>
+					<div class="card-content">
+						<div class="card-content-inner" id="content14">
+							<p>税号:430103098826854</p>
+							<p>地址:长沙市天心区黄兴南路445号1层la07-la07b号</p>
+							<p>电话:0731-83387337</p>
+							<p>开户行:中国工商银行股份有限公司长沙步行街支行</p>
+							<p>账号:1901100409200002304</p>
+
+						</div>
+					</div>
+				</div>
+				<div class="card company">
+					<div class="card-content" onclick="imgList(this,'card13')">
+						<div class="card-content-inner">
+							<span id="title15">湖南御泥坊化妆品有限公司天心区二分公司</span><span><img
+								src="../../../images/apps/new/nextIcon.png"
+								class="nextIcon down" style="float: right;" /></span>
+						</div>
+					</div>
+				</div>
+
+				<div class="card details dis" name='details' id="card13">
+					<div class="card-header">
+						详细信息
+						<div onclick="copy('title15','content15')"
+							class="button button-big"
+							style="font-size: 0.65rem; line-height: 1.1rem; height: 1.2rem;">复制</div>
+					</div>
+					<div class="card-content">
+						<div class="card-content-inner" id="content15">
+							<p>税号:430103098229785</p>
+							<p>地址:长沙市天心区黄兴南路步行商业街西厢南栋1230号</p>
+							<p>电话:0731-83387337</p>
+							<p>开户行:中国工商银行股份有限公司长沙步行街支行</p>
+							<p>账号:1901100409200002428</p>
+
+						</div>
+					</div>
+				</div>
+				<div class="card company">
+					<div class="card-content" onclick="imgList(this,'card14')">
+						<div class="card-content-inner">
+							<span id="title16">湖南御家化妆品有限公司天心区四分公司</span><span><img
+								src="../../../images/apps/new/nextIcon.png"
+								class="nextIcon down" style="float: right;" /></span>
+						</div>
+					</div>
+				</div>
+
+				<div class="card details dis" name='details' id="card14">
+					<div class="card-header">
+						详细信息
+						<div onclick="copy('title16','content16')"
+							class="button button-big"
+							style="font-size: 0.65rem; line-height: 1.1rem; height: 1.2rem;">复制</div>
+					</div>
+					<div class="card-content">
+						<div class="card-content-inner" id="content16">
+							<p>税号:430103320549297</p>
+							<p>地址:长沙市天心区解放西路398号涵相大厦长沙女人世界购物中心将军楼1017、1018、1019号商铺</p>
+							<p>电话:0731-83387337</p>
+							<p>开户行:中国工商银行长沙市司门口支行</p>
+							<p>账号:1901004009022538108</p>
+
+						</div>
+					</div>
+				</div>
+				<div class="card company">
+					<div class="card-content" onclick="imgList(this,'card15')">
+						<div class="card-content-inner">
+							<span id="title17">湖南御家化妆品有限公司岳麓区一分公司</span><span><img
+								src="../../../images/apps/new/nextIcon.png"
+								class="nextIcon down" style="float: right;" /></span>
+						</div>
+					</div>
+				</div>
+
+				<div class="card details dis" name='details' id="card15">
+					<div class="card-header">
+						详细信息
+						<div onclick="copy('title17','content17')"
+							class="button button-big"
+							style="font-size: 0.65rem; line-height: 1.1rem; height: 1.2rem;">复制</div>
+					</div>
+					<div class="card-content">
+						<div class="card-content-inner" id="content17">
+							<p>税号:91430104325668068M</p>
+							<p>地址:湖南省长沙市岳麓区岳麓街道麓山南路732号（原129号）</p>
+							<p>电话:0731-83387337</p>
+							<p>开户行:中国工商银行股份有限公司长沙步行街支行</p>
+							<p>账号:1901100409200003179</p>
+
+						</div>
+					</div>
+				</div>
+				<div class="card company">
+					<div class="card-content" onclick="imgList(this,'card16')">
+						<div class="card-content-inner">
+							<span id="title18">湖南御家化妆品有限公司岳麓区三分公司</span><span><img
+								src="../../../images/apps/new/nextIcon.png"
+								class="nextIcon down" style="float: right;" /></span>
+						</div>
+					</div>
+				</div>
+
+				<div class="card details dis" name='details' id="card16">
+					<div class="card-header">
+						详细信息
+						<div onclick="copy('title18','content18')"
+							class="button button-big"
+							style="font-size: 0.65rem; line-height: 1.1rem; height: 1.2rem;">复制</div>
+					</div>
+					<div class="card-content">
+						<div class="card-content-inner" id="content18">
+							<p>税号:914301043447131782</p>
+							<p>地址:湖南省长沙市岳麓区银盆岭街道岳麓大道57号奥克斯广场商业栋二层204B号</p>
+							<p>电话:0731-83387337</p>
+							<p>开户行:中国工商银行股份有限公司长沙金鹏支行</p>
+							<p>账号:1901018009200030732</p>
+
+						</div>
+					</div>
+				</div>
+
+				<div style="margin-bottom: 0.5rem"></div>
+				<div class="card area" style="border-bottom: 0">
+					<div class="card-content">
+						<div class="card-content-inner">
+							<span class="region1"></span><span>香港公司开票信息</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="card company">
+					<div class="card-content" onclick="imgList(this,'card17')">
+						<div class="card-content-inner">
+							<span id="title19">香港御家韓美科技有限公司</span><span><img
+								src="../../../images/apps/new/nextIcon.png"
+								class="nextIcon down" style="float: right;" /></span>
+						</div>
+					</div>
+				</div>
+
+				<div class="card details dis" name='details' id="card17">
+					<div class="card-header">
+						詳細信息
+						<div onclick="copy('title19','content19')"
+							class="button button-big"
+							style="font-size: 0.65rem; line-height: 1.1rem; height: 1.2rem;">copy</div>
+					</div>
+					<div class="card-content">
+						<div class="card-content-inner" id="content19">
+							<p>名稱:香港御家韓美科技有限公司</p>
+							<p>HONG KONG YU JIA K-BEAUTY TECHNOLOGY COMPANY LIMITED</p>
+							<p>地址:香港灣仔港灣道6-8號瑞安中心33字樓3312室</p>
+							<p>登記證號碼:65641443-000-12-15-2</p>
+
+
+						</div>
+					</div>
+				</div>
+
+				<div class="card company">
+					<div class="card-content" onclick="imgList(this,'card20')">
+						<div class="card-content-inner">
+							<span id="title20">香港薇風科技有限公司</span><span><img
+								src="../../../images/apps/new/nextIcon.png"
+								class="nextIcon down" style="float: right;" /></span>
+						</div>
+					</div>
+				</div>
+
+
+				<div class="card details dis" name='details' id="card20">
+					<div class="card-header">
+						詳細信息
+						<div onclick="copy('title20','content20')"
+							class="button button-big"
+							style="font-size: 0.65rem; line-height: 1.1rem; height: 1.2rem;">copy</div>
+					</div>
+					<div class="card-content">
+						<div class="card-content-inner" id="content20">
+							<p>名稱:香港薇風科技有限公司</p>
+							<p>HONG KONG WELLFON TECHNOLOGY COMPANY LIMITED</p>
+							<p>地址:香港灣仔港灣道6-8號瑞安中心33字樓3312室</p>
+							<p>登記證號碼:64929783-000-06-16-A</p>
+
+						</div>
+					</div>
+				</div>
+
+				<div class="card company">
+					<div class="card-content" onclick="imgList(this,'card21')">
+						<div class="card-content-inner">
+							<span id="title21">香港御家國際科技有限公司</span><span><img
+								src="../../../images/apps/new/nextIcon.png"
+								class="nextIcon down" style="float: right;" /></span>
+						</div>
+					</div>
+				</div>
+
+
+				<div class="card details dis" name='details' id="card21">
+					<div class="card-header">
+						詳細信息
+						<div onclick="copy('title21','content21')"
+							class="button button-big"
+							style="font-size: 0.65rem; line-height: 1.1rem; height: 1.2rem;">copy</div>
+					</div>
+					<div class="card-content">
+						<div class="card-content-inner" id="content21">
+							<p>名稱:香港御家國際科技有限公司</p>
+							<p>HONG KONG YU JIA INTERNATIONAL TECHNOLOGY COMPANY LIMITED</p>
+							<p>地址:香港灣仔港灣道6-8號瑞安中心33字樓3312室</p>
+							<p>登記證號碼:64646426-000-04-16-6</p>
+
+						</div>
+					</div>
+				</div>
+
+
+
+
+			</div>
+		</div>
+	</div>
+
+	<textarea id="hiddenText" class="hidden" style="display: none"></textarea>
+
+	<script src="../../../js/zepto/zepto.js"></script>
+	<script type='text/javascript' src='http://g.alicdn.com/msui/sm/0.6.2/js/sm.min.js' charset='utf-8'></script>
+	<script type='text/javascript' src='http://g.alicdn.com/msui/sm/0.6.2/js/sm-extend.min.js' charset='utf-8'></script>
+	<script type="text/javascript" src="../../../js/common/base.js"></script>
+	<script>
+	var falg = true;
+	
+	function imgList(obj,id){
+		obj = obj.getElementsByTagName("img")[0];
+		if(obj.className=="nextIcon down"){
+			$(".details").addClass("dis");
+			$(".down").removeClass("tranform")
+			falg = true;
+		}
+		if(falg){
+			$("#"+id).removeClass("dis");
+			obj.className="nextIcon down tranform"; 
+		   	falg = false;
+		}else{
+			obj.className="nextIcon down";  
+		   	$("#"+id).addClass("dis"); 
+		   	falg = true;
+		}
+	
+	}
+	
+	function copy(id1,id2){
+		var str = $("#"+id1).text()+$("#"+id2).text();
+	    var save = function(e){
+	        e.clipboardData.setData('text/plain', str);
+	        e.preventDefault();
+	    }
+	    document.addEventListener('copy', save);
+	    document.execCommand('copy');
+	    document.removeEventListener('copy',save);	
+	    var u = navigator.userAgent;
+	    if(u==undefined||u==null||u==''){
+	    	$.alert("。。。");
+	    }else{
+	    	 var isAndroid  = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1;  //Android终端
+	 	    if(!isAndroid ){
+	 	    	 $.alert('此功能暂不支持IOS系统！','请手动复制');
+	 	    }else{
+	 	    	  $.alert('复制成功！');
+	 	    }
+	    }
+	   
+	  
+	}
+	
+	
+	</script>
+		<!--使用钉钉的JSAPI  -->
+    <script type="text/javascript" src="http://g.alicdn.com/dingding/open-develop/0.8.4/dingtalk.js"></script>
+    <script type="text/javascript" src="../../../js/common/dingTop.js"></script>
+    <script type="text/javascript" src="../../../js/common/dingBase.js"></script>
+</body>
+</html>

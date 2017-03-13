@@ -1,0 +1,103 @@
+<!doctype html>
+<html style="overflow:hidden;">
+<head>
+<meta charset="utf-8">
+<title>我的薪资</title>  
+<meta name="viewport" content="initial-scale=1, maximum-scale=1">
+<link rel="shortcut icon" href="/favicon.ico">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<link rel="stylesheet" href="//g.alicdn.com/msui/sm/0.6.2/css/??sm.min.css,sm-extend.min.css">
+<link rel="stylesheet" href="../../../css/common/common.css?v=20170302174246">
+<link rel="stylesheet" href="//at.alicdn.com/t/font_vqhk3hp4fp8n0zfr.css">
+</head>
+
+<body>
+     <div class="page-group hide">
+        <div class="page page-current">
+       		<!-- <header class="bar bar-nav m-header-container">
+       			<a class="button button-link button-nav pull-left m-header-return doa-go-back" href="#">
+       				<span class="icon icon-left"></span>
+       			</a>
+       			<div class="title m-header-title">我的薪资</div>
+       		</header> -->
+            <div class="content m-content">
+            	<!-- 时间段筛选 -->
+                <div class="salary-list-block">
+                	<div class="salary-month-filter">
+                		<li id="one-month" class="mar0 "><span>近一个月</span></li>
+                		<li id="three-month" class="cur"><span>近三个月</span></li>
+                		<li id="six-month"><span>近六个月</span></li>
+                	</div>	
+                </div>
+                <div class="graybg"></div>
+                <!-- 列表 -->
+                <div class="salary-filter-detail">
+	                <div id="FIRST-LEVEL" class="list-block">
+						<!-- 这里放薪资的类目信息 -->
+					</div>
+				</div>
+            </div>           
+            <div class="return-top"></div> 
+         </div>
+    </div>    
+    <div class="popup popup-pwd" style="background:#efeff4;">
+		<header class="bar bar-nav m-header-container">
+			<a class="button button-link button-nav pull-left m-header-return"
+				href="../../index.html?v=20170302174246"> <span class="icon icon-left"></span>
+			</a>
+			<div class="title m-header-title">我的薪资</div>
+		</header>
+		<div class="content m-content">
+			<div class="salary-list-block">
+				<div class="list-block font30 color88 salary-title">请输入薪资查询密码</div>
+				<div class="item-input salary-input">
+					<input type="password" class="font26">
+				</div>
+			</div>
+			<div class="content-block mar1">
+				<div class="row">
+					<div class="col-50">
+						<a href="#"
+							class="button button-big button-fill button-danger reset-btn"
+							style="background-color: #ffffff; line-height: 2rem;height:2.04rem;">重置密码</a>
+					</div>
+					<div class="col-50">
+						<a href="#" class="button button-big button-fill bgorg search-btn"
+							style="background-color: #f36b23; line-height: 2rem;">查询</a>
+					</div>
+				</div>
+				<div class="pwd-list-block">
+					首次使用或忘记密码时请点击“重置密码”，系统将发送新的查询密码到您的御家汇邮箱，请注意查收。
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="SALARY-POPUPS">
+		<!-- 这里放薪资详情的弹出框,不要找了,就是这里!!!! -->
+	</div>
+
+
+	
+
+    <link rel="stylesheet" href="../../../css/apps/salary.css?v=20170302174246">
+	<script src="../../../js/zepto/zepto.js?v=20170302174246"></script>
+	<script type='text/javascript' src='//g.alicdn.com/msui/sm/0.6.2/js/sm.min.js' charset='utf-8'></script>
+	<script type='text/javascript' src='//g.alicdn.com/msui/sm/0.6.2/js/sm-extend.min.js' charset='utf-8'></script>
+	<script type="text/javascript" src="../../../js/common/base.js?v=20170302174246"></script>
+	<script type="text/javascript" src="../../../js/common/baseUrl.js?v=20170302174246"></script>
+	<script type="text/javascript" src="../../../js/common/md5.js?v=20170302174246"></script>
+	<script>
+		var iconfontJs = document.createElement('script');
+		iconfontJs.src="//at.alicdn.com/t/font_nibk6n8iaqxb6gvi.js";
+		document.getElementsByTagName('head')[0].appendChild(iconfontJs);
+	</script> 
+	<script type="text/javascript" src="../../../js/salary/salary_func.js?v=20170302174246"></script>
+	<script type="text/javascript" src="../../../js/salary/salary_req.js?v=20170302174246"></script>
+	
+		<!-- 钉钉弹出聊天框需要的JS -->
+    <script type="text/javascript" src="http://g.alicdn.com/dingding/open-develop/0.8.4/dingtalk.js"></script>
+	<script type="text/javascript" src="../../../js/common/dingTop.js?v=20170302174246"></script>
+	<script type="text/javascript" src="../../../js/common/dingBase.js?v=20170302174246"></script>
+</body>
+</html>

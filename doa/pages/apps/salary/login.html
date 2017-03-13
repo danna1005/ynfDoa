@@ -1,0 +1,57 @@
+<!doctype html>
+<html style="overflow:hidden;">
+<head>
+<meta charset="utf-8">
+<title>薪资管理-输入密码</title>  
+<meta name="viewport" content="initial-scale=1, maximum-scale=1">
+<link rel="shortcut icon" href="/favicon.ico">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<link rel="stylesheet" href="//g.alicdn.com/msui/sm/0.6.2/css/??sm.min.css,sm-extend.min.css">
+<link rel="stylesheet" href="../../../css/common/common.css">
+</head>
+
+<body>
+     <div class="page-group">
+        <div class="page page-current">
+       		<header class="bar bar-nav m-header-container">
+       			<a class="button button-link button-nav pull-left m-header-return" href="javascript:history.go(-1)">
+       				<span class="icon icon-left"></span>
+       			</a>
+       			<div class="title m-header-title">我的薪资</div>
+       		</header>
+            <div class="content m-content">
+            	<div class="salary-list-block">
+                	<div class="list-block font30 color88 salary-title">请输入薪资查询密码</div>
+                	<div class="item-input salary-input">
+		              <input type="password" placeholder="请输入查询密码" class="font26">
+		            </div>
+                </div>
+                <div class="content-block mar1">
+                	<div class="row">
+                		<div class="col-50">
+                			<a href="#" class="close-popup button button-big button-fill button-danger reset-btn" style="background-color:#ffffff;line-height:2rem;">重置密码</a>
+                		</div>
+					  	<div class="col-50">
+						  	<a href="index.html" id="enterUserLocation2" class="button button-big button-fill bgorg" style="background-color:#f36b23;line-height:2rem;">查询</a>
+					  </div>
+                	</div>
+                </div>
+            </div>            
+         </div>
+    </div>    
+    <link rel="stylesheet" href="../../../css/apps/salary.css">
+	<script src="../../../js/zepto/zepto.js"></script>
+	<script type='text/javascript' src='//g.alicdn.com/msui/sm/0.6.2/js/sm.min.js' charset='utf-8'></script>
+	<script type='text/javascript' src='//g.alicdn.com/msui/sm/0.6.2/js/sm-extend.min.js' charset='utf-8'></script>
+	<script type="text/javascript" src="../../../js/common/base.js"></script>
+	<script>
+		$(function(){
+			$('.content-block').on('click','a.reset-btn',function(e){
+				e.preventDefault();
+				$.alert('新密码已经发送到您的邮箱，tangmi@yujiahui.com，请查收', '提示');
+			})
+		});
+	</script>
+</body>
+</html>

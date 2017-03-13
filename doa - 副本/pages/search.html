@@ -1,0 +1,78 @@
+
+            <!--近期搜索-->     
+            <div class="record-block" >
+                <div class="list-block rencent-block">
+                    <div class="item-inner content-block-title" style="font-size:0.75rem">近期搜索{{title}}</div>
+                    <ul class="appslist">
+                        <li v-for="key in keys">
+                            <a href="#" class="apps" v-text="key"></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="list-block search-more-block">
+                	<div class="title"><span>在这里可以搜索到</span></div>
+                	<div class="list">
+                		<span><img src="../images/apps/new/feature.png"/>应用</span>
+                		<span><img src="../images/apps/new/process.png"/>流程</span>
+                		<span><img src="../images/apps/new/news.png"/>新闻公告</span>
+                	</div>
+                </div>
+            </div>
+            <!--搜索结果-->
+            <div class="result-block dis-none">
+                <!-- 功能 -->
+                <div class="list-block">
+                    <div class="subsidiary-title-container" style="padding: 0rem 0rem;" >
+		       			<div class="subsidiary-title-flag">┃</div>
+		       			<div class="subsidiary-title" style="color: #888888;">应用</div>
+		       		</div>
+                    <ul>
+                        <li v-for="app in apps">
+                            <a href="{{app.url}}" class="aaa" >
+                                <div class="item-inner">
+                                  <div class="item-title" v-text="app.name"></div>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="graybg"></div>
+                <!-- 流程 -->
+                <div class="list-block">
+                    <div class="subsidiary-title-container" style="padding: 0rem 0rem;" >
+		       			<div class="subsidiary-title-flag">┃</div>
+		       			<div class="subsidiary-title" style="color: #888888;">流程</div>
+		       		</div>
+                    <ul>
+                        <li v-for="flow in flows">
+                            <a href="{{flow.url}}">
+                                <div class="item-inner">
+                                  <div class="item-title" v-text="flow.title"></div>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="graybg"></div>
+                <!-- 资讯 -->
+                <div class="list-block">
+                    <div class="subsidiary-title-container" style="padding: 0rem 0rem;" >
+		       			<div class="subsidiary-title-flag">┃</div>
+		       			<div class="subsidiary-title" style="color: #888888;">资讯</div>
+		       		</div>
+                    <ul>
+                        <li v-for="news_ in news">
+                            <a href="{{news_.url}}">
+                                <div class="item-inner">
+                                  <div class="item-title" v-text="news_.title"></div>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!--无搜索结果则removeClass(dis-none)-->
+            <div class="empty-block dis-none">
+                <img src="../images/common/empty.png" class="empty-img"/>
+                <p>没有搜索到您想要的结果</p>
+            </div>

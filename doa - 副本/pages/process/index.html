@@ -1,0 +1,127 @@
+<!doctype html>
+<html style="overflow:hidden;">
+<head>
+<meta charset="utf-8">
+<title>我的流程</title>  
+<meta name="viewport" content="initial-scale=1, maximum-scale=1">
+<link rel="shortcut icon" href="/favicon.ico">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<link rel="stylesheet" href="//g.alicdn.com/msui/sm/0.6.2/css/??sm.min.css,sm-extend.min.css">
+<link rel="stylesheet" href="../../css/common/common.css">
+</head>
+
+<body>
+     <div class="page-group">
+        <div class="page page-current">
+       		<!-- <header class="bar bar-nav m-header-container">
+       			<a class="button button-link button-nav pull-left m-header-return doa-go-back" href="#">
+       				<span class="icon icon-left"></span>
+       			</a>
+       			<div class="title m-header-title">我的流程</div>
+       			<a class="button button-link button-nav pull-right button-new" href="#">
+       				新建
+       			</a>
+       		</header> -->
+            <div class="content m-content" >
+            	<!-- 时间段筛选 -->
+                <div class="salary-list-block">
+                	<div class="nav"></div>
+                	<div class="nav-filter">
+                		<div class="buttons-tab category-tab"> 
+						    <a href="#" class="tab-link active button allProcess">全部</a>
+						    <a href="#" class="tab-link button oaProcess">OA</a>
+						    <a href="#" class="tab-link button hrProcess">HR</a>
+						</div> 
+					</div>
+					<div class="nav-filter">
+						<div class="buttons-tab pad5 second-category-tab">
+						    <a href="#myApplyBtn" class="tab-link active button myApplyBtn">我的申请</a>
+						    <a href="#approveBtn" class="tab-link button approveBtn">待我审</a>
+						    <a href="#approvedBtn" class="tab-link button approvedBtn">我已审</a>
+						    <a href="#doingBtn" class="tab-link button doingBtn">待我阅</a>
+						    <a href="#doneBtn" class="tab-link button doneBtn">已办</a>
+						</div>
+                	</div>
+                	<div class="search-panel">
+                		<div class="search-input">
+			  				<input type="search" id="search" placeholder="输入流程主题进行搜索" style="background-color:#eee;border:0px">
+			  				<label class="icon icon-search" for="search" style="float:right;"></label>
+						</div>
+                	</div>
+                </div>                	
+                <div class="graybg"></div>
+                <div class="list-block tabs process-list-block">
+                	<div class="tab active" id="myApplyBtn"></div>                	
+                	<div class="tab" id="approveBtn"></div>
+                	<div class="tab" id="approvedBtn">
+                		<div class="empty-block"><img src="../../images/common/empty.png" class="empty-img"><p id="tips">暂无我已审相关流程</p></div>
+                	</div>
+                	<div class="tab" id="doingBtn">待我阅列表</div>
+                	<div class="tab" id="doneBtn">
+                		已办列表
+                	</div>
+                </div>
+            </div>     
+            <div class="return-top"></div>       
+         </div>
+    </div>
+	<!--     新建 -->
+    <div class="popup popup-new">
+    	<!-- 一级分类 -->
+    	<div class="page-group page-first-cate">
+	        <div class="page page-current">
+	       		<header class="bar bar-nav m-header-container m-category-header">
+	       			<div class="title m-header-title">分类选择</div>
+	       			<a class="button button-link button-nav pull-right close-popup" href="#" style="color:#fff;">
+	       				取消
+	       			</a>
+	       		</header>
+	            <div class="content m-content" style="top:2.2rem !important">
+	            	<div class="list-block category-list">
+	            		<ul id="proMainCate">
+	            		</ul>
+	            	</div>              	
+	            </div>          
+	         </div>
+	    </div>
+    	<!-- 二级分类 -->
+    	<div class="page-group page-second-cate">
+	    	<div class="page page-current">
+	    		<header class="bar bar-nav m-header-container m-category-header">
+	    			<a class="button button-link button-nav pull-left goback" href="#" style="color:#fff;margin-left:.25rem;">
+	       				上一级
+	       			</a>
+	       			<div class="title m-header-title">业务部门</div>
+	       			<a class="button button-link button-nav pull-right close-popup" href="#" style="color:#fff;">
+	       				取消
+	       			</a>
+	       		</header>
+		    	<div class="content m-content" style="top:2.2rem !important">
+		    		<div class="list-block category-list">
+		           		<ul id="proSubCate">
+		           		</ul>
+		           	</div> 
+		    	</div>
+		    </div>
+    	</div>
+    </div>
+
+    <link rel="stylesheet" href="../../css/apps/process.css">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_dr3una4blqnf80k9.css">
+	<script src="../../js/zepto/zepto.js"></script>
+	<script type='text/javascript' src='//g.alicdn.com/msui/sm/0.6.2/js/sm.min.js' charset='utf-8'></script>
+	<script type='text/javascript' src='//g.alicdn.com/msui/sm/0.6.2/js/sm-extend.min.js' charset='utf-8'></script>	
+	
+	<script type="text/javascript" src="../../js/common/base.js"></script>
+	<script type="text/javascript" src="../../js/common/baseUrl.js"></script>
+	<script type="text/javascript" src="../../js/common/commonAjax.js"></script>
+	<script type="text/javascript" src="../../js/process/process_func.js"></script>
+	<script type="text/javascript" src="../../js/process/process_req.js"></script>
+	<script type="text/javascript" src="../../js/process/process_create.js"></script>
+	
+	<script type="text/javascript" src="http://g.alicdn.com/dingding/open-develop/0.8.4/dingtalk.js"></script>
+	<script type="text/javascript" src="../../js/process/dingProcessTop.js"></script>
+	<script type="text/javascript" src="../../js/common/dingBase.js"></script>
+</body>
+</html>

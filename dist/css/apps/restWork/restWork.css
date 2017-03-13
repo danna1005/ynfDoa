@@ -1,0 +1,149 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: 'Microsoft YaHei'; }
+
+html {
+  font-size: 38.4px; }
+
+li {
+  list-style: none; }
+a{
+	text-decoration: none;
+}
+
+/* start rem */
+/*search */
+.header {
+  width: 100%;
+  height: 2.08333rem;
+  background: #eeeeee; }
+
+.content {
+  height: 25.41667rem;
+  width: 100%;
+  /*background: green;*/ }
+
+.content .conTitle {
+  height: 2.08333rem;
+  width: 100%;
+  position: relative;
+  /*background:green;*/ }
+
+.header img {
+  position: absolute;
+  top: 0.52083rem;
+  left: 0.78125rem; 
+  width: 0.9375rem;
+  height: 0.9375rem;
+}
+
+.header p {
+  position: absolute;
+  left: 7.8125rem;
+  line-height: 2.08333rem;
+  height: 2.08333rem;
+  color: #989898; 
+  font-size: 0.78125rem;
+}
+
+.content .conList {
+  width: 100%; }
+
+.conTitle p {
+  margin-left: 0.78125rem;
+  width: 100%;
+  padding-top: 0.67708rem;
+  height: 1.40625rem;
+  position: relative;
+  font-size: 0rem; }
+
+.conTitle .titleBg {
+  display: inline-block;
+  width: 0.15625rem;
+  height: 0.72917rem;
+  background: #f36920; }
+
+.conTitle .titleRest {
+  display: inline-block;
+  font-weight: normal;
+  font-size: 0.78125rem;
+  position: absolute;
+  left: 0.39063rem;
+  line-height: 0.6317rem; 
+  height: 0.72917rem;
+}
+
+.conTitle .restTip {
+  position: absolute;
+  left: 3.77604rem;
+  font-size: 0.625rem;
+  line-height: 0.57917rem;
+  height: 0.72917rem;
+  display: inline-block;
+  color: #888888; }
+
+.conList li {
+  width: 17.1875rem;
+  height: 3.125rem;
+  margin-left: 0.78125rem;
+  padding-right: 0.78125rem;
+  /*background: green;*/
+  position: relative;
+  border-top: 0.05208rem solid #dddddd;
+  /*background:blue;*/ }
+
+.conList li img {
+  position: absolute;
+  width: 1.875rem;
+  height:1.875rem;
+  top: 0.72917rem; }
+
+.conList li .speCon {
+  position: absolute;
+  top: 0.72917rem;
+  left: 2.34375rem; }
+
+.conList li .speCon h2 {
+  /*height: 1.11979rem;*/
+  color:#333;
+  font-size: 0.78125rem;
+  font-weight: normal;
+  width: 6.25rem;
+  overflow: hidden; }
+
+.conList li .speCon p {
+  /*height:0.52083rem; */
+  height: 0.78125rem;
+  line-height:0.78125rem;
+  font-size: 0.625rem;
+  font-weight: normal;
+  color: #666;
+  /*width: 6.25rem;*/
+  overflow: hidden; 
+  
+  }
+
+.conList li .timer {
+  display: block;
+  position: absolute;
+  bottom: 0.67708rem;
+  right: 0rem;
+  font-size: 0.57292rem;
+  color: #adadad; 
+}
+
+.conList li .enter {
+  width: 0.9375rem;
+  height: 0.9375rem;
+  position: absolute;
+  top: 1.04167rem;
+  right: 0.78125rem; }
+
+/*# sourceMappingURL=index3.css.map */
+
+
+
+
+
+

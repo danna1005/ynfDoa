@@ -1,0 +1,86 @@
+<xform:viewShow>
+<c:if test="${kmReviewMainForm.docStatus!='30' && kmReviewMainForm.docStatus!='31'}">
+<ui:button text="创建订单" onclick="creatOrder();"/>
+</c:if>
+<div id="rstMsg" style="display:none"></div>
+<input type="hidden" id="fdId" value="${param.fdId }"/>
+<script>
+	function creatOrder(){
+		if($("input[name='extendDataFormInfo.value(x_resultCode)']").val() == '0000'){
+			alert("订单已创建成功，请勿重复创建！");
+			return;
+		}
+											
+		var fdId = $("#fdId").val();
+		var url = "smisGiftCreateOrderManuallyService&fdId="+fdId;
+		var data = new KMSSData();
+		var rtnVal = data.AddBeanData(url).GetHashMapArray();
+		var rstMsg = eval("{"+"["+rtnVal[0]['key0']+"]"+"}")[0]["rstMsg"];
+		var rstCode = eval("{"+"["+rtnVal[0]['key0']+"]"+"}")[0]["rstCode"];
+		
+		$("#rstMsg").html("<font color='#FF0000'>"+rstMsg+"</font>");
+		$("#rstMsg").show();
+		$("input[name='extendDataFormInfo.value(x_resultCode)']").val(rstCode);
+		}
+</script>
+</xform:viewShow>
+<!--------------------------------------------------------------------------------------------------------------------------------------------!>
+<xform:editShow>
+<script>
+Com_Parameter.event["submit"].push(function(){
+	var type = $("input[name='extendDataFormInfo.value(x_fdType)']").val();
+	var commodityTypes = $("input[name='extendDataFormInfo.value(x_commodityType)']");	
+	var commodityType = "1";
+	for(var c=0;c<commodityTypes.length;c++){
+		if(commodityTypes[c].checked){
+			commodityType = commodityTypes[c].value;
+			break;
+		}
+	}
+   	
+	var length = attachmentObject_x_fdFile.fileList.length;
+	var len = 0;
+	var index = 0;
+	
+	for(var i=0;i<length;i++){
+		if(attachmentObject_x_fdFile.fileList[i].fileStatus > -1){//满足条件的附件
+			len++;
+			index = i;
+		}
+	}
+	if(len <=0){
+		alert("请上传明细附件");
+		return false;
+	}
+	if(len > 1){
+		alert("只能上传一份附件，请调整！");
+		return false;
+	}
+
+	var fileKey = attachmentObject_x_fdFile.fileList[index].fileKey;
+	var fileName = attachmentObject_x_fdFile.fileList[index].fileName;
+	
+	fileName = encodeURI(encodeURI(fileName));
+	var url = "smisGiftVerifyService&type="+type+"&commodityType="+commodityType+"&fileKey="+fileKey+"&fileName="+fileName;
+	var data = new KMSSData();
+	var rtnVal = data.AddBeanData(url).GetHashMapArray();
+	var resultCode = eval("{"+"["+rtnVal[0]['key0']+"]"+"}")[0]["resultCode"];
+	if("0000" == resultCode){
+		var extendFlag = eval("{"+"["+rtnVal[0]['key0']+"]"+"}")[0]["extendFlag"];
+		var totalMoney = eval("{"+"["+rtnVal[0]['key0']+"]"+"}")[0]["totalMoney"];
+		document.getElementsByName("extendDataFormInfo.value(x_fdExtendFlag)")[0].value = extendFlag;//是否走生产管理审批
+		var totalMOld = document.getElementsByName("extendDataFormInfo.value(x_fdTotalMoney)")[0].value;//申请人手动填写的总金额
+		if(commodityType == '1' && totalMOld != totalMoney){
+			alert("请检查录入的价格是否正确。SMIS系统计算金额合计为"+totalMoney+"元");
+			return false;
+		}
+		return true;
+	}else{
+		var ERROR = eval("{"+"["+rtnVal[0]['key0']+"]"+"}")[0]["ERROR"];
+		var resultMsg = eval("{"+"["+rtnVal[0]['key0']+"]"+"}")[0]["resultMsg"];
+		alert(resultMsg +": "+ ERROR);
+		return false;
+	}
+});
+</script>
+</xform:editShow>

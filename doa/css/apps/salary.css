@@ -1,0 +1,55 @@
+@charset "UTF-8";
+ul,li{list-style:none;}
+.font30{font-size:.75rem;}
+.font26{font-size:.65rem;}
+.color88{color:#888;}
+.color33{color:#333;}
+.color66{color:#666;}
+.mar1{margin:1rem 0;}
+.bgorg{background-color:#f36b23;}
+.list-block{margin:0;}
+.salary-title{text-align:center;margin:1rem auto .5rem;}
+.salary-list-block{background:#fff;overflow:hidden;}
+.salary-list-block:after,.list-tit-block:after,.month-detail-list .item-content:after{content: '';position: absolute;left: 0;bottom: 0;bottom: auto;right: auto;height: 1px;width: 100%;background-color: #d2d2d2;display: block;z-index: 15;-webkit-transform-origin: 50% 0%;transform-origin: 50% 0%;}
+.salary-input{margin:0 .75rem 1.5rem;}
+.salary-input input{border:1px solid #c0c0c0;border-radius:.3rem; height:2rem; line-height:2rem;width:100%;padding:0 0.5rem; opacity:0.8;}
+.button.reset-btn{border:1px solid #dedede;color:#333333; height:2rem;}
+.button.bgorg{ height:2rem;}
+.salary-list{font-size:0.65rem;margin:0; display:none;}
+.salary-list .item-content{min-height:auto;line-height:1.3rem;}
+.salary-list .item-after{max-height:auto;}
+.salary-list .item-inner{min-height:auto;padding:.2rem 0;}
+.salary-list .item-title{width:42%;text-align:right;color:#888;}
+.salary-list .item-after{width:56%;text-align:left;color:#333;}
+.list-block svg.calendar{width:1.4rem;height:1.4rem;position:absolute;right:0.5rem;top:0.5rem;}
+.salary-month-picker{height:2.4rem;line-height:2.4rem; text-align:center; position:relative;}
+.salary-month-picker input[type="text"]{border:0;font-size:0.75rem;text-align:center;height:2.4rem; position:absolute; z-index:2;}
+button.icon-triangle-left,button.icon-triangle-right{position:absolute;left:0;top:0.1rem; font-size:1rem;color:#898989;background:none;border:0;height:2rem;width:2rem;text-align:left;padding:0 .75rem;margin:0;}
+button.icon-triangle-right{right:0;left:auto;}
+button:disabled{opacity:0.5;}
+.type-select-block .salary-month-picker{height:2rem; line-height:2rem;}
+.gray{background:#ededed; width:100%; height:0.25rem;}
+.list-block ul.salary-type{width:80%;overflow:hidden;margin:0 auto;background:none; position:absolute;left:10%; top:0;}
+.list-block ul.salary-type:before{height:0;}
+.salary-type li{float:left; white-space:nowrap; width:100%; display:none;}
+
+.salary-month-filter{margin:1rem auto;overflow:hidden;text-align:center;}
+.salary-month-filter li{margin-left:0.75rem;width:3.5rem; display:inline-block;}
+.salary-month-filter li.mar0{margin-left:0;}
+.salary-month-filter li span{font-size:0.65rem;width:100%;margin:0 auto;text-align:center;display:block; height:1.5rem; line-height:1.5rem; background:#fff; border:0.01rem solid #c0c0c0; border-radius:1rem;color:#333;}
+.salary-month-filter li.cur span{background:#f36920;border-color:#f36920;color:#fff;}
+.graybg{width:100%; height:0.5rem;}
+.month-detail-list,.salary-filter-detail .list-block{color:#888; font-size:0.65rem; position:relative;}
+.hide{display:none;}
+.month-detail-list .item-after,.first-level>.item-content .item-after{padding-right:0.3rem;}
+.item-media .icon{color:#c9c9c9;font-size:0.75rem; padding:0.3rem 0.75rem 0;}
+.first-level{margin-bottom:0.45rem;}
+.first-level>.item-content{background:#fff;border-bottom:1px solid #d6d6d6;}
+.first-level>.item-content .item-title{font-size:0.75rem;color:#333;}
+.month-detail-list>ul{/* margin-top:0.3rem; */border-bottom:1px solid #d6d6d6;}
+.first-level .item-inner:after,.month-detail-list>ul:after{height:0;}
+.month-detail-list .item-title{padding-left:0.5rem;}
+.month-detail-list .item-after{font-size:0.6rem;}
+.month-detail-list .item-content:after{top:auto;bottom:0;background-color:#e7e7e7;-webkit-transform:scaleY(.33);transform:scaleY(.33);}
+.month-detail-list .item-content:last-child:after{height:0;}
+.pwd-list-block{margin:1rem 0;font-size:0.65rem; color:#888;text-align:justify;}

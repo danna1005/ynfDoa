@@ -1,0 +1,272 @@
+<!doctype html>
+<html style="overflow:hidden;">
+<head>
+<meta charset="utf-8">
+<title>问题详情</title>
+<meta name="viewport" content="initial-scale=1, maximum-scale=1">
+<meta http-equiv="pragma" content="no-cache"/>
+<meta http-equiv="cache-control" content="no-cache"/>
+<meta http-equiv="expires" content="-1"/>
+<link rel="shortcut icon" href="/favicon.ico">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<link rel="stylesheet" href="../../../css/common/common.css?v=20170302174246">
+<link rel="stylesheet" href="../../../css/sui/sm.css?v=20170302174246">
+<link rel="stylesheet" href="http://g.alicdn.com/msui/sm/0.6.2/css/sm-extend.css">
+<link rel="stylesheet" href="../../../css/apps/supportResult/supportResult.css?v=20170302174246">	
+<script src="../../../js/zepto/zepto.js?v=20170302174246"></script>
+<script type='text/javascript' src='http://g.alicdn.com/msui/sm/0.6.2/js/??sm.min.js,sm-extend.min.js' charset='utf-8'></script>
+</head>
+<body>
+    <div class="page-group">
+        <div class="page page-current">
+           <!--  <header class="bar bar-nav m-header-container">
+       			<a class="button button-link button-nav pull-left m-header-return doa-go-back" href="#">
+       				<span class="icon icon-left"></span>
+       			</a>
+       			<div class="title m-header-title">IT支持</div>
+       		</header> -->
+            <div class="content m-content">
+                <div class="con-title">
+                    <p id="typeName">网络问题</p>
+                </div>
+                <div class="speCon">
+                    <h2>
+                        <img src="../../../images/apps/questionDetail/me.png" alt="人物" class="person">
+                        <span class="personText"	id = "docCreatorName" v-text="speCon.person"></span>
+                    </h2>
+                    <p id = "description" v-text="speCon.content">
+                    </p>
+                </div>
+                <div class="graybg"></div>
+                <div class="speResult">
+                    <p class="resultTitle">
+                        <img src="../../../images/apps/supportResult/result.png" alt="人物" class="resultImg">
+                        <span class="resultText">处理结果</span>
+                    </p>
+                    <div>
+	                    <p class="infor" id="ret">尚未处理</p>
+	                    
+                    </div>
+                </div>
+                <div class="graybg"></div>
+                <div class="speCon location">
+                    <h2>
+                        <img src="../../../images/apps/questionDetail/location.png" alt="" class="person">
+                        <span class="personText">位置</span>
+                    </h2>
+                    <p class="infor" id ="address">御家汇大楼 2楼大厅第1排A列15号</p>
+                    <div class="bg lastBg"></div>
+                </div>
+                <div class="graybg"></div>
+                <div class="speCon status">
+                    <h2>
+                        <img src="../../../images/apps/questionDetail/status.png" alt="" class="person">
+                        <span class="personText" >状态</span>
+                    </h2>
+                    <p class="infor" id="status">待接单</p>
+                </div>
+                <div class="graybg"></div>
+                <div class="footer" id= "footer">
+                    <div class="row">
+                        <div class="col-50" ><input id="other" type="button" value="转办" class="default-btn open-about" /></div>
+                        <div class="col-50"><input type="button" value="确认" class="sure-btn" id="confirm"/></div>
+                    </div>                    
+                </div>
+            </div>
+            
+            
+            <div class="popup popup-member" id ="popup-member">
+              <div class="popup-mask"></div>
+              <div class="content-block">
+                  <ul class="member-item" >
+                      <li v-for="(key, value) in memberData" >
+             			<span style="display:none" v-text="value.fdId"></span>
+                        <p>	
+                       
+                            <span v-text="value.post"></span><span class="name" v-text="value.name"></span>
+                           
+                        </p> 
+                        <img src="../../../images/apps/supportResult/gou.png" class="gou"/>
+                      </li>
+                  </ul>
+                  <div class="row no-gutter opt-panel">
+                      <div class="col-50"><a id="determine" class="sure-btn close-popup">确定</a></div>
+                      <div class="col-50"><a href="#" class="default-btn close-popup">取消</a></div>
+                  </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+<script src="../../../js/vue/vue.js?v=20170302174246"></script>
+ <script type="text/javascript" src="../../../js/common/base.js?v=20170302174246"></script>
+<script>
+	var perId=null;
+	var fdId = null;
+	
+	
+	$(document).ready(function() {	
+		 
+		
+		
+		//console.log(window.location.href);
+	
+		var arr = window.location.href.split("?"); 
+		fdId = arr[1].substr(3,arr[1].length);
+		
+		getProplem(fdId);
+		$("#other").click(function() {
+			var detailData = new Vue({
+	            el:'.popup-member',
+	            data:{memberData:''},
+	        	ready:function(){
+	        		
+	        		var url = makeUrl("third/doa/doa_problem/doaProblem.do?method=getEngineer");
+	        
+					 $.getJSON(url, function(data) {
+						
+						 logJsonText(data.data);
+						 detailData.memberData = data.data;
+						
+					 });												
+			  	}
+	        });
+			
+		});
+		
+		 $('.footer').on('click','.default-btn',function(){
+	            $.popup('.popup-member');
+	      });        
+	        $('.member-item').on('click','li',function(){ 
+	        	
+	            $(this).find('img').show().parent().siblings().find('img').hide();
+	            perId = $(this).find("span").eq(0).text();
+	          
+	           
+	      });
+	        
+	        $("#confirm").click(function() {
+	        	var url = makeUrl("third/doa/doa_problem/doaProblem.do?method=update");
+		    	 $.ajax({			            
+			            type:"POST",	 
+			            url:url,			            
+			            data:{fdId:fdId,status:0}, 
+			            datatype: "json",
+			            success:function(data){
+			            	$.toast("接单成功");
+			   				 window.location.href="process-support.html";
+			            },
+			            error: function(){
+			            	 $.toast("接单失败，系统异常");
+			            }         
+		         });
+			});
+	        
+	        
+   			 $("#determine").click(function() {
+   				updateProplem(fdId,perId)
+				
+		    	
+			});
+	      
+		   
+	});	
+		
+		 function getProplem(fdId){	
+			
+		    var url = makeUrl("third/doa/doa_problem/doaProblem.do?method=view&fdId="+fdId);
+		    	
+		  
+		    $.getJSON(url, function(data) {
+		    		
+		            	loadProplemsHandle(data);
+		           
+		          
+	       		});
+		}
+		 
+ 
+	        function loadProplemsHandle(data){
+	        	//alert(data.typeName);
+	        	logJsonText(data.data);
+	        	$("#ret").html(data.data.handleResult);
+	        	$("#address").html(data.data.location);	        	
+	        	$("#typeName").html(data.data.typeName);
+	        	$("#docCreatorName").html(data.data.docCreatorName);
+	        	$("#description").html(data.data.description);
+	        	//alert(data.data.status);
+	        	if(data.data.status==1){
+	        		$("#status").html("请优先");
+	        	}else if(data.data.status==3){
+	        		$("#status").html("待评价");
+	        		$("#popup-member").html("");
+	        		$("#footer").html("");
+	        	}else if(data.data.status==4){
+	        		$("#status").html("已结束");
+	        		$("#popup-member").html("");
+	        		$("#footer").html("");
+	        	}else{
+	        		
+	        	}
+	        	
+	        		        	
+	        }
+	        
+	        function updateProplem(fdId,perId){
+	        	
+				 if(perId == null){
+					 alert("请选择转办人");
+					 
+	        		 
+	        	 }else{
+	        		 var url = makeUrl("third/doa/doa_problem/doaProblem.do?method=update");
+	 		    	
+	 		    	$.showPreloader('正在提交');
+	 		    	 $.ajax({			            
+	 			            type:"POST",	 
+	 			            url:url,			            
+	 			            data:{fdId:fdId,currentHandlerId:perId}, 
+	 			            datatype: "json",
+	 			            success:function(data){
+	 			            	 $.hidePreloader();
+	 			            	$.toast("转交成功成功");
+	 			   				 window.location.href="process-support.html";
+	 			            },
+	 			            error: function(){
+	 			            	 $.hidePreloader();
+	 			            	 $.toast("转交失败，系统异常");
+	 			            }         
+	 		         });
+	        		 
+	        	 }
+		    	
+		     }
+	        
+		
+	
+	
+	
+	
+	
+		
+		function loadMemberList(result){
+			
+			if(noError(result)){
+				
+				var memberData = {memberList: result.data}
+		        new Vue({
+		            el:'.popup-member',
+		            data:memberData
+		        });
+				
+				 
+	     	}
+		}
+</script>
+	<!-- 钉钉弹出聊天框需要的JS -->
+    <script type="text/javascript" src="http://g.alicdn.com/dingding/open-develop/0.8.4/dingtalk.js"></script>
+	<script type="text/javascript" src="../../../js/common/dingTop.js?v=20170302174246"></script>
+	<script type="text/javascript" src="../../../js/common/dingBase.js?v=20170302174246"></script>
+</body>
+</html>
